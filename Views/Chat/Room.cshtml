@@ -4,14 +4,14 @@
 <div class="row">
     <div class="col-12">
         <input type="text" placeholder="usuario" id="user"  />
-        <input type="text" palceholder="texto" id="message" />
-        <button id="btnSend">Send</button>
+        <input type="number" palceholder="texto" id="bid" />
+        <button id="btnSend">Send bid</button>
     </div>
 </div>
 
 <div class="row">
     <div class="col-6">
-        <div id="messages"></div>
+        <div id="bids"></div>
     </div>
     <div class="col-6">
         <div id="notifications"></div>
@@ -28,25 +28,25 @@
     document.getElementById("btnSend").addEventListener("click", (event) => {
         let room = "@Model";
         let user = document.getElementById("user").value;
-        let message = document.getElementById("message").value;
+        let bid = document.getElementById("bid").value;
 
-        connection.invoke("SendMessage", room, user, message).catch((err) =>
+        connection.invoke("SendMessage", room, user, bid).catch((err) =>
             console.error(err.toString()));
 
-        document.getElementById("message").value = "";
-        document.getElementById("message").focus();
+        document.getElementById("bid").value = "";
+        document.getElementById("bid").focus();
 
 
         event.preventDefault();
     });
 
-    connection.on("RecieveMessage", (user, message) => {
-        var message = "<div ><b>" + user + " dijo:</b> " + message + "</div>";
-        document.getElementById("messages").innerHTML = message + document.getElementById("messages").innerHTML;
+    connection.on("RecieveMessage", (user, bid) => {
+        var bid = "<div ><b>" + user + " dijo:</b> " + bid + "</div>";
+        document.getElementById("bids").innerHTML = bid + document.getElementById("bids").innerHTML;
     });
 
-    connection.on("ShowWho", (message) => {
-        var message = "<div ><b>" + message + "</br></div>";
-        document.getElementById("notifications").innerHTML = message + document.getElementById("notifications").innerHTML;
+    connection.on("ShowWho", (bid) => {
+        var bid = "<div ><b>" + bid + "</br></div>";
+        document.getElementById("notifications").innerHTML = bid + document.getElementById("notifications").innerHTML;
     });
 </script>

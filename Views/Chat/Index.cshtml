@@ -1,13 +1,35 @@
 ﻿<div class="row">
-    <div class="col-md-8 offset-2">
-        <h2>
-            Salas de Chat
-        </h2>
+
+    <div class="col-md-6">
+        <h2>Subastas activas</h2>
         <ul class="list-group">
-            @foreach(var e in ChatRoom.Controllers.ChatController.Rooms)
+            @foreach (var e in ChatRoom.Controllers.ChatController.Rooms)
             {
                 <li class="list-group-item"><a href="~/Chat/Room?room=@e.Key">@e.Value</a></li>
             }
         </ul>
+    </div>
+
+
+    <div class="col-md-6">
+        <h2>Nueva sala</h2>
+        <div>
+            <form method="post" action="~/Chat/CreateRoom">
+                <div class="form-group">
+                    <label for="roomName">Nombre de la sala</label>
+                    <input type="text" class="form-control" id="roomName" name="roomName" />
+
+                    <label for="productName">Nombre del producto</label>
+                    <input type="text" class="form-control" id="productName" name="productName" />
+
+                    <label for="initialPrice">Precio inicial</label>
+                    <input type="number" class="form-control" id="initialPrice" name="initialPrice" />
+
+                    <label for="roomImage">Imagen del producto</label>
+                    <input type="file" class="form-control" id="roomImage" name="roomImage" />
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Crear subasta</button>
+            </form>
+        </div>
     </div>
 </div>
