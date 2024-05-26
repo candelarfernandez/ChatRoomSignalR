@@ -3,23 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9A9CCF82-7196-461F-9FFE-06934D076574}|..\\ChatRoom.Datos\\ChatRoom.Datos.csproj|c:\\users\\nitof\\source\\repos\\repositorios programacion web iii\\chatroomsignalr\\chatroom.datos\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|solutionrelative:chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|c:\\users\\nitof\\source\\repos\\repositorios programacion web iii\\chatroomsignalr\\chatroom\\views\\chat\\room.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|solutionrelative:views\\chat\\room.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|c:\\users\\nitof\\source\\repos\\repositorios programacion web iii\\chatroomsignalr\\chatroom\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|solutionrelative:controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|c:\\users\\nitof\\source\\repos\\repositorios programacion web iii\\chatroomsignalr\\chatroom\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|c:\\users\\nitof\\source\\repos\\repositorios programacion web iii\\chatroomsignalr\\chatroom\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|solutionrelative:chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|c:\\users\\nitof\\source\\repos\\repositorios programacion web iii\\chatroomsignalr\\chatroom\\views\\chat\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\views\\chat\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|solutionrelative:views\\chat\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -43,19 +46,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom.Datos\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\ChatRoom.Datos\\Class1.cs",
+              "ToolTip": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom.Datos\\Class1.cs",
+              "RelativeToolTip": "..\\ChatRoom.Datos\\Class1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T00:44:22.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Room.cshtml",
               "DocumentMoniker": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\Views\\Chat\\Room.cshtml",
               "RelativeDocumentMoniker": "Views\\Chat\\Room.cshtml",
               "ToolTip": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\Views\\Chat\\Room.cshtml",
               "RelativeToolTip": "Views\\Chat\\Room.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADEAAABtAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADEAAABpAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-21T15:37:36.354Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\Views\\Chat\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Chat\\Index.cshtml",
@@ -68,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ChatController.cs",
               "DocumentMoniker": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\Controllers\\ChatController.cs",
               "RelativeDocumentMoniker": "Controllers\\ChatController.cs",
@@ -81,7 +97,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -94,13 +110,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "ChatHub.cs",
               "DocumentMoniker": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\ChatHub.cs",
               "RelativeDocumentMoniker": "ChatHub.cs",
               "ToolTip": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\ChatHub.cs",
               "RelativeToolTip": "ChatHub.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA/AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAABPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-21T15:13:31.37Z",
               "EditorCaption": ""
