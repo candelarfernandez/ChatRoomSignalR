@@ -9,47 +9,47 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ChatRoom
 build_property.RootNamespace = ChatRoom
-build_property.ProjectDir = C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\ChatRoom\
+build_property.ProjectDir = C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\ChatRoom
+build_property.MSBuildProjectDirectory = C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/nitof/source/repos/Repositorios Programacion Web III/ChatRoomSignalR/ChatRoom/Views/Chat/Index.cshtml]
+[C:/Users/ailuv/OneDrive/Documentos/progrmación-web-III/SignalR/Views/Chat/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nitof/source/repos/Repositorios Programacion Web III/ChatRoomSignalR/ChatRoom/Views/Chat/Room.cshtml]
+[C:/Users/ailuv/OneDrive/Documentos/progrmación-web-III/SignalR/Views/Chat/Room.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdFxSb29tLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nitof/source/repos/Repositorios Programacion Web III/ChatRoomSignalR/ChatRoom/Views/Home/Index.cshtml]
+[C:/Users/ailuv/OneDrive/Documentos/progrmación-web-III/SignalR/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nitof/source/repos/Repositorios Programacion Web III/ChatRoomSignalR/ChatRoom/Views/Home/Privacy.cshtml]
+[C:/Users/ailuv/OneDrive/Documentos/progrmación-web-III/SignalR/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nitof/source/repos/Repositorios Programacion Web III/ChatRoomSignalR/ChatRoom/Views/Shared/Error.cshtml]
+[C:/Users/ailuv/OneDrive/Documentos/progrmación-web-III/SignalR/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nitof/source/repos/Repositorios Programacion Web III/ChatRoomSignalR/ChatRoom/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/ailuv/OneDrive/Documentos/progrmación-web-III/SignalR/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nitof/source/repos/Repositorios Programacion Web III/ChatRoomSignalR/ChatRoom/Views/_ViewImports.cshtml]
+[C:/Users/ailuv/OneDrive/Documentos/progrmación-web-III/SignalR/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nitof/source/repos/Repositorios Programacion Web III/ChatRoomSignalR/ChatRoom/Views/_ViewStart.cshtml]
+[C:/Users/ailuv/OneDrive/Documentos/progrmación-web-III/SignalR/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nitof/source/repos/Repositorios Programacion Web III/ChatRoomSignalR/ChatRoom/Views/Shared/_Layout.cshtml]
+[C:/Users/ailuv/OneDrive/Documentos/progrmación-web-III/SignalR/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-xi6co5s6bw

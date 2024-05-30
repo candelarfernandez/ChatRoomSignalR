@@ -1,23 +1,46 @@
-﻿@model int 
-<h1>@ChatRoom.Controllers.ChatController.Rooms.GetValueOrDefault(Model)</h1>
+﻿@model int
+@{
+    var bids = ViewBag.Bids as List<ChatRoom.Models.Bid>;
+}
 
-<div class="row">
+<h1 class="text-center">@ChatRoom.Controllers.ChatController.Rooms.GetValueOrDefault(Model)</h1>
+
+<div class="row my-4">
     <div class="col-12">
-        <input type="text" placeholder="usuario" id="user"  />
-        <input type="number" palceholder="texto" id="bid" />
-        <button id="btnSend">Send bid</button>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Usuario" id="user" />
+            <input type="number" class="form-control" placeholder="Monto" id="bid" />
+            <div class="input-group-append">
+                <button class="btn btn-primary" id="btnSend">Enviar oferta</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-12">
+        <div id="lastBid" class="alert alert-info">
+            <b>Última oferta:</b> <span id="lastBidContent">Ninguna oferta aún</span>
+        </div>
     </div>
 </div>
 
 <div class="row">
-    <div class="col-6">
-        <div id="bids"></div>
+    <div class="col-md-6">
+        <div id="bids" class="border p-3" style="height: 300px; overflow-y: scroll;">
+            @foreach (var bid in bids)
+            {
+                <div><b>@bid.FromUser ofertó:</b> $@bid.Amount</div>
+            }
+        </div>
     </div>
-    <div class="col-6">
-        <div id="notifications"></div>
+    <div class="col-md-6">
+        <div id="notifications" class="border p-3" style="height: 300px; overflow-y: scroll;">
+        </div>
+    </div>
+</div>
     </div>
 
-</div>
 <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
 <script>
     var connection = new signalR.HubConnectionBuilder().withUrl("/chat").build();
@@ -30,23 +53,35 @@
         let user = document.getElementById("user").value;
         let bid = document.getElementById("bid").value;
 
+        console.log(room, user, bid)
+
+        fetch('/Chat/AddBid', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ ToRoomId: room, user: user, Amount: bid })
+        }).catch((err) =>
+            console.error(err.toString())
+        );
+
         connection.invoke("SendMessage", room, user, bid).catch((err) =>
             console.error(err.toString()));
 
         document.getElementById("bid").value = "";
         document.getElementById("bid").focus();
 
-
         event.preventDefault();
     });
 
     connection.on("RecieveMessage", (user, bid) => {
-        var bid = "<div ><b>" + user + " dijo:</b> " + bid + "</div>";
-        document.getElementById("bids").innerHTML = bid + document.getElementById("bids").innerHTML;
+        var bidMessage = "<div><b>" + user + " ofertó:</b> $" + bid + "</div>";
+        document.getElementById("bids").innerHTML = bidMessage + document.getElementById("bids").innerHTML;
+        document.getElementById("lastBidContent").innerHTML = user + " ofertó: $" + bid;
     });
 
     connection.on("ShowWho", (bid) => {
-        var bid = "<div ><b>" + bid + "</br></div>";
-        document.getElementById("notifications").innerHTML = bid + document.getElementById("notifications").innerHTML;
+        var bidNotification = "<div><b>" + bid + "</b></div>";
+        document.getElementById("notifications").innerHTML = bidNotification + document.getElementById("notifications").innerHTML;
     });
 </script>

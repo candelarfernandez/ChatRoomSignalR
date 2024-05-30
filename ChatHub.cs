@@ -1,12 +1,13 @@
-﻿using Microsoft.AspNetCore.SignalR;
+﻿using ChatRoom.Models;
+using Microsoft.AspNetCore.SignalR;
 
 namespace ChatRoom
 {
     public class ChatHub : Hub
     {
-        public async Task SendMessage(string room, string user, string message)
+        public async Task SendMessage(string room, string user, string amount)
         {
-            await Clients.Group(room).SendAsync("RecieveMessage", user, message);
+            await Clients.Group(room).SendAsync("RecieveMessage", user, amount);
 
         }
         public async Task AddToGroup(string room)

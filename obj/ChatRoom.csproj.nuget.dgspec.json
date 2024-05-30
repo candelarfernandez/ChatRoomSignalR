@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\ChatRoom.csproj": {}
+    "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoom.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\ChatRoom.csproj": {
+    "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoom.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\ChatRoom.csproj",
+        "projectUniqueName": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoom.csproj",
         "projectName": "ChatRoom",
-        "projectPath": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\ChatRoom.csproj",
-        "packagesPath": "C:\\Users\\nitof\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\obj\\",
+        "projectPath": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoom.csproj",
+        "packagesPath": "C:\\Users\\ailuv\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nitof\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ailuv\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -63,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

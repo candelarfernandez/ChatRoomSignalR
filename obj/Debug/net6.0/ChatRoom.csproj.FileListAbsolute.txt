@@ -29,3 +29,35 @@ C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\Ch
 C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\ChatRoom\obj\Debug\net6.0\ChatRoom.pdb
 C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\ChatRoom\obj\Debug\net6.0\ChatRoom.genruntimeconfig.cache
 C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\ChatRoom\obj\Debug\net6.0\ref\ChatRoom.dll
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\bin\Debug\net6.0\appsettings.json
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\bin\Debug\net6.0\libman.json
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\bin\Debug\net6.0\ChatRoom.staticwebassets.runtime.json
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\bin\Debug\net6.0\ChatRoom.exe
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\bin\Debug\net6.0\ChatRoom.deps.json
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\bin\Debug\net6.0\ChatRoom.runtimeconfig.json
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\bin\Debug\net6.0\ChatRoom.dll
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\bin\Debug\net6.0\ChatRoom.pdb
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\ChatRoom.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\ChatRoom.AssemblyInfoInputs.cache
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\ChatRoom.AssemblyInfo.cs
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\ChatRoom.csproj.CoreCompileInputs.cache
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\ChatRoom.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\ChatRoom.RazorAssemblyInfo.cache
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\ChatRoom.RazorAssemblyInfo.cs
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\ChatRoom.sourcelink.json
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\staticwebassets\msbuild.ChatRoom.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\staticwebassets\msbuild.build.ChatRoom.props
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.ChatRoom.props
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.ChatRoom.props
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\scopedcss\bundle\ChatRoom.styles.css
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\scopedcss\projectbundle\ChatRoom.bundle.scp.css
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\ChatRoom.dll
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\refint\ChatRoom.dll
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\ChatRoom.pdb
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\ChatRoom.genruntimeconfig.cache
+C:\Users\ailuv\OneDrive\Documentos\progrmación-web-III\SignalR\obj\Debug\net6.0\ref\ChatRoom.dll
