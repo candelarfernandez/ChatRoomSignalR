@@ -1,13 +1,13 @@
-﻿@model int 
-<h1>@ChatRoom.Controllers.ChatController.Rooms.GetValueOrDefault(Model)</h1>
+﻿@model ChatRoom.Datos.Entidades.Sala
 
+<h1>@Model.Nombre</h1>
 <div class="row">
     <div class="col-12">
-        <input type="text" placeholder="usuario" id="user"  />
-        <input type="number" palceholder="texto" id="bid" />
-        <button id="btnSend">Send bid</button>
+        <input type="text" placeholder="usuario" id="user" />
+        <input type="number" placeholder="puja" id="bid" />
+        <button id="btnSend">Enviar puja</button>
     </div>
-</div>
+</div> 
 
 <div class="row">
     <div class="col-6">
@@ -16,17 +16,17 @@
     <div class="col-6">
         <div id="notifications"></div>
     </div>
-
 </div>
+
 <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
 <script>
     var connection = new signalR.HubConnectionBuilder().withUrl("/chat").build();
     connection.start().then(() => {
-        connection.invoke("AddToGroup", "@Model")
+        connection.invoke("AddToGroup", "@Model.Id")
     }).catch((e) => console.error(e));
 
     document.getElementById("btnSend").addEventListener("click", (event) => {
-        let room = "@Model";
+        let room = "@Model.Id";
         let user = document.getElementById("user").value;
         let bid = document.getElementById("bid").value;
 

@@ -1,10 +1,12 @@
 using ChatRoom;
+using ChatRoom.Dominio;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSignalR();
+builder.Services.AddScoped<ISalaService, SalaService>();
 
 var app = builder.Build();
 

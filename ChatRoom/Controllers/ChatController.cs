@@ -1,23 +1,30 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+using ChatRoom.Dominio;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ChatRoom.Controllers;
 
 public class ChatController : Controller
 {
-    public static Dictionary<int, string> Rooms =
-        new Dictionary<int, string>()
-        {
-            {1, "Cervezas"},
-            {2, "Programacion"},
-            {3, "Moda"}
-        };
+    private readonly ISalaService _salaService;
+
+    public ChatController(ISalaService salaService)
+    {
+        _salaService = salaService;
+    }
     public IActionResult Index()
     {
-        return View();
+        var salas = _salaService.GetSalas();
+        return View(salas);
     }
-    public IActionResult Room(int room)
+    public IActionResult Room(int id)
     {
-        return View("Room", room);
+        var sala = _salaService.GetSalaById(id);
+        if (sala == null)
+        {
+            return NotFound();
+        }
+        return View(sala);
     }
 
     public IActionResult CreateRoom()
@@ -27,15 +34,13 @@ public class ChatController : Controller
     }
 
     [HttpPost]
-    public IActionResult CreateRoom(string roomName)
+    public IActionResult CreateRoom(string nombre, string fotoProductoNombre, int? idVendedor)
     {
-        if (!string.IsNullOrEmpty(roomName))
+        if (!string.IsNullOrEmpty(nombre) && !string.IsNullOrEmpty(fotoProductoNombre))
         {
-            int newRoomId = Rooms.Count + 1;
-            Rooms.Add(newRoomId, roomName);
-            return RedirectToAction("Room", new { room = newRoomId });
+            var sala = _salaService.CreateSala(nombre, fotoProductoNombre, idVendedor);
+            return RedirectToAction("Index");
         }
-
         return View();
     }
 }

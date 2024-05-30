@@ -12,3 +12,4 @@ C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\Ch
 C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\ChatRoom.Datos\obj\Debug\net6.0\ChatRoom.Datos.pdb
 C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\ChatRoom.Datos\obj\Debug\net6.0\ChatRoom.Datos.genruntimeconfig.cache
 C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\ChatRoom.Datos\obj\Debug\net6.0\ref\ChatRoom.Datos.dll
+C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\ChatRoom.Datos\obj\Debug\net6.0\ChatRoom.Datos.sourcelink.json

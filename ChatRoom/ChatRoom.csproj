@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ChatRoom.Datos\ChatRoom.Datos.csproj" />
+    <ProjectReference Include="..\ChatRoom.Dominio\ChatRoom.Dominio.csproj" />
   </ItemGroup>
 
 </Project>
