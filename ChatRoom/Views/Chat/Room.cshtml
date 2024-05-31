@@ -1,13 +1,45 @@
-﻿@model ChatRoom.Datos.Entidades.Sala
+﻿@using ChatRoom.Datos.Entidades
+@model ChatRoom.Datos.Entidades.Sala
 
 <h1>@Model.Nombre</h1>
+
+@if (Model.Oferta != null && Model.Oferta.Any())
+{
+    <h1>Ofertas:</h1>
+    @foreach (var oferta in Model.Oferta)
+    {
+        <p>Monto: @oferta.Monto</p>
+    }
+}
+else
+{
+    @foreach (var oferta in Model.Oferta)
+    {
+        <p>Monto: @oferta.Monto</p>
+    }
+    <p>No hay ofertas disponibles.</p>
+}
+
+
 <div class="row">
+    <form method="post" action="~/Chat/CreateOferta">
     <div class="col-12">
-        <input type="text" placeholder="usuario" id="user" />
-        <input type="number" placeholder="puja" id="bid" />
+            <label for="idSala">id sala</label>
+            <input type="number" class="form-control" placeholder="id sala" id="sala" name="idSala" required />
+
+            <label for="idUsuario">id usuario</label>
+            <input type="number" class="form-control" placeholder="id usuario" id="user" name="idUsuario" required />
+
+            <label for="monto">monto</label>
+            <input type="number" class="form-control" placeholder="puja" id="bid" name="monto" required />
         <button id="btnSend">Enviar puja</button>
     </div>
+    </form>
 </div> 
+
+
+
+
 
 <div class="row">
     <div class="col-6">
@@ -17,6 +49,8 @@
         <div id="notifications"></div>
     </div>
 </div>
+
+
 
 <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
 <script>
@@ -36,6 +70,15 @@
         document.getElementById("bid").value = "";
         document.getElementById("bid").focus();
 
+        // document.getElementById("bids").innerHTML = ""; // Clear existing bids
+
+        // var bid = "<div ><b>" + user + " dijo:</b> " + bid + "</div>";
+        // document.getElementById("bids").innerHTML += bid; // Add new offer
+
+        // // Call function to filter and display ofertums (explained later)
+        // filterAndDisplayOfertas(room);
+
+
 
         event.preventDefault();
     });
@@ -49,4 +92,22 @@
         var bid = "<div ><b>" + bid + "</br></div>";
         document.getElementById("notifications").innerHTML = bid + document.getElementById("notifications").innerHTML;
     });
+    // function filterAndDisplayOfertas(salaId) {
+    //     connection.invoke("GetOfertasBySala", salaId)
+    //         .then(ofertums => {
+    //             // Filter ofertums with highest monto
+    //             var highestOfertum = ofertums.sort((a, b) => b.monto - a.monto)[0];
+
+    //             var filteredBids = "";
+    //             for (var i = 0; i < ofertums.length; i++) {
+    //                 var oferta = ofertums[i];
+    //                 filteredBids += "<div ><b>" + oferta.idComprador + " ofreció:</b> " + oferta.monto + "</div>";
+    //             }
+
+    //             // Update bids section with highest offer and filtered ofertums
+    //             document.getElementById("bids").innerHTML +=
+    //                 "<div><b>Oferta Máxima:</b> " + highestOfertum.monto + "</div>" + filteredBids;
+    //         })
+    //         .catch(err => console.error(err));
+    // }
 </script>

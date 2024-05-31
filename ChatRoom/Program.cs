@@ -7,6 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddSignalR();
 builder.Services.AddScoped<ISalaService, SalaService>();
+builder.Services.AddScoped<IOfertumService, OfertumService>();
+
+
 
 var app = builder.Build();
 

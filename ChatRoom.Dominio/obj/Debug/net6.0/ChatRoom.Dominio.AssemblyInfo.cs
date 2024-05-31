@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ChatRoom.Dominio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7efceda60a7e76020afdf46fed02c6672f7e8888")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85accaad1d0198cf7c59ca2471a0775fdb35772d")]
 [assembly: System.Reflection.AssemblyProductAttribute("ChatRoom.Dominio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ChatRoom.Dominio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

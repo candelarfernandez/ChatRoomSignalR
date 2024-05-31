@@ -2976,19 +2976,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nitof\\.nuget\\packages\\": {}
+    "C:\\Users\\andrea.sosa\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom.Datos\\ChatRoom.Datos.csproj",
+      "projectUniqueName": "C:\\Users\\andrea.sosa\\Source\\Repos\\ChatRoomSignalR\\ChatRoom.Datos\\ChatRoom.Datos.csproj",
       "projectName": "ChatRoom.Datos",
-      "projectPath": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom.Datos\\ChatRoom.Datos.csproj",
-      "packagesPath": "C:\\Users\\nitof\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom.Datos\\obj\\",
+      "projectPath": "C:\\Users\\andrea.sosa\\Source\\Repos\\ChatRoomSignalR\\ChatRoom.Datos\\ChatRoom.Datos.csproj",
+      "packagesPath": "C:\\Users\\andrea.sosa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\andrea.sosa\\Source\\Repos\\ChatRoomSignalR\\ChatRoom.Datos\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\nitof\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\andrea.sosa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2996,6 +3001,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3051,12 +3057,26 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.29, 6.0.29]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.29, 6.0.29]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.29, 6.0.29]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
       }
     }
   }

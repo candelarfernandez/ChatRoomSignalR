@@ -7,6 +7,8 @@ namespace ChatRoom.Dominio
         List<Sala> GetSalas();
         Sala? GetSalaById(int id);
         Sala CreateSala(string nombre, string? fotoProductoNombre, int? idVendedor);
+        void agregarOfertaALaSala(Ofertum oferta, int idSala);
+
     }
     public class SalaService : ISalaService
     {
@@ -40,6 +42,12 @@ namespace ChatRoom.Dominio
             Salas.Add(sala);
             return sala;
         }
+        public void agregarOfertaALaSala(Ofertum oferta, int idSala) {
 
+          var Sala =  GetSalaById(idSala);
+            Sala.Oferta.Add(oferta);
+
+
+        }
     }
 }
