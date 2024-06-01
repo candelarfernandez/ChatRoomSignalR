@@ -1,2 +1,4 @@
-obj/
 .vs/
+bin/
+# Ignorar todas las carpetas obj en cualquier parte del proyecto
+obj/
