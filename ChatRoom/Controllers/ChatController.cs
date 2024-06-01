@@ -48,23 +48,24 @@ public class ChatController : Controller
         return View();
     }
 
-
-    public IActionResult ofertum(int id)
+    //version Cande
+    [HttpPost]
+    public IActionResult CreateOferta(decimal monto, int? idComprador, int? idSala)
     {
-        var ofertum = _ofertumService.GetOfertumById(id);
-        if (ofertum == null)
+        if (monto > 0 && idComprador.HasValue && idSala.HasValue)
         {
-            return NotFound();
+            var oferta = _ofertumService.CreateOfertum(monto, idComprador.Value, idSala.Value);
+
+            var sala = _salaService.GetSalaById(idSala.Value);
+            if (sala != null)
+            {
+                _salaService.agregarOfertaALaSala(oferta, idSala.Value);
+            }
         }
-        return View(ofertum);
+        return RedirectToAction("Room", new { id = idSala });
     }
 
-    public IActionResult CreateOferta()
-    {
-
-        return View();
-    }
-
+    //version que estaba comentada de andre
     //[HttpPost]
     //public IActionResult CreateOferta(decimal monto, int? idComprador, int? idSala)
     //{
@@ -84,13 +85,12 @@ public class ChatController : Controller
     //            _salaService.agregarOfertaALaSala(oferta, idSala.Value);
     //        }
 
-
-
     //    }
     //    return View();
     //}
 
-    [HttpPost]
+    /* VERSION QUE FUNCIONA ACTUALMENTE DE ANDRE
+     * [HttpPost]
     public IActionResult CreateOferta(decimal monto, int? idComprador, int? idSala)
     {
         if (monto > 0 && idComprador.HasValue && idSala.HasValue)
@@ -107,10 +107,10 @@ public class ChatController : Controller
           //  return RedirectToAction("DetalleSala", new { idSala = idSala.Value });
         }
         return View();
-    }
+    }*/
 
 
-
+    //version que estaba comentada ya de andre
     //public IActionResult DetalleSala(int idSala)
     //{
     //    var sala = _salaService.GetSalaById(idSala);
@@ -128,5 +128,5 @@ public class ChatController : Controller
     //}
 
 
-  
+
 }

@@ -1,4 +1,5 @@
 using ChatRoom;
+using ChatRoom.Datos;
 using ChatRoom.Dominio;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSignalR();
+builder.Services.AddScoped<SubastaContext>();
 builder.Services.AddScoped<ISalaService, SalaService>();
 builder.Services.AddScoped<IOfertumService, OfertumService>();
 

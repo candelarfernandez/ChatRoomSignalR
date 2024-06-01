@@ -16,5 +16,9 @@ namespace ChatRoom
             await Clients.Group(room).SendAsync("ShowWho", $"{Context.ConnectionId} se unió a esta subasta");
 
         }
+        public async Task SendOferta(string room, decimal monto, int? idComprador)
+        {
+            await Clients.Group(room).SendAsync("ReceiveOferta", monto, idComprador);
+        }
     }
 }

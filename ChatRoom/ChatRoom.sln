@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom", "ChatRoom.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom.Datos", "..\ChatRoom.Datos\ChatRoom.Datos.csproj", "{9A9CCF82-7196-461F-9FFE-06934D076574}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRoom.Dominio", "..\ChatRoom.Dominio\ChatRoom.Dominio.csproj", "{1EECD7D2-6A30-4E69-BE05-1C5EB4C48E0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom.Dominio", "..\ChatRoom.Dominio\ChatRoom.Dominio.csproj", "{1EECD7D2-6A30-4E69-BE05-1C5EB4C48E0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
