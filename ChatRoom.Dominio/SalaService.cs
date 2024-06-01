@@ -1,4 +1,7 @@
-﻿using ChatRoom.Datos.Entidades;
+﻿using ChatRoom.Datos;
+using ChatRoom.Datos.Entidades;
+using Microsoft.EntityFrameworkCore;
+using System.Threading;
 
 namespace ChatRoom.Dominio
 {
@@ -18,36 +21,41 @@ namespace ChatRoom.Dominio
         new Sala { Id = 2, Nombre = "Programacion", FotoProductoNombre = "libro.jpg" },
         new Sala { Id = 3, Nombre = "Moda", FotoProductoNombre = "chaqueta.jpg" }
     };
+        private SubastaContext _subastaContext;
+
+        public SalaService(SubastaContext subastaContext) {
+            _subastaContext = subastaContext;
+        }
 
         public List<Sala> GetSalas()
         {
-            return Salas;
+            return _subastaContext.Salas.Include(s => s.Oferta).ToList();
         }
-
         public Sala? GetSalaById(int id)
         {
-            return Salas.FirstOrDefault(s => s.Id == id);
+            return _subastaContext.Salas.Include(s => s.Oferta).FirstOrDefault(s => s.Id == id);
         }
 
         public Sala CreateSala(string nombre, string? fotoProductoNombre, int? idVendedor)
         {
-            int newRoomId = Salas.Count + 1;
             var sala = new Sala
             {
-                Id = newRoomId,
                 Nombre = nombre,
                 FotoProductoNombre = fotoProductoNombre,
                 IdVendedor = idVendedor
             };
-            Salas.Add(sala);
+            _subastaContext.Salas.Add(sala);
+            _subastaContext.SaveChanges();
             return sala;
         }
         public void agregarOfertaALaSala(Ofertum oferta, int idSala) {
 
-          var Sala =  GetSalaById(idSala);
-            Sala.Oferta.Add(oferta);
-
-
+            var sala = GetSalaById(idSala);
+            if (sala != null)
+            {
+                sala.Oferta.Add(oferta);
+                _subastaContext.SaveChanges();
+            }
         }
     }
 }
