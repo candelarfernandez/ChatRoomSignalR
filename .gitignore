@@ -1,0 +1,5 @@
+# Ignorar la carpeta .vs
+.vs/
+
+# Ignorar todas las carpetas obj en cualquier parte del proyecto
+obj/
