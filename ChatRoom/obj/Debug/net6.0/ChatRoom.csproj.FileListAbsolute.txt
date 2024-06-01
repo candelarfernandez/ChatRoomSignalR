@@ -92,3 +92,15 @@ C:\Users\andrea.sosa\Source\Repos\ChatRoomSignalR\ChatRoom\obj\Debug\net6.0\refi
 C:\Users\andrea.sosa\Source\Repos\ChatRoomSignalR\ChatRoom\obj\Debug\net6.0\ChatRoom.pdb
 C:\Users\andrea.sosa\Source\Repos\ChatRoomSignalR\ChatRoom\obj\Debug\net6.0\ChatRoom.genruntimeconfig.cache
 C:\Users\andrea.sosa\Source\Repos\ChatRoomSignalR\ChatRoom\obj\Debug\net6.0\ref\ChatRoom.dll
+C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\ChatRoom\obj\Debug\net6.0\ChatRoom.csproj.AssemblyReference.cache
+C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\ChatRoom\obj\Debug\net6.0\ChatRoom.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\ChatRoom\obj\Debug\net6.0\ChatRoom.AssemblyInfoInputs.cache
+C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\ChatRoom\obj\Debug\net6.0\ChatRoom.AssemblyInfo.cs
+C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\ChatRoom\obj\Debug\net6.0\ChatRoom.csproj.CoreCompileInputs.cache
+C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\ChatRoom\obj\Debug\net6.0\ChatRoom.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\ChatRoom\obj\Debug\net6.0\ChatRoom.RazorAssemblyInfo.cache
+C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\ChatRoom\obj\Debug\net6.0\ChatRoom.RazorAssemblyInfo.cs
+C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\ChatRoom\obj\Debug\net6.0\ChatRoom.sourcelink.json
+C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\ChatRoom\obj\Debug\net6.0\ChatRoom.dll
+C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\ChatRoom\obj\Debug\net6.0\refint\ChatRoom.dll
+C:\Users\nitof\source\repos\Repositorios Programacion Web III\ChatRoomSignalR\ChatRoom\obj\Debug\net6.0\ChatRoom.pdb
