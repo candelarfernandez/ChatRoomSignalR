@@ -149,7 +149,7 @@ public partial class SubastaContext : IdentityDbContext<IdentityUser>
                 .HasMaxLength(15)
                 .IsUnicode(false)
                 .HasColumnName("password");
-            entity.Property(e => e.Username)
+            entity.Property(e => e.UserName)
                 .HasMaxLength(30)
                 .IsUnicode(false)
                 .HasColumnName("username");
