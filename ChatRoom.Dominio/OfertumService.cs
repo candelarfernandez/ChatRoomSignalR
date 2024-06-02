@@ -9,7 +9,7 @@ namespace ChatRoom.Dominio
     {
         List<Ofertum> GetOfertums();
         Ofertum? GetOfertumById(int id);
-        Ofertum CreateOfertum(decimal monto, int? idComprador, int? idSala);
+        Ofertum CreateOfertum(decimal monto, string? idComprador, int? idSala);
     }
     public class OfertumService : IOfertumService
     {
@@ -29,7 +29,7 @@ namespace ChatRoom.Dominio
             return _subastaContext.Oferta.Include(o => o.IdCompradorNavigation).Include(o => o.IdSalaNavigation).FirstOrDefault(o => o.Id == id);
         }
 
-        public Ofertum CreateOfertum(decimal monto, int? idComprador, int? idSala)
+        public Ofertum CreateOfertum(decimal monto, string? idComprador, int? idSala)
         {
             var ofertum = new Ofertum
             {

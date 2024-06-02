@@ -41,7 +41,7 @@ public class ChatController : Controller
     }
 
     [HttpPost]
-    public IActionResult CreateRoom(string nombre, string fotoProductoNombre, int? idVendedor)
+    public IActionResult CreateRoom(string nombre, string fotoProductoNombre, string? idVendedor)
     {
         if (!string.IsNullOrEmpty(nombre) && !string.IsNullOrEmpty(fotoProductoNombre))
         {

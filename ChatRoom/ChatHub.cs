@@ -19,9 +19,8 @@ namespace ChatRoom
         public async Task AddOferta(string salaId, string idComprador, string monto)
         {
             int salaIdInt = int.Parse(salaId);
-            int idCompradorInt = int.Parse(idComprador);
             decimal montoDecimal = decimal.Parse(monto);
-            var oferta = _ofertumService.CreateOfertum(montoDecimal, idCompradorInt, salaIdInt);
+            var oferta = _ofertumService.CreateOfertum(montoDecimal, idComprador, salaIdInt);
             if (oferta != null)
             {
                 _salaService.agregarOfertaALaSala(oferta, salaIdInt);

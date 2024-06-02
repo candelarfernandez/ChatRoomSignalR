@@ -10,7 +10,7 @@ namespace ChatRoom.Dominio
     {
         List<Sala> GetSalas();
         Sala? GetSalaById(int id);
-        Sala CreateSala(string nombre, string? fotoProductoNombre, int? idVendedor);
+        Sala CreateSala(string nombre, string? fotoProductoNombre, string? idVendedor);
         void agregarOfertaALaSala(Ofertum oferta, int idSala);
 
     }
@@ -31,7 +31,7 @@ namespace ChatRoom.Dominio
             return _subastaContext.Salas.Include(s => s.Oferta).FirstOrDefault(s => s.Id == id);
         }
 
-        public Sala CreateSala(string nombre, string? fotoProductoNombre, int? idVendedor)
+        public Sala CreateSala(string nombre, string? fotoProductoNombre, string? idVendedor)
         {
             if (idVendedor == null)
             {
