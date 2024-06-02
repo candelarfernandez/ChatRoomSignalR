@@ -1,17 +1,18 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 
 namespace ChatRoom.Datos.Entidades;
 
-public partial class Usuario
+public partial class Usuario : IdentityUser
 {
-    public int Id { get; set; }
+    public override string? Id { get; set; }
 
     public string Username { get; set; } = null!;
 
     public string Password { get; set; } = null!;
 
-    public string Email { get; set; } = null!;
+    public override string Email { get; set; } = null!;
 
     public decimal? DineroDisponible { get; set; }
 

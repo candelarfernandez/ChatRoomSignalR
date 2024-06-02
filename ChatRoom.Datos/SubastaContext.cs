@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using ChatRoom.Datos.Entidades;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace ChatRoom.Datos;
 
-public partial class SubastaContext : DbContext
+public partial class SubastaContext : IdentityDbContext<IdentityUser>
 {
     public SubastaContext()
     {
@@ -34,6 +36,13 @@ public partial class SubastaContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+
+        modelBuilder.Entity<IdentityUserLogin<string>>().HasKey(p => new { p.LoginProvider, p.ProviderKey });
+        modelBuilder.Entity<IdentityUserRole<string>>().HasKey(p => new { p.UserId, p.RoleId });
+        modelBuilder.Entity<IdentityUserClaim<string>>().HasKey(p => p.Id);
+        modelBuilder.Entity<IdentityUserToken<string>>().HasKey(p => new { p.UserId, p.LoginProvider, p.Name });
+        modelBuilder.Entity<IdentityRoleClaim<string>>().HasKey(p => p.Id);
+
         modelBuilder.Entity<Notificacion>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Notifica__3213E83FF347DE52");
@@ -124,7 +133,7 @@ public partial class SubastaContext : DbContext
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Usuario__3213E83F4EFFA6FD");
+            //entity.HasKey(e => e.Id).HasName("PK__Usuario__3213E83F4EFFA6FD");
 
             entity.ToTable("Usuario");
 

@@ -1,6 +1,8 @@
 using ChatRoom;
 using ChatRoom.Datos;
 using ChatRoom.Dominio;
+using Microsoft.AspNetCore.Identity;
+using ChatRoom.Datos.Entidades;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +13,17 @@ builder.Services.AddScoped<SubastaContext>();
 builder.Services.AddScoped<ISalaService, SalaService>();
 builder.Services.AddScoped<IOfertumService, OfertumService>();
 
-
+builder.Services.AddIdentity<Usuario, IdentityRole>(options =>
+{
+options.Password.RequireDigit = false;
+options.Password.RequireLowercase = false;
+options.Password.RequireUppercase = false;
+options.Password.RequireNonAlphanumeric = false;
+options.Password.RequiredLength = 6;
+options.Password.RequiredUniqueChars = 0;
+    })
+    .AddEntityFrameworkStores<SubastaContext>()
+    .AddDefaultTokenProviders();
 
 var app = builder.Build();
 

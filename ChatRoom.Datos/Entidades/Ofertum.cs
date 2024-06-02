@@ -10,7 +10,7 @@ public partial class Ofertum
 
     public decimal Monto { get; set; }
 
-    public int? IdComprador { get; set; }
+    public string? IdComprador { get; set; }
 
     public int? IdSala { get; set; }
 

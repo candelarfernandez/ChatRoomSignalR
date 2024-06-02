@@ -11,7 +11,7 @@ public partial class Sala
 
     public string? FotoProductoNombre { get; set; }
 
-    public int? IdVendedor { get; set; }
+    public string? IdVendedor { get; set; }
 
     public string? UsuariosConectados { get; set; }
 
