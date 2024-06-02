@@ -1,29 +1,80 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\",
+  "WorkspaceRootPath": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1EECD7D2-6A30-4E69-BE05-1C5EB4C48E0D}|..\\ChatRoom.Dominio\\ChatRoom.Dominio.csproj|c:\\users\\nitof\\source\\repos\\repositorios programacion web iii\\chatroomsignalr\\chatroom.dominio\\salaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\auth\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|solutionrelative:auth\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9A9CCF82-7196-461F-9FFE-06934D076574}|..\\ChatRoom.Datos\\ChatRoom.Datos.csproj|c:\\users\\ailuv\\onedrive\\documentos\\progrmaci\u00F3n-web-iii\\signalr\\chatroomsignalr\\chatroom.datos\\entidades\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A9CCF82-7196-461F-9FFE-06934D076574}|..\\ChatRoom.Datos\\ChatRoom.Datos.csproj|c:\\users\\ailuv\\onedrive\\documentos\\progrmaci\u00F3n-web-iii\\signalr\\chatroomsignalr\\chatroom.datos\\subastacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|solutionrelative:controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|c:\\users\\nitof\\source\\repos\\repositorios programacion web iii\\chatroomsignalr\\chatroom\\views\\chat\\room.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|solutionrelative:views\\chat\\room.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\auth\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|solutionrelative:auth\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|c:\\users\\nitof\\source\\repos\\repositorios programacion web iii\\chatroomsignalr\\chatroom\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|solutionrelative:views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EECD7D2-6A30-4E69-BE05-1C5EB4C48E0D}|..\\ChatRoom.Dominio\\ChatRoom.Dominio.csproj|c:\\users\\ailuv\\onedrive\\documentos\\progrmaci\u00F3n-web-iii\\signalr\\chatroomsignalr\\chatroom.dominio\\ofertumservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EECD7D2-6A30-4E69-BE05-1C5EB4C48E0D}|..\\ChatRoom.Dominio\\ChatRoom.Dominio.csproj|c:\\users\\ailuv\\onedrive\\documentos\\progrmaci\u00F3n-web-iii\\signalr\\chatroomsignalr\\chatroom.dominio\\salaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A9CCF82-7196-461F-9FFE-06934D076574}|..\\ChatRoom.Datos\\ChatRoom.Datos.csproj|c:\\users\\ailuv\\onedrive\\documentos\\progrmaci\u00F3n-web-iii\\signalr\\chatroomsignalr\\chatroom.datos\\entidades\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A9CCF82-7196-461F-9FFE-06934D076574}|..\\ChatRoom.Datos\\ChatRoom.Datos.csproj|c:\\users\\ailuv\\onedrive\\documentos\\progrmaci\u00F3n-web-iii\\signalr\\chatroomsignalr\\chatroom.datos\\entidades\\sala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A9CCF82-7196-461F-9FFE-06934D076574}|..\\ChatRoom.Datos\\ChatRoom.Datos.csproj|c:\\users\\ailuv\\onedrive\\documentos\\progrmaci\u00F3n-web-iii\\signalr\\chatroomsignalr\\chatroom.datos\\entidades\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A9CCF82-7196-461F-9FFE-06934D076574}|..\\ChatRoom.Datos\\ChatRoom.Datos.csproj|c:\\users\\ailuv\\onedrive\\documentos\\progrmaci\u00F3n-web-iii\\signalr\\chatroomsignalr\\chatroom.datos\\entidades\\oferta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\views\\chat\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|solutionrelative:views\\chat\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\auth\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|solutionrelative:auth\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|c:\\users\\nitof\\source\\repos\\repositorios programacion web iii\\chatroomsignalr\\chatroom\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|solutionrelative:chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9A9CCF82-7196-461F-9FFE-06934D076574}|..\\ChatRoom.Datos\\ChatRoom.Datos.csproj|c:\\users\\ailuv\\onedrive\\documentos\\progrmaci\u00F3n-web-iii\\signalr\\chatroomsignalr\\chatroom.datos\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\auth\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|solutionrelative:auth\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A9CCF82-7196-461F-9FFE-06934D076574}|..\\ChatRoom.Datos\\ChatRoom.Datos.csproj|c:\\users\\ailuv\\onedrive\\documentos\\progrmaci\u00F3n-web-iii\\signalr\\chatroomsignalr\\chatroom.datos\\chatroom.datos.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|solutionrelative:views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E367C784-51E6-4A48-938C-DEEE01BE2CEA}|ChatRoom.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -33,93 +84,265 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SalaService.cs",
-              "DocumentMoniker": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom.Dominio\\SalaService.cs",
-              "RelativeDocumentMoniker": "..\\ChatRoom.Dominio\\SalaService.cs",
-              "ToolTip": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom.Dominio\\SalaService.cs",
-              "RelativeToolTip": "..\\ChatRoom.Dominio\\SalaService.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAEwC8AAAAMAAAA",
+              "DocumentIndex": 2,
+              "Title": "SubastaContext.cs",
+              "DocumentMoniker": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\SubastaContext.cs",
+              "RelativeDocumentMoniker": "..\\ChatRoom.Datos\\SubastaContext.cs",
+              "ToolTip": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\SubastaContext.cs",
+              "RelativeToolTip": "..\\ChatRoom.Datos\\SubastaContext.cs",
+              "ViewState": "AQIAAHsAAAAAAAAAAAAgwIoAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T15:22:27.176Z",
+              "WhenOpened": "2024-06-01T18:26:20.94Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ChatHub.cs",
-              "DocumentMoniker": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\ChatHub.cs",
-              "RelativeDocumentMoniker": "ChatHub.cs",
-              "ToolTip": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\ChatHub.cs",
-              "RelativeToolTip": "ChatHub.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
+              "DocumentIndex": 8,
+              "Title": "Venta.cs",
+              "DocumentMoniker": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\Entidades\\Venta.cs",
+              "RelativeDocumentMoniker": "..\\ChatRoom.Datos\\Entidades\\Venta.cs",
+              "ToolTip": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\Entidades\\Venta.cs",
+              "RelativeToolTip": "..\\ChatRoom.Datos\\Entidades\\Venta.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T13:45:39.24Z",
+              "WhenOpened": "2024-06-01T23:07:31.136Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SalaService.cs",
+              "DocumentMoniker": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Dominio\\SalaService.cs",
+              "RelativeDocumentMoniker": "..\\ChatRoom.Dominio\\SalaService.cs",
+              "ToolTip": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Dominio\\SalaService.cs",
+              "RelativeToolTip": "..\\ChatRoom.Dominio\\SalaService.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAApwBMAAABVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T23:11:25.736Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\Entidades\\Usuario.cs",
+              "RelativeDocumentMoniker": "..\\ChatRoom.Datos\\Entidades\\Usuario.cs",
+              "ToolTip": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\Entidades\\Usuario.cs",
+              "RelativeToolTip": "..\\ChatRoom.Datos\\Entidades\\Usuario.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T22:27:20.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Auth\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Auth\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Auth\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Auth\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAWwCEAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T21:40:45.712Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAaAAAA",
+              "Title": "ChatController.cs",
+              "DocumentMoniker": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Controllers\\ChatController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ChatController.cs",
+              "ToolTip": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Controllers\\ChatController.cs",
+              "RelativeToolTip": "Controllers\\ChatController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T13:22:30.602Z",
+              "WhenOpened": "2024-06-01T21:51:32.378Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Room.cshtml",
-              "DocumentMoniker": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\Views\\Chat\\Room.cshtml",
-              "RelativeDocumentMoniker": "Views\\Chat\\Room.cshtml",
-              "ToolTip": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\Views\\Chat\\Room.cshtml",
-              "RelativeToolTip": "Views\\Chat\\Room.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAADMAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-30T23:56:24.531Z",
-              "EditorCaption": ""
+              "DocumentIndex": 16,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Auth\\Models\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "Auth\\Models\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Auth\\Models\\LoginViewModel.cs",
+              "RelativeToolTip": "Auth\\Models\\LoginViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T21:44:42.061Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\Views\\Chat\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Chat\\Index.cshtml",
-              "ToolTip": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\Views\\Chat\\Index.cshtml",
-              "RelativeToolTip": "Views\\Chat\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-30T23:57:35.211Z",
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Auth\\Models\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "Auth\\Models\\RegisterViewModel.cs",
+              "ToolTip": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Auth\\Models\\RegisterViewModel.cs",
+              "RelativeToolTip": "Auth\\Models\\RegisterViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T21:44:53.324Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ChatController.cs",
-              "DocumentMoniker": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\Controllers\\ChatController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ChatController.cs",
-              "ToolTip": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\Controllers\\ChatController.cs",
-              "RelativeToolTip": "Controllers\\ChatController.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAIwD0AAABIAAAA",
+              "DocumentIndex": 12,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Views\\Account\\Login.cshtml",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAEwBgAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-01T21:48:37.549Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Oferta.cs",
+              "DocumentMoniker": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\Entidades\\Oferta.cs",
+              "RelativeDocumentMoniker": "..\\ChatRoom.Datos\\Entidades\\Oferta.cs",
+              "ToolTip": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\Entidades\\Oferta.cs",
+              "RelativeToolTip": "..\\ChatRoom.Datos\\Entidades\\Oferta.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAsAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T23:46:52.614Z",
+              "WhenOpened": "2024-06-01T21:38:50.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "Views\\_ViewStart.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-01T21:59:19.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ChatRoom.Datos.csproj",
+              "DocumentMoniker": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\ChatRoom.Datos.csproj",
+              "RelativeDocumentMoniker": "..\\ChatRoom.Datos\\ChatRoom.Datos.csproj",
+              "ToolTip": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\ChatRoom.Datos.csproj",
+              "RelativeToolTip": "..\\ChatRoom.Datos\\ChatRoom.Datos.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-01T21:18:41.86Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "Views\\Account\\Register.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-01T21:49:12.784Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Producto.cs",
+              "DocumentMoniker": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\Entidades\\Producto.cs",
+              "RelativeDocumentMoniker": "..\\ChatRoom.Datos\\Entidades\\Producto.cs",
+              "ToolTip": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\Entidades\\Producto.cs",
+              "RelativeToolTip": "..\\ChatRoom.Datos\\Entidades\\Producto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T23:07:11.555Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Sala.cs",
+              "DocumentMoniker": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\Entidades\\Sala.cs",
+              "RelativeDocumentMoniker": "..\\ChatRoom.Datos\\Entidades\\Sala.cs",
+              "ToolTip": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\Entidades\\Sala.cs",
+              "RelativeToolTip": "..\\ChatRoom.Datos\\Entidades\\Sala.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T23:07:16.364Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OfertumService.cs",
+              "DocumentMoniker": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Dominio\\OfertumService.cs",
+              "RelativeDocumentMoniker": "..\\ChatRoom.Dominio\\OfertumService.cs",
+              "ToolTip": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Dominio\\OfertumService.cs",
+              "RelativeToolTip": "..\\ChatRoom.Dominio\\OfertumService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA8AAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T23:11:50.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Auth\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Auth\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Auth\\Models\\User.cs",
+              "RelativeToolTip": "Auth\\Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T20:07:46.14Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T20:00:55.196Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\Models\\User.cs",
+              "RelativeDocumentMoniker": "..\\ChatRoom.Datos\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\Models\\User.cs",
+              "RelativeToolTip": "..\\ChatRoom.Datos\\Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T22:12:36.482Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-01T21:59:22.674Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmaci\u00F3n-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Views\\_ViewImports.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-01T22:02:00.305Z"
             }
           ]
         }

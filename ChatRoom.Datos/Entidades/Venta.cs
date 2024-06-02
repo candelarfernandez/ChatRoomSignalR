@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 namespace ChatRoom.Datos.Entidades;
 
-public partial class Ventum
+public partial class Venta
 {
     public int Id { get; set; }
 
     public int? IdProducto { get; set; }
 
-    public int? IdVendedor { get; set; }
+    public string? IdVendedor { get; set; }
 
-    public int? IdComprador { get; set; }
+    public string? IdComprador { get; set; }
 
     public decimal? Monto { get; set; }
 

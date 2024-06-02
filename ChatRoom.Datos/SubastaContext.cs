@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using ChatRoom.Datos.Entidades;
+using ChatRoom.Datos.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace ChatRoom.Datos;
 
-public partial class SubastaContext : DbContext
+public partial class SubastaContext : IdentityDbContext<IdentityUser>
 {
     public SubastaContext()
     {
@@ -18,7 +21,7 @@ public partial class SubastaContext : DbContext
 
     public virtual DbSet<Notificacion> Notificacions { get; set; }
 
-    public virtual DbSet<Ofertum> Oferta { get; set; }
+    public virtual DbSet<Oferta> Oferta { get; set; }
 
     public virtual DbSet<Producto> Productos { get; set; }
 
@@ -26,14 +29,20 @@ public partial class SubastaContext : DbContext
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
-    public virtual DbSet<Ventum> Venta { get; set; }
+    public virtual DbSet<Venta> Venta { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=LAPTOP-RFDT8K10;Database=Subasta;Trusted_Connection=True;Encrypt=False");
+        => optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=Subasta;Trusted_Connection=True;Encrypt=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<IdentityUserLogin<string>>().HasKey(p => new { p.LoginProvider, p.ProviderKey });
+        modelBuilder.Entity<IdentityUserRole<string>>().HasKey(p => new { p.UserId, p.RoleId });
+        modelBuilder.Entity<IdentityUserClaim<string>>().HasKey(p => p.Id);
+        modelBuilder.Entity<IdentityUserToken<string>>().HasKey(p => new { p.UserId, p.LoginProvider, p.Name });
+        modelBuilder.Entity<IdentityRoleClaim<string>>().HasKey(p => p.Id);
+
         modelBuilder.Entity<Notificacion>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Notifica__3213E83F7C94F6A8");
@@ -53,7 +62,7 @@ public partial class SubastaContext : DbContext
                 .HasConstraintName("FK__Notificac__idVen__59063A47");
         });
 
-        modelBuilder.Entity<Ofertum>(entity =>
+        modelBuilder.Entity<Oferta>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Oferta__3213E83F32ACC869");
 
@@ -116,11 +125,10 @@ public partial class SubastaContext : DbContext
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Usuario__3213E83F568D2894");
-
             entity.ToTable("Usuario");
 
             entity.Property(e => e.Id).HasColumnName("id");
+
             entity.Property(e => e.DineroDisponible)
                 .HasColumnType("decimal(10, 2)")
                 .HasColumnName("dineroDisponible");
@@ -132,13 +140,13 @@ public partial class SubastaContext : DbContext
                 .HasMaxLength(15)
                 .IsUnicode(false)
                 .HasColumnName("password");
-            entity.Property(e => e.Username)
+            entity.Property(e => e.UserName)
                 .HasMaxLength(30)
                 .IsUnicode(false)
                 .HasColumnName("username");
         });
 
-        modelBuilder.Entity<Ventum>(entity =>
+        modelBuilder.Entity<Venta>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Venta__3213E83FECD699D5");
 

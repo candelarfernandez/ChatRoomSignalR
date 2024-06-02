@@ -11,5 +11,5 @@ public partial class Notificacion
 
     public int IdVenta { get; set; }
 
-    public virtual Ventum IdVentaNavigation { get; set; } = null!;
+    public virtual Venta IdVentaNavigation { get; set; } = null!;
 }

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace ChatRoom.Datos.Entidades;
 
-public partial class Ofertum
+public partial class Oferta
 {
     public int Id { get; set; }
 
     public decimal Monto { get; set; }
 
-    public int? IdComprador { get; set; }
+    public string? IdComprador { get; set; }
 
     public int? IdSala { get; set; }
 

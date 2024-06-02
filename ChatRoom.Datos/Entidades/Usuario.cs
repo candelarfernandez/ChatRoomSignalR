@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
 
 namespace ChatRoom.Datos.Entidades;
 
-public partial class Usuario
+public partial class Usuario : IdentityUser
 {
-    public int Id { get; set; }
+    //public int Id { get; set; }
 
-    public string Username { get; set; } = null!;
+    //public string Username { get; set; } = null!;
 
     public string Password { get; set; } = null!;
 
@@ -15,11 +16,11 @@ public partial class Usuario
 
     public decimal? DineroDisponible { get; set; }
 
-    public virtual ICollection<Ofertum> Oferta { get; set; } = new List<Ofertum>();
+    public virtual ICollection<Oferta> Oferta { get; set; } = new List<Oferta>();
 
     public virtual ICollection<Sala> Salas { get; set; } = new List<Sala>();
 
-    public virtual ICollection<Ventum> VentumIdCompradorNavigations { get; set; } = new List<Ventum>();
+    public virtual ICollection<Venta> VentumIdCompradorNavigations { get; set; } = new List<Venta>();
 
-    public virtual ICollection<Ventum> VentumIdVendedorNavigations { get; set; } = new List<Ventum>();
+    public virtual ICollection<Venta> VentumIdVendedorNavigations { get; set; } = new List<Venta>();
 }

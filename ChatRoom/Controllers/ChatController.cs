@@ -1,10 +1,12 @@
 ﻿
 using ChatRoom.Datos.Entidades;
 using ChatRoom.Dominio;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChatRoom.Controllers;
 
+//[Authorize]
 public class ChatController : Controller
 {
     private readonly ISalaService _salaService;
@@ -38,7 +40,7 @@ public class ChatController : Controller
     }
 
     [HttpPost]
-    public IActionResult CreateRoom(string nombre, string fotoProductoNombre, int? idVendedor)
+    public IActionResult CreateRoom(string nombre, string fotoProductoNombre, string? idVendedor)
     {
         if (!string.IsNullOrEmpty(nombre) && !string.IsNullOrEmpty(fotoProductoNombre))
         {
@@ -50,11 +52,11 @@ public class ChatController : Controller
 
     //version Cande
     [HttpPost]
-    public IActionResult CreateOferta(decimal monto, int? idComprador, int? idSala)
+    public IActionResult CreateOferta(decimal monto, string? idComprador, int? idSala)
     {
-        if (monto > 0 && idComprador.HasValue && idSala.HasValue)
+        if (monto > 0 && idSala.HasValue && idComprador != null)
         {
-            var oferta = _ofertumService.CreateOfertum(monto, idComprador.Value, idSala.Value);
+            var oferta = _ofertumService.CreateOfertum(monto, idComprador, idSala.Value);
 
             var sala = _salaService.GetSalaById(idSala.Value);
             if (sala != null)

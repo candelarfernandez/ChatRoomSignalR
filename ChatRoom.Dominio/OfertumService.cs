@@ -5,30 +5,30 @@ namespace ChatRoom.Dominio
 {
     public interface IOfertumService
     {
-        List<Ofertum> GetOfertums();
-        Ofertum? GetOfertumById(int id);
-        Ofertum CreateOfertum(decimal monto, int? idComprador, int? idSala);
+        List<Oferta> GetOfertums();
+        Oferta? GetOfertumById(int id);
+        Oferta CreateOfertum(decimal monto, string? idComprador, int? idSala);
     }
     public class OfertumService : IOfertumService
     {
-        private static List<Ofertum> Ofertums = new List<Ofertum>
+        private static List<Oferta> Ofertums = new List<Oferta>
     {
     };
 
-        public  List<Ofertum> GetOfertums()
+        public  List<Oferta> GetOfertums()
         {
             return  Ofertums;
         }
 
-        public Ofertum? GetOfertumById(int id)
+        public Oferta? GetOfertumById(int id)
         {
             return Ofertums.FirstOrDefault(o => o.Id == id);
         }
 
-        public Ofertum CreateOfertum(decimal monto, int? idComprador, int? idSala)
+        public Oferta CreateOfertum(decimal monto, string? idComprador, int? idSala)
         {
             int newOfertumId = Ofertums.Count + 1;
-            var Ofertum = new Ofertum
+            var Ofertum = new Oferta
             {
                 Id = newOfertumId,
                 Monto = monto,
@@ -38,7 +38,7 @@ namespace ChatRoom.Dominio
             Ofertums.Add(Ofertum);
             return Ofertum;
         }
-        public Ofertum? getOfertaMax(int idSala)
+        public Oferta? getOfertaMax(int idSala)
         {
             var ofertasEnSala = Ofertums.Where(o => o.IdSala == idSala);
 

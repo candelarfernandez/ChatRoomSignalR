@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\ChatRoom.csproj": {}
+    "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\ChatRoom.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom.Datos\\ChatRoom.Datos.csproj": {
+    "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\ChatRoom.Datos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom.Datos\\ChatRoom.Datos.csproj",
+        "projectUniqueName": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\ChatRoom.Datos.csproj",
         "projectName": "ChatRoom.Datos",
-        "projectPath": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom.Datos\\ChatRoom.Datos.csproj",
-        "packagesPath": "C:\\Users\\nitof\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom.Datos\\obj\\",
+        "projectPath": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\ChatRoom.Datos.csproj",
+        "packagesPath": "C:\\Users\\ailuv\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nitof\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ailuv\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,6 +45,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNet.Identity.EntityFramework": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.31, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.19, )"
@@ -82,21 +90,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom.Dominio\\ChatRoom.Dominio.csproj": {
+    "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Dominio\\ChatRoom.Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom.Dominio\\ChatRoom.Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Dominio\\ChatRoom.Dominio.csproj",
         "projectName": "ChatRoom.Dominio",
-        "projectPath": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom.Dominio\\ChatRoom.Dominio.csproj",
-        "packagesPath": "C:\\Users\\nitof\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom.Dominio\\obj\\",
+        "projectPath": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Dominio\\ChatRoom.Dominio.csproj",
+        "packagesPath": "C:\\Users\\ailuv\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nitof\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ailuv\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -110,75 +118,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom.Datos\\ChatRoom.Datos.csproj": {
-                "projectPath": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom.Datos\\ChatRoom.Datos.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\ChatRoom.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\ChatRoom.csproj",
-        "projectName": "ChatRoom",
-        "projectPath": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\ChatRoom.csproj",
-        "packagesPath": "C:\\Users\\nitof\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\nitof\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {
-              "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom.Datos\\ChatRoom.Datos.csproj": {
-                "projectPath": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom.Datos\\ChatRoom.Datos.csproj"
-              },
-              "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom.Dominio\\ChatRoom.Dominio.csproj": {
-                "projectPath": "C:\\Users\\nitof\\source\\repos\\Repositorios Programacion Web III\\ChatRoomSignalR\\ChatRoom.Dominio\\ChatRoom.Dominio.csproj"
+              "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\ChatRoom.Datos.csproj": {
+                "projectPath": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\ChatRoom.Datos.csproj"
               }
             }
           }
@@ -198,6 +139,83 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.31, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\ChatRoom.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\ChatRoom.csproj",
+        "projectName": "ChatRoom",
+        "projectPath": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\ChatRoom.csproj",
+        "packagesPath": "C:\\Users\\ailuv\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ailuv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\ChatRoom.Datos.csproj": {
+                "projectPath": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Datos\\ChatRoom.Datos.csproj"
+              },
+              "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Dominio\\ChatRoom.Dominio.csproj": {
+                "projectPath": "C:\\Users\\ailuv\\OneDrive\\Documentos\\progrmación-web-III\\SignalR\\ChatRoomSignalR\\ChatRoom.Dominio\\ChatRoom.Dominio.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.31, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.19, )"
@@ -238,7 +256,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

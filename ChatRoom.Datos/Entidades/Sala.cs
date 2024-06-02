@@ -11,11 +11,11 @@ public partial class Sala
 
     public string? FotoProductoNombre { get; set; }
 
-    public int? IdVendedor { get; set; }
+    public string? IdVendedor { get; set; }
 
     public string? UsuariosConectados { get; set; }
 
     public virtual Usuario? IdVendedorNavigation { get; set; }
 
-    public virtual ICollection<Ofertum> Oferta { get; set; } = new List<Ofertum>();
+    public virtual ICollection<Oferta> Oferta { get; set; } = new List<Oferta>();
 }
