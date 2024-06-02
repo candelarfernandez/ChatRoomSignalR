@@ -23,4 +23,9 @@ public partial class Usuario : IdentityUser
     public virtual ICollection<Venta> VentumIdCompradorNavigations { get; set; } = new List<Venta>();
 
     public virtual ICollection<Venta> VentumIdVendedorNavigations { get; set; } = new List<Venta>();
+
+    public Usuario()
+    {
+        DineroDisponible = 0.0m;
+    }
 }
