@@ -15,6 +15,14 @@ public partial class Sala
 
     public string? UsuariosConectados { get; set; }
 
+    public bool? Activa { get; set; }
+
+    public long? TiempoRestante { get; set; }
+
+    public DateTime? HoraFinalizacion { get; set; }
+
+    public DateTime? HoraUltimaOferta { get; set; }
+
     public virtual Usuario? IdVendedorNavigation { get; set; }
 
     public virtual ICollection<Ofertum> Oferta { get; set; } = new List<Ofertum>();

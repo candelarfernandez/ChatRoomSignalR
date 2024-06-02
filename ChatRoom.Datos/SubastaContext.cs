@@ -30,13 +30,13 @@ public partial class SubastaContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=LAPTOP-RFDT8K10;Database=Subasta;Trusted_Connection=True;Encrypt=False");
+        => optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=Subasta;Trusted_Connection=True;TrustServerCertificate=True;Encrypt=false");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Notificacion>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Notifica__3213E83F7C94F6A8");
+            entity.HasKey(e => e.Id).HasName("PK__Notifica__3213E83FF347DE52");
 
             entity.ToTable("Notificacion");
 
@@ -55,7 +55,7 @@ public partial class SubastaContext : DbContext
 
         modelBuilder.Entity<Ofertum>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Oferta__3213E83F32ACC869");
+            entity.HasKey(e => e.Id).HasName("PK__Oferta__3213E83F1D1D8CFF");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.IdComprador).HasColumnName("idComprador");
@@ -75,7 +75,7 @@ public partial class SubastaContext : DbContext
 
         modelBuilder.Entity<Producto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Producto__3213E83F80C1EEC1");
+            entity.HasKey(e => e.Id).HasName("PK__Producto__3213E83FE0211E48");
 
             entity.ToTable("Producto");
 
@@ -91,20 +91,28 @@ public partial class SubastaContext : DbContext
 
         modelBuilder.Entity<Sala>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Sala__3213E83FB9D4858B");
+            entity.HasKey(e => e.Id).HasName("PK__Sala__3213E83F37C04928");
 
             entity.ToTable("Sala");
 
             entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Activa).HasColumnName("activa");
             entity.Property(e => e.FotoProductoNombre)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("fotoProductoNombre");
+            entity.Property(e => e.HoraFinalizacion)
+                .HasColumnType("datetime")
+                .HasColumnName("horaFinalizacion");
+            entity.Property(e => e.HoraUltimaOferta)
+                .HasColumnType("datetime")
+                .HasColumnName("horaUltimaOferta");
             entity.Property(e => e.IdVendedor).HasColumnName("idVendedor");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(30)
                 .IsUnicode(false)
                 .HasColumnName("nombre");
+            entity.Property(e => e.TiempoRestante).HasColumnName("tiempoRestante");
             entity.Property(e => e.UsuariosConectados)
                 .HasColumnType("text")
                 .HasColumnName("usuariosConectados");
@@ -116,7 +124,7 @@ public partial class SubastaContext : DbContext
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Usuario__3213E83F568D2894");
+            entity.HasKey(e => e.Id).HasName("PK__Usuario__3213E83F4EFFA6FD");
 
             entity.ToTable("Usuario");
 
@@ -140,7 +148,7 @@ public partial class SubastaContext : DbContext
 
         modelBuilder.Entity<Ventum>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Venta__3213E83FECD699D5");
+            entity.HasKey(e => e.Id).HasName("PK__Venta__3213E83F603E29AC");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.IdComprador).HasColumnName("idComprador");
