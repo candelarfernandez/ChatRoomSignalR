@@ -21,11 +21,11 @@ public class ChatController : Controller
     }
     public IActionResult Index()
     {
+        var salas = _salaService.GetSalas();
         if (User.Identity.IsAuthenticated)
         {
-            return View("Logueado");
+            return View("Logueado", salas);
         }
-        var salas = _salaService.GetSalas();
         return View(salas);
     }
     public IActionResult Room(int id)
