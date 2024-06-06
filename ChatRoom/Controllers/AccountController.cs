@@ -2,6 +2,7 @@
 using ChatRoom.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace ChatRoom.Controllers
 {
@@ -26,7 +27,8 @@ namespace ChatRoom.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
+                var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, false);
+
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index", "Chat");
@@ -40,17 +42,24 @@ namespace ChatRoom.Controllers
         {
             return View();
         }
-
+        
 
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var user = new Usuario { UserName = model.UserName, Email = model.Email, Password = model.Password };
+                var user = new Usuario { UserName = model.UserName, Email = model.Email, Password = model.Password};
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    var claimResult = await _userManager.AddClaimAsync(user, new Claim(ClaimTypes.Name, model.UserName));
+                    if (!claimResult.Succeeded)
+                    {
+                        ModelState.AddModelError(string.Empty, "Error adding claim.");
+                        return View(model);
+                    }
+
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("Index", "Chat");
                 }
