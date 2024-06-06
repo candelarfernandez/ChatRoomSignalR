@@ -2,6 +2,7 @@
 @model LoginViewModel
 @{
     ViewData["Title"] = "Login";
+    Layout = "_Layout";
 }
 
 <h1>Login</h1>
@@ -9,27 +10,25 @@
 <form asp-action="Login" method="post">
     <div asp-validation-summary="All"></div>
 
-    <div>
+    <div class="form-group">
         <label asp-for="UserName"></label>
-        <input asp-for="UserName" />
-        <span asp-validation-for="UserName"></span>
+        <input asp-for="UserName" class="form-control" />
+        <span asp-validation-for="UserName" class="text-danger"></span>
     </div>
 
-    <div>
+    <div class ="form-group">
         <label asp-for="Password"></label>
-        <input asp-for="Password" type="password" />
-        <span asp-validation-for="Password"></span>
+        <input asp-for="Password" type="password" class="form-control"/>
+        <span asp-validation-for="Password" class="text-danger"></span>
     </div>
 
-    <div>
+    <div class="form-check">
         <label asp-for="RememberMe"></label>
-        <input asp-for="RememberMe" type="checkbox" />
+        <input asp-for="RememberMe" type="checkbox" class="form-check-input" />
     </div>
 
-    <button type="submit">Login</button>
+    <button type="submit" class="btn btn-primary mt-2">Login</button>
 </form>
 
-<a asp-action="Register">Register</a>
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
+<a asp-action="Register" class="btn btn-link" >Register</a>
+

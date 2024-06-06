@@ -24,6 +24,9 @@
             <div id="montos">
             </div>
         </div>
+    <div class="col-6">
+        <div id="errors"></div>
+    </div>
         <div class="col-6">
             <div id="notifications"></div>
         </div>
@@ -42,9 +45,6 @@
             let salaId = "@Model.Id";
             let userId = document.getElementById("user").value;
             let monto = document.getElementById("monto").value;   
-            console.log("se envio una oferta");
-            console.log(connection);
-
 
         connection.invoke("AddOferta", salaId, userId, monto).catch((err) =>
             console.error(err.toString()));
@@ -60,6 +60,10 @@
             ofertasHtml += `<div><b>Monto:</b> ${oferta.monto}, <b>Comprador:</b> ${oferta.idComprador}</div>`;
         });
         document.getElementById("montos").innerHTML = ofertasHtml;
+    });
+    connection.on("ShowError", (message) => {
+        var errorsHtml = `<div class="alert alert-danger"><b>${message}</b></div>`;
+        document.getElementById("errors").innerHTML = errorsHtml + document.getElementById("errors").innerHTML;
     });
 
     connection.on("ShowWho", (message) => {

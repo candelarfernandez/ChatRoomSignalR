@@ -37,28 +37,9 @@ namespace ChatRoom.Dominio
                 IdComprador = idComprador,
                 IdSala = idSala
             };
-
-            _subastaContext.Oferta.Add(ofertum);
-            _subastaContext.SaveChanges();
-
             return ofertum;
         }
-        /*public Ofertum? getOfertaMax(int idSala)
-        {
-            var ofertasEnSala = Ofertums.Where(o => o.IdSala == idSala);
-
-            if (ofertasEnSala.Any())
-            {
-                var ofertaMaxima = ofertasEnSala.OrderByDescending(o => o.Monto).First();
-                return ofertaMaxima;
-            }
-            else
-            {
-                return null; 
-            }
-        }*/
-
-
+     
 
     }
 }

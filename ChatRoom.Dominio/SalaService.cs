@@ -35,7 +35,7 @@ namespace ChatRoom.Dominio
         {
             if (idVendedor == null)
             {
-                throw new ArgumentNullException(nameof(idVendedor), "El ID del vendedor no puede ser nulo.");
+                throw new Exception("El ID del vendedor no puede ser nulo.");
             }
             var sala = new Sala
             {
@@ -50,9 +50,16 @@ namespace ChatRoom.Dominio
         public void agregarOfertaALaSala(Ofertum oferta, int idSala) {
 
             var sala =  _subastaContext.Salas.Include(s => s.Oferta).FirstOrDefault(s => s.Id == idSala);
-            if (sala == null) throw new Exception("Sala no encontrada");
-            sala.Oferta.Add(oferta);
-            _subastaContext.SaveChanges();
+            var ultimaOferta = sala.Oferta.OrderByDescending(o => o.Monto).FirstOrDefault();
+            if (ultimaOferta == null || oferta.Monto > ultimaOferta.Monto)
+            {
+                sala.Oferta.Add(oferta);
+                _subastaContext.SaveChanges();
+            }
+            else
+            {
+                throw new Exception("La oferta debe ser mayor a la anterior");
+            }
         }
     }
 }
