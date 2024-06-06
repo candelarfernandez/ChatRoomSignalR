@@ -8,7 +8,7 @@ public partial class Usuario : IdentityUser
 {
     //public override string? Id { get; set; }
 
-    public override string UserName { get; set; } = null!;
+    //public override string UserName { get; set; } = null!;
 
     public string Password { get; set; } = null!;
 

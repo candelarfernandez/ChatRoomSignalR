@@ -59,8 +59,8 @@ namespace ChatRoom.Controllers
                         ModelState.AddModelError(string.Empty, "Error adding claim.");
                         return View(model);
                     }
-
                     await _signInManager.SignInAsync(user, isPersistent: false);
+
                     return RedirectToAction("Index", "Chat");
                 }
                 foreach (var error in result.Errors)

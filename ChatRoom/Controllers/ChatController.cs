@@ -21,6 +21,10 @@ public class ChatController : Controller
     }
     public IActionResult Index()
     {
+        if (User.Identity.IsAuthenticated)
+        {
+            return View("Logueado");
+        }
         var salas = _salaService.GetSalas();
         return View(salas);
     }
