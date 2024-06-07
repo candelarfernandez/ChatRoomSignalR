@@ -45,7 +45,8 @@ namespace ChatRoom.Dominio
             {
                 Nombre = nombre,
                 FotoProductoNombre = fotoProductoNombre,
-                IdVendedor = idVendedor
+                IdVendedor = idVendedor,
+                Activa = true
             };
 
             var producto = new Producto
@@ -55,7 +56,7 @@ namespace ChatRoom.Dominio
             };
 
             _subastaContext.Productos.Add(producto);
-
+            _subastaContext.SaveChanges();
             sala.IdProducto = producto.Id;
 
             _subastaContext.Salas.Add(sala);
@@ -96,8 +97,9 @@ namespace ChatRoom.Dominio
                 IdProducto = sala.IdProducto,
                 Monto = ultimaOferta.Monto
             };
-
+            _subastaContext.Venta.Add(venta);
         _subastaContext.SaveChanges();
         }
+       
     }
 }
