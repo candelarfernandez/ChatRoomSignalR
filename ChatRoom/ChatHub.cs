@@ -40,7 +40,7 @@ namespace ChatRoom
 
 
         }
-        public async Task JoinSala(string salaId)
+        public async Task JoinSala(string salaId, string userName)
         {
                 int salaIdInt = int.Parse(salaId);
                 await Groups.AddToGroupAsync(Context.ConnectionId, salaId);
@@ -49,6 +49,7 @@ namespace ChatRoom
                 {
                     await Clients.Caller.SendAsync("ReceiveOferta", sala.Oferta);
                 }
+            await Clients.Group(salaId).SendAsync("ShowWho", $"{userName} se unió a la sala");
 
         }
     

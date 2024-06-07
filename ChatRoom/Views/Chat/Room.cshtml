@@ -15,6 +15,7 @@
                 @if (authenticatedUser != null)
             {
                 <input type="hidden" id="user" name="idUsuario" value="@authenticatedUser.Id" />
+                <input type="hidden" id="userName" value="@authenticatedUser.UserName" />
             }
                 <label for="monto">Monto</label>
                 <input type="number" class="form-control" id="monto" name="monto" required />
@@ -49,7 +50,8 @@
         var connection = new signalR.HubConnectionBuilder().withUrl("/chat").build();
 
     connection.start().then(() => {
-        connection.invoke("JoinSala", "@Model.Id")
+        let userName = document.getElementById("userName").value;
+        connection.invoke("JoinSala", "@Model.Id", userName)
     }).catch((e) => console.error(e));
 
         document.getElementById("btnSend").addEventListener("click", (event) => {
