@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ChatRoom.Datos.Entidades;
 
-public partial class Ventum
+public partial class Venta
 {
     public int Id { get; set; }
 

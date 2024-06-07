@@ -1,4 +1,9 @@
-﻿@model List<ChatRoom.Datos.Entidades.Sala>
+﻿ @using ChatRoom.Datos.Entidades
+ @model List<ChatRoom.Datos.Entidades.Sala>
+
+@{
+    var authenticatedUser = ViewData["AuthenticatedUser"] as Usuario;
+}
 
 <div class="row">
     <div class="col-md-6">
@@ -19,17 +24,18 @@
 
     <div class="col-md-6">
         <h2>Nueva sala</h2>
-        <form method="post" action="~/Chat/CreateRoom">
+        <form method="post" asp-action="CreateRoom">
             <div class="form-group">
                 <label for="nombre">Nombre de la sala</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" required />
 
                 <label for="fotoProductoNombre">Nombre de la imagen del producto</label>
                 <input type="text" class="form-control" id="fotoProductoNombre" name="fotoProductoNombre" required />
-
-                <label for="idVendedor">ID del Vendedor</label>
-                <input type="text" class="form-control" id="idVendedor" name="idVendedor" />
             </div>
+            @if (authenticatedUser != null)
+            {
+                <input type="hidden" id="idVendedor" name="idVendedor" value="@authenticatedUser.Id" />
+            }
             <button type="submit" class="btn btn-primary mt-2">Crear subasta</button>
         </form>
     </div>

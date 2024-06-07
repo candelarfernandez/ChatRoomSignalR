@@ -28,11 +28,11 @@ public partial class SubastaContext : IdentityDbContext<IdentityUser>
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
-    public virtual DbSet<Ventum> Venta { get; set; }
+    public virtual DbSet<Venta> Venta { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=LAPTOP-RFDT8K10;Database=Subasta;Trusted_Connection=True;TrustServerCertificate=True;Encrypt=false");
+        => optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=Subasta;Trusted_Connection=True;TrustServerCertificate=True;Encrypt=false");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -117,6 +117,7 @@ public partial class SubastaContext : IdentityDbContext<IdentityUser>
                 .HasColumnType("datetime")
                 .HasColumnName("horaUltimaOferta");
             entity.Property(e => e.IdVendedor).HasColumnName("idVendedor");
+            entity.Property(e => e.IdProducto).HasColumnName("idProducto");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(30)
                 .IsUnicode(false)
@@ -129,6 +130,13 @@ public partial class SubastaContext : IdentityDbContext<IdentityUser>
             entity.HasOne(d => d.IdVendedorNavigation).WithMany(p => p.Salas)
                 .HasForeignKey(d => d.IdVendedor)
                 .HasConstraintName("FK__Sala__idVendedor__52593CB8");
+
+            entity.HasOne(d => d.IdProductoNavigation)
+            .WithOne()
+            .HasForeignKey<Sala>(d => d.IdProducto)
+            .HasConstraintName("FK__Sala__idProducto__6FE99F9F");
+
+
         });
 
         modelBuilder.Entity<Usuario>(entity =>
@@ -155,7 +163,7 @@ public partial class SubastaContext : IdentityDbContext<IdentityUser>
                 .HasColumnName("username");
         });
 
-        modelBuilder.Entity<Ventum>(entity =>
+        modelBuilder.Entity<Venta>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Venta__3213E83F603E29AC");
 

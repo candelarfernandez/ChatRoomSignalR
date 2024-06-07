@@ -20,7 +20,7 @@ public partial class Usuario : IdentityUser
 
     public virtual ICollection<Sala> Salas { get; set; } = new List<Sala>();
 
-    public virtual ICollection<Ventum> VentumIdCompradorNavigations { get; set; } = new List<Ventum>();
+    public virtual ICollection<Venta> VentumIdCompradorNavigations { get; set; } = new List<Venta>();
 
-    public virtual ICollection<Ventum> VentumIdVendedorNavigations { get; set; } = new List<Ventum>();
+    public virtual ICollection<Venta> VentumIdVendedorNavigations { get; set; } = new List<Venta>();
 }

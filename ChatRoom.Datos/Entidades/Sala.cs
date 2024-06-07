@@ -13,6 +13,8 @@ public partial class Sala
 
     public string? IdVendedor { get; set; }
 
+    public int IdProducto { get; set; }
+
     public string? UsuariosConectados { get; set; }
 
     public bool? Activa { get; set; }
@@ -24,6 +26,8 @@ public partial class Sala
     public DateTime? HoraUltimaOferta { get; set; }
 
     public virtual Usuario? IdVendedorNavigation { get; set; }
+
+    public virtual Producto? IdProductoNavigation { get; set; }
 
     public virtual ICollection<Ofertum> Oferta { get; set; } = new List<Ofertum>();
 }
