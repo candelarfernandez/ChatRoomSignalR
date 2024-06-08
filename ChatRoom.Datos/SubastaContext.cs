@@ -33,6 +33,7 @@ public partial class SubastaContext : IdentityDbContext<IdentityUser>
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("Server=ARGN0189\\SQLEXPRESS;Database=Subasta;Trusted_Connection=True;TrustServerCertificate=True;Encrypt=false");
 
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
 
@@ -133,7 +134,7 @@ public partial class SubastaContext : IdentityDbContext<IdentityUser>
             entity.HasOne(d => d.IdProductoNavigation)
             .WithOne()
             .HasForeignKey<Sala>(d => d.IdProducto)
-            .HasConstraintName("FK__Sala__idProducto__6FE99F9F");
+            .HasConstraintName("FK_Sala_Producto");
 
 
         });
