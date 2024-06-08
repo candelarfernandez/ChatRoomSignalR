@@ -1,0 +1,50 @@
+﻿
+    .perfil-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.perfil-box {
+    width: 70%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.icono-persona {
+    text-align: center;
+ 
+}
+#icono {
+    width: 100px;
+    height: 100px;
+}
+.datos-usuario {
+    margin-top: 20px;
+}
+
+    .datos-usuario p {
+        margin-bottom: 10px;
+    }
+
+.btn-actualizar {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px ;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right:30 px;
+    transition: background-color 0.3s;
+}
+
+    .btn-actualizar:hover {
+        background-color: #0056b3;
+    }
+
+    
+

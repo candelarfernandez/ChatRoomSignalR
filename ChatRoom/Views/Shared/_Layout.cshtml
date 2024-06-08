@@ -40,14 +40,31 @@
                             </li>
                         }
                     </ul>
-                    @if (User.Identity.IsAuthenticated)
+                    @if (User.Identity.IsAuthenticated && !Context.Request.Path.StartsWithSegments("/Account/Perfil"))
                     {
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link text-dark">Hola, @User.Identity.Name</a>
                             </li>
                         </ul>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a asp-controller="Account" asp-action="Perfil" class="btn btn-primary">Ir a Perfil</a>
+                            </li>
+                        </ul>
                     }
+                    else
+                    {
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a asp-controller="Account" asp-action="MisCompras" class="btn btn-primary">Mis compras</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="Account" asp-action="MisVentas" class="btn btn-primary">Mis ventas</a>
+                            </li>
+                        </ul>
+                    }
+
                 </div>
             </div>
         </nav>

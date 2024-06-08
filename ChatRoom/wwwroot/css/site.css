@@ -16,3 +16,6 @@ html {
 body {
   margin-bottom: 60px;
 }
+.nav-item {
+    margin-right: 20px;
+}

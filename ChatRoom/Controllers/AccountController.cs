@@ -78,5 +78,10 @@ namespace ChatRoom.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Chat");
         }
+
+        public IActionResult Perfil()
+        {
+            return View();
+        }
     }
 }
