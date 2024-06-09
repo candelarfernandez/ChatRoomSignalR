@@ -14,7 +14,8 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #E8E2FF;
 }
 
 /*Login*/
@@ -138,3 +139,20 @@ h1 {
             color: #e84a80;
             text-decoration: underline;
         }
+
+/*Index*/
+h2 {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    font-size: 28px;
+} 
+
+    .list-group-item-action {
+        width: 95%;
+    }
+
+/*Logueado*/
+
+.list-group-flush .btn-link {
+    color: darkgray;
+}

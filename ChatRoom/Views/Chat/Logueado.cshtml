@@ -5,26 +5,33 @@
     var authenticatedUser = ViewData["AuthenticatedUser"] as Usuario;
 }
 
-<div class="row">
-    <div class="col-md-6">
-        <h2>Subastas activas</h2>
-        <div>Estas Logueado, querés cerrar sesion?
+<section class="d-flex vh-100">
+    <article class="col-3 d-flex flex-column" style="background-color: #C5C3FC;">
+        <div class="mb-auto">
+            <h2>Subastas activas</h2>
+
+            <ul class="list-group">
+                @foreach (var sala in Model)
+                {
+                    <div class="list-group list-group-flush border-bottom scrollarea">
+                        <a class="list-group-item list-group-item-action py-3 lh-sm mb-3 m-lg-2 rounded-2" aria-current="true" href="~/Chat/Room?id=@sala.Id">@sala.Nombre</a>
+                    </div>
+                }
+            </ul>
+        </div>
+        
+        <div class="list-group list-group-flush border-top scrollarea mt-auto">
+            <small class="text-md-center">Estas Logueado, querés cerrar sesion?</small>
             <a href="javascript:void(0);" id="logoutLink" onclick="document.getElementById('logoutForm').submit();" class="btn btn-link">Logout</a>
         </div>
         <form id="logoutForm" action="~/Account/Logout" method="post" style="display:none;"></form>
-        <ul class="list-group">
-            @foreach (var sala in Model)
-            {
-                <li class="list-group-item">
-                    <a href="~/Chat/Room?id=@sala.Id">@sala.Nombre</a>
-                </li>
-            }
-        </ul>
-    </div>
+    </article>
 
-    <div class="col-md-6">
+    <article class="col-6"></article>
+
+    <article class="col-3" style="background-color: #C5C3FC;">
         <h2>Nueva sala</h2>
-        <form method="post" asp-action="CreateRoom">
+        <form method="post" asp-action="CreateRoom" class="py-3 lh-sm mb-3 m-lg-2">
             <div class="form-group">
                 <label for="nombre">Nombre de la sala</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" required />
@@ -36,7 +43,7 @@
             {
                 <input type="hidden" id="idVendedor" name="idVendedor" value="@authenticatedUser.Id" />
             }
-            <button type="submit" class="btn btn-primary mt-2">Crear subasta</button>
+            <button type="submit" class="btn mt-2 align-items-center" style="background-color: #E8E2FF;">Crear subasta</button>
         </form>
-    </div>
-</div>
+    </article>
+</section>
