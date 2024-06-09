@@ -90,15 +90,27 @@
             text: "La subasta ha finalizado. Serás redirigido.",
             duration: 3000,
             close: true,
-            gravity: "bottom", // `top` or `bottom`
-            position: "center", // `left`, `center` or `right`
-            backgroundColor: "#333",
-            stopOnFocus: true, // Prevents dismissing of toast on hover
+            gravity: "bottom", 
+            position: "center",
+            backgroundColor: "#ff6f69",
+            stopOnFocus: true, 
         }).showToast();
 
         setTimeout(() => {
             window.location.href = "/Chat/Index";
         }, 3000);
+    });
+
+    connection.on("ReceiveNotification", (message) => {
+        Toastify({
+            text: message,
+            duration: 6000,
+            close: true,
+            gravity: "bottom",
+            position: "center",
+            backgroundColor: "#88d8b0",
+            stopOnFocus: true, 
+        }).showToast();
     });
 
     </script>

@@ -88,6 +88,7 @@ public class ChatController : Controller
             var producto = _salaService.GetProductoById(venta.IdProducto);
 
             var mensajeComprador = $"Felicidades! El producto: {producto.Nombre} es tuyo! Contactate con {vendedor.UserName} para reclamar tu compra.";
+            //este no se muestra
             var mensajeVendedor = $"Felicidades! {comprador.UserName} ha comprado tu producto!";
 
             _hubContext.Clients.User(venta.IdComprador.ToString()).SendAsync("ReceiveNotification", mensajeComprador);
@@ -97,7 +98,6 @@ public class ChatController : Controller
             _hubContext.Clients.Group(groupName).SendAsync("CloseAuction");
 
         }
-
         return RedirectToAction("Index");
     }
 
