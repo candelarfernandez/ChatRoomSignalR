@@ -1,49 +1,49 @@
-﻿    @using ChatRoom.Datos.Entidades
-    @model ChatRoom.Datos.Entidades.Sala
+﻿@using ChatRoom.Datos.Entidades
+@model ChatRoom.Datos.Entidades.Sala
 
-    @{
+@{
     var authenticatedUser = ViewData["AuthenticatedUser"] as Usuario;
-    }
+}
 
-    <h1>@Model.Nombre</h1>
+<h1>@Model.Nombre</h1>
 
-    <div class="row">
+<div class="row">
         <form method="post" action="~/Chat/CreateOferta" id="ofertaForm">
             <div class="col-12">
                 <label for="idSala">ID Sala</label>
                 <input type="number" class="form-control" id="sala" name="idSala" value="@Model.Id" readonly />
                 @if (authenticatedUser != null)
-            {
-                <input type="hidden" id="user" name="idUsuario" value="@authenticatedUser.Id" />
-                <input type="hidden" id="userName" value="@authenticatedUser.UserName" />
-            }
+                {
+                    <input type="hidden" id="user" name="idUsuario" value="@authenticatedUser.Id" />
+                    <input type="hidden" id="userName" value="@authenticatedUser.UserName" />
+                }
                 <label for="monto">Monto</label>
                 <input type="number" class="form-control" id="monto" name="monto" required />
                 <button id="btnSend">Enviar Puja</button>
             </div>
         </form>
 
-    @if (authenticatedUser.Id == Model.IdVendedor)
-    {
-        <form method="post" action="~/Chat/FinalizarSubasta" id="finalizarSubastaForm">
-			<input type="hidden" id="idSala" name="idSala" value="@Model.Id" />
+@if (authenticatedUser != null && authenticatedUser.Id == Model.IdVendedor)
+{
+    <form method="post" action="~/Chat/FinalizarSubasta" id="finalizarSubastaForm">
+        <input type="hidden" id="idSala" name="idSala" value="@Model.Id" />
         <button id="btnFinalizarSubasta">Finalizar subasta</button>
-        </form>
-    }
-    </div>
+    </form>
+}
+</div>
 
-    <div class="row">
-        <div class="col-6">
-            <div id="montos">
-            </div>
+<div class="row">
+    <div class="col-6">
+        <div id="montos">
         </div>
+    </div>
     <div class="col-6">
         <div id="errors"></div>
     </div>
-        <div class="col-6">
-            <div id="notifications"></div>
-        </div>
+    <div class="col-6">
+        <div id="notifications"></div>
     </div>
+</div>
 
     <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
     <script>
@@ -111,6 +111,19 @@
             backgroundColor: "#88d8b0",
             stopOnFocus: true, 
         }).showToast();
+    });
+
+    document.getElementById("btnFinalizarSubasta").addEventListener("click", function (event) {
+        var numOfertas = document.getElementById("montos").children.length;
+
+        if (numOfertas > 0) {
+            return true;
+        } else {
+            var errorMessage = "No se puede finalizar la subasta porque no hay ofertas en la sala.";
+            var errorsHtml = `<div class="alert alert-danger"><b>${errorMessage}</b></div>`;
+            document.getElementById("errors").innerHTML = errorsHtml;
+            event.preventDefault(); 
+        }
     });
 
     </script>
