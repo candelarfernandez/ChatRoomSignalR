@@ -12,7 +12,10 @@ namespace ChatRoom.Dominio
         Sala? GetSalaById(int id);
         Sala CreateSala(string nombre, string? fotoProductoNombre, string? idVendedor);
         void agregarOfertaALaSala(Ofertum oferta, int idSala);
-        void FinalizarSubasta(int idSala);
+        Venta FinalizarSubasta(int idSala);
+        Usuario GetUserById(string userId);
+        Producto GetProductoById(int productoId);
+
     }
     public class SalaService : ISalaService
     {
@@ -78,7 +81,7 @@ namespace ChatRoom.Dominio
             }
         }
 
-        public void FinalizarSubasta(int idSala)
+        public Venta FinalizarSubasta(int idSala)
         {
             var sala = _subastaContext.Salas.Include(s => s.Oferta).FirstOrDefault(s => s.Id == idSala);
             sala.Activa = false;
@@ -97,9 +100,23 @@ namespace ChatRoom.Dominio
                 IdProducto = sala.IdProducto,
                 Monto = ultimaOferta.Monto
             };
+
             _subastaContext.Venta.Add(venta);
-        _subastaContext.SaveChanges();
+            _subastaContext.SaveChanges();
+
+            return venta;
         }
-       
+
+        public Usuario GetUserById(string userId)
+        {
+           return _subastaContext.Usuarios.Find(userId);
+
+        }
+
+        public Producto GetProductoById(int productoId)
+        {
+            return _subastaContext.Productos.Find(productoId);
+        }
+
     }
 }

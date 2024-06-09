@@ -84,4 +84,21 @@
         var notificationHtml = `<div><b>${message}</b></div>`;
         document.getElementById("notifications").innerHTML = notificationHtml + document.getElementById("notifications").innerHTML;
     });
+
+    connection.on("CloseAuction", () => {
+        Toastify({
+            text: "La subasta ha finalizado. Serás redirigido.",
+            duration: 3000,
+            close: true,
+            gravity: "bottom", // `top` or `bottom`
+            position: "center", // `left`, `center` or `right`
+            backgroundColor: "#333",
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+        }).showToast();
+
+        setTimeout(() => {
+            window.location.href = "/Chat/Index";
+        }, 3000);
+    });
+
     </script>

@@ -1,0 +1,17 @@
+{
+  "name": "chatroom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy-toastify": "mkdir -p wwwroot/lib/toastify-js && cp node_modules/toastify-js/src/toastify.css wwwroot/lib/toastify-js/toastify.css && cp node_modules/toastify-js/src/toastify.js wwwroot/lib/toastify-js/toastify.js"
+  },
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "toastify-js": "^1.12.0"
+  }
+}

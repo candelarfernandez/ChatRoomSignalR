@@ -52,6 +52,16 @@ namespace ChatRoom
             await Clients.Group(salaId).SendAsync("ShowWho", $"{userName} se unió a la sala");
 
         }
-    
+
+        public async Task SendNotification(string userId, string message)
+        {
+            await Clients.User(userId).SendAsync("ReceiveNotification", message);
+        }
+
+        public async Task CloseAuction(string groupName)
+        {
+            await Clients.Group(groupName).SendAsync("CloseAuction");
+        }
+
     }
 }
