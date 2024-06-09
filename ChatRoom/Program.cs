@@ -12,6 +12,7 @@ builder.Services.AddSignalR();
 builder.Services.AddScoped<SubastaContext>();
 builder.Services.AddScoped<ISalaService, SalaService>();
 builder.Services.AddScoped<IOfertumService, OfertumService>();
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 
 builder.Services.AddIdentity<Usuario, IdentityRole>(options =>
 {

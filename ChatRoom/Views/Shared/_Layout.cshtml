@@ -40,7 +40,7 @@
                             </li>
                         }
                     </ul>
-                    @if (User.Identity.IsAuthenticated && !Context.Request.Path.StartsWithSegments("/Account/Perfil"))
+                    @if (User.Identity.IsAuthenticated && !Context.Request.Path.StartsWithSegments("/Usuario/Perfil"))
                     {
                         <ul class="navbar-nav">
                             <li class="nav-item">
@@ -49,7 +49,7 @@
                         </ul>
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a asp-controller="Account" asp-action="Perfil" class="btn btn-primary">Ir a Perfil</a>
+                                <a asp-controller="Usuario" asp-action="Perfil" class="btn btn-primary">Ir a Perfil</a>
                             </li>
                         </ul>
                     }
@@ -57,10 +57,10 @@
                     {
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a asp-controller="Account" asp-action="MisCompras" class="btn btn-primary">Mis compras</a>
+                                <a asp-controller="Usuario" asp-action="MisCompras" class="btn btn-primary">Mis compras</a>
                             </li>
                             <li class="nav-item">
-                                <a asp-controller="Account" asp-action="MisVentas" class="btn btn-primary">Mis ventas</a>
+                                <a asp-controller="Usuario" asp-action="MisVentas" class="btn btn-primary">Mis ventas</a>
                             </li>
                         </ul>
                     }

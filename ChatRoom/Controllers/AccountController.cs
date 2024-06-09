@@ -1,7 +1,10 @@
-﻿using ChatRoom.Datos.Entidades;
+﻿using ChatRoom.Datos;
+using ChatRoom.Datos.Entidades;
 using ChatRoom.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace ChatRoom.Controllers
@@ -10,6 +13,7 @@ namespace ChatRoom.Controllers
     {
         private readonly SignInManager<Usuario> _signInManager;
         private readonly UserManager<Usuario> _userManager;
+
 
         public AccountController(SignInManager<Usuario> signInManager, UserManager<Usuario> userManager)
         {
@@ -79,9 +83,5 @@ namespace ChatRoom.Controllers
             return RedirectToAction("Index", "Chat");
         }
 
-        public IActionResult Perfil()
-        {
-            return View();
-        }
     }
 }

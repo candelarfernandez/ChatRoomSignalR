@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿    @using ChatRoom.Datos.Entidades
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -10,6 +13,9 @@
     <link rel="stylesheet" href="~/css/perfil.css" asp-append-version="true" />
 
 </head>
+@{
+    var authenticatedUser = ViewData["AuthenticatedUser"] as Usuario;
+}
 <body>
     <div class="perfil-container">
         <div class="perfil-box">
@@ -18,8 +24,8 @@
             </div>
             
                 <div class="datos-usuario">
-                    <p>Usuario: <span>nombre</span></p>
-                    <p>Mail: <span>mail</span></p>
+                <p>Usuario: <span>@authenticatedUser.UserName<span></p>
+                <p>Mail: <span>@authenticatedUser.Email</span></p>
                     <p>Contraseña: <span>******</span></p>
                    
                 </div>
