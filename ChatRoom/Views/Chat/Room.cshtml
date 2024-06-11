@@ -3,11 +3,14 @@
 
 @{
     var authenticatedUser = ViewData["AuthenticatedUser"] as Usuario;
+    var isCreator = (bool)ViewData["IsCreator"];
 }
 
 <h1>@Model.Nombre</h1>
 
 <div class="row">
+    @if (!isCreator)
+    {
         <form method="post" action="~/Chat/CreateOferta" id="ofertaForm">
             <div class="col-12">
                 <label for="idSala">ID Sala</label>
@@ -22,6 +25,22 @@
                 <button id="btnSend">Enviar Puja</button>
             </div>
         </form>
+    }
+    else
+    {
+        <form method="post" action="~/Chat/CreateOferta" id="ofertaForm" type="hidden">
+            <div class="col-12">
+                <input type="hidden" class="form-control" id="sala" name="idSala" value="@Model.Id" readonly  />
+                @if (authenticatedUser != null)
+                {
+                    <input type="hidden" id="user" name="idUsuario" value="@authenticatedUser.Id" />
+                    <input type="hidden" id="userName" value="@authenticatedUser.UserName" />
+                }
+                <input type="hidden" class="form-control" id="monto" name="monto"  required />
+                <button style="display:none" id="btnSend">Enviar puja</button>
+            </div>
+        </form>
+    }
 
 @if (authenticatedUser != null && authenticatedUser.Id == Model.IdVendedor)
 {

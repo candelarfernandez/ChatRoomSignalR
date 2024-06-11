@@ -14,7 +14,7 @@ namespace ChatRoom
         {
             _salaService = salaService;
             _ofertumService = ofertumService;
-        }
+        }     
 
         public async Task AddOferta(string salaId, string idComprador, string monto)
         {
@@ -36,9 +36,6 @@ namespace ChatRoom
             {
                 await Clients.Caller.SendAsync("ShowError", ex.Message);
             }
-
-
-
         }
         public async Task JoinSala(string salaId, string userName)
         {

@@ -56,6 +56,7 @@ public class ChatController : Controller
             return NotFound();
         }
         ViewData["AuthenticatedUser"] = user;
+        ViewData["IsCreator"] = (user.Id == sala.IdVendedor);
         return View(sala);
     }
 
@@ -66,7 +67,7 @@ public class ChatController : Controller
     }
 
     [HttpPost]
-    public IActionResult CreateRoom(string nombre, string fotoProductoNombre, string? idVendedor)
+    public async Task<IActionResult> CreateRoom(string nombre, string fotoProductoNombre, string? idVendedor)
     {
         if (!string.IsNullOrEmpty(nombre) && !string.IsNullOrEmpty(fotoProductoNombre))
         {
@@ -100,7 +101,5 @@ public class ChatController : Controller
         }
         return RedirectToAction("Index");
     }
-
-
 
 }
