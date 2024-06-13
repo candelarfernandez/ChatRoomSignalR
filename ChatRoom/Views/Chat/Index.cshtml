@@ -1,4 +1,6 @@
-﻿@model List<ChatRoom.Datos.Entidades.Sala>
+﻿@using ChatRoom.Datos.Entidades
+@model List<ChatRoom.Datos.Entidades.Sala>
+
 
 <section class="d-flex vh-100">
     <article class="col-3" style="background-color: #C5C3FC;">
@@ -7,7 +9,7 @@
             @foreach (var sala in Model)
             {
                 <div class="list-group list-group-flush border-bottom scrollarea">
-                    <a class="list-group-item list-group-item-action py-3 lh-sm mb-3 m-lg-2 rounded-2" aria-current="true" href="~/Chat/Room?id=@sala.Id">@sala.Nombre</a>      
+                    <a class="list-group-item list-group-item-action py-3 lh-sm mb-3 m-lg-2 rounded-2" aria-current="true" href="~/Chat/Room?id=@sala.Id">@sala.Nombre</a>
                 </div>
             }
         </ul>

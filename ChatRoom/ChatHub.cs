@@ -1,6 +1,7 @@
 ﻿using ChatRoom.Datos.Entidades;
 using ChatRoom.Dominio;
 using Microsoft.AspNetCore.SignalR;
+using Microsoft.EntityFrameworkCore;
 using System.Text.RegularExpressions;
 
 namespace ChatRoom

@@ -67,8 +67,12 @@ public class ChatController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateRoom(string nombre, string fotoProductoNombre, string? idVendedor)
+    public async Task<IActionResult> CreateRoom(string nombre, string fotoProductoNombre, string idVendedor)
     {
+        if (string.IsNullOrEmpty(idVendedor))
+        {
+            return RedirectToAction("Login", "Account");
+        }
         if (!string.IsNullOrEmpty(nombre) && !string.IsNullOrEmpty(fotoProductoNombre))
         {
             var sala = _salaService.CreateSala(nombre, fotoProductoNombre, idVendedor);
