@@ -60,6 +60,20 @@ namespace ChatRoom
         {
             await Clients.Group(groupName).SendAsync("CloseAuction");
         }
+        public async Task CreateSala(string nombre, string fotoProductoNombre, string idVendedor)
+        {
+            var sala = _salaService.CreateSala(nombre, fotoProductoNombre, idVendedor);
+            if (sala != null)
+            {
+                var salas = _salaService.GetSalas();
+                await Clients.All.SendAsync("ReceiveSalas", salas);
+            }
+        }
+        public async Task GetSalas()
+        {
+            var salas = _salaService.GetSalas();
+            await Clients.Caller.SendAsync("ReceiveSalas", salas);
+        }
 
     }
 }

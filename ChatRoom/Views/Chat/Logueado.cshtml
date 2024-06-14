@@ -10,11 +10,11 @@
         <div class="mb-auto">
             <h2>Subastas activas</h2>
 
-            <ul class="list-group">
+            <ul id="salasList" class="list-group">
                 @foreach (var sala in Model)
                 {
                     <div class="list-group list-group-flush border-bottom scrollarea">
-                        <a class="list-group-item list-group-item-action py-3 lh-sm mb-3 m-lg-2 rounded-2" aria-current="true" href="~/Chat/Room?id=@sala.Id">@sala.Nombre</a>
+                        <a class="list-group-item list-group-item-action py-3 lh-sm mb-3 m-lg-2 rounded-2" aria-current="true" href="/Chat/Room?id=@sala.Id">@sala.Nombre</a>
                     </div>
                 }
             </ul>
@@ -31,7 +31,7 @@
 
     <article class="col-3" style="background-color: #C5C3FC;">
         <h2>Nueva sala</h2>
-        <form method="post" asp-action="CreateRoom" class="py-3 lh-sm mb-3 m-lg-2">
+        <form method="post" id="createSalaForm" action="/Chat/Room/CreateRoom" class="py-3 lh-sm mb-3 m-lg-2">
             <div class="form-group">
                 <label for="nombre">Nombre de la sala</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" required />
@@ -47,3 +47,32 @@
         </form>
     </article>
 </section>
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script>
+    var connection = new signalR.HubConnectionBuilder().withUrl("/chat").build();
+    document.getElementById("createSalaForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var nombre = document.getElementById("nombre").value;
+        var fotoProductoNombre = document.getElementById("fotoProductoNombre").value;
+        var idVendedor = document.getElementById("idVendedor").value;
+        connection.invoke("CreateSala", nombre, fotoProductoNombre, idVendedor).catch(function (err) {
+            return console.error(err.toString());
+        });
+    });
+    connection.start().then(function () {
+        connection.invoke("GetSalas");
+    }).catch(function (err) {
+        return console.error(err.toString());
+    });
+    connection.on("ReceiveSalas", function (salas) {
+        const salasList = document.getElementById("salasList");
+        salasList.innerHTML = "";
+        salas.forEach(function (sala) {
+            const salaItem = document.createElement("div");
+            salaItem.className = "list-group list-group-flush border-bottom scrollarea";
+            salaItem.innerHTML = `<a class="list-group-item list-group-item-action py-3 lh-sm mb-3 m-lg-2 rounded-2" aria-current="true" href="/Chat/Room?id=${sala.id}">${sala.nombre}</a>`;
+            salasList.appendChild(salaItem);
+        });
+    });
+ 
+</script>

@@ -61,25 +61,27 @@ public class ChatController : Controller
     }
 
     public IActionResult CreateRoom()
-    {
+   {
 
-        return View();
-    }
+       return View();
+   }
 
-    [HttpPost]
-    public async Task<IActionResult> CreateRoom(string nombre, string fotoProductoNombre, string idVendedor)
-    {
-        if (string.IsNullOrEmpty(idVendedor))
-        {
-            return RedirectToAction("Login", "Account");
-        }
-        if (!string.IsNullOrEmpty(nombre) && !string.IsNullOrEmpty(fotoProductoNombre))
-        {
-            var sala = _salaService.CreateSala(nombre, fotoProductoNombre, idVendedor);
+  [HttpPost]
+   public async Task<IActionResult> CreateRoom(string nombre, string fotoProductoNombre, string idVendedor)
+   {
+       if (string.IsNullOrEmpty(idVendedor))
+       {
+           return RedirectToAction("Login", "Account");
+       }
+       if (!string.IsNullOrEmpty(nombre) && !string.IsNullOrEmpty(fotoProductoNombre))
+       {
+            _salaService.CreateSala(nombre, fotoProductoNombre, idVendedor);
+            var salas = _salaService.GetSalas();
+            await _hubContext.Clients.All.SendAsync("ReceiveSalas", salas);
             return RedirectToAction("Index");
-        }
-        return View();
-    }
+       }
+       return View();
+   }
 
     [HttpPost]
     public IActionResult FinalizarSubasta(int idSala)
