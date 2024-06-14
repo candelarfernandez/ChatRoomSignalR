@@ -60,27 +60,17 @@ public class ChatController : Controller
         return View(sala);
     }
 
-    public IActionResult CreateRoom()
-   {
-
-       return View();
-   }
+    //unicamente valida si no esta logueado el usuario, para que no se rompa, no me dejo agregarlo de alguna forma en el hub, 
+    //asi que si el usuario NO esta logueado, y quiere crear una sala, entra en este metodo (vista index) sino entra en el metodo
+    //invocado x signalR en la vista "Logueado"
 
   [HttpPost]
-   public async Task<IActionResult> CreateRoom(string nombre, string fotoProductoNombre, string idVendedor)
+   public async Task<IActionResult> CreateRoom(string idVendedor)
    {
        if (string.IsNullOrEmpty(idVendedor))
        {
            return RedirectToAction("Login", "Account");
-       }
-       if (!string.IsNullOrEmpty(nombre) && !string.IsNullOrEmpty(fotoProductoNombre))
-       {
-            _salaService.CreateSala(nombre, fotoProductoNombre, idVendedor);
-            var salas = _salaService.GetSalas();
-            await _hubContext.Clients.All.SendAsync("ReceiveSalas", salas);
-            return RedirectToAction("Index");
-       }
-       return View();
+       }return View();
    }
 
     [HttpPost]
