@@ -11,4 +11,4 @@ Utiliza la librería SignalR para gestionar la comunicación en tiempo real entr
 - **Unirse a Salas**: Otros usuarios pueden unirse a las salas existentes para participar en las subastas.
 - **Ofertas en Tiempo Real**: Los usuarios pueden hacer ofertas por los objetos en tiempo real, y todos los participantes de la sala verán las ofertas sin necesidad de recargar la página.
 - **Finalizar Subasta**: El usuario que creó la sala puede finalizar la subasta en cualquier momento. Esto guarda la venta y desactiva la sala.
-- **Notificaciones en Tiempo Real**: Se notifica en tiempo real a los usuarios cuando otros se unen a la sala, cuando se crean nuevas salas y cuando se realizan nuevas ofertas.
+- **Notificaciones en Tiempo Real**: Se notifica en tiempo real a los usuarios cuando otros se unen a la sala, cuando se crean nuevas salas, cuando se realizan nuevas ofertas y finalmente cuando el usuario vendedor finaliza la subasta y se crea la venta.
