@@ -1,6 +1,7 @@
 ﻿using ChatRoom.Datos.Entidades;
 using ChatRoom.Dominio;
 using Microsoft.AspNetCore.SignalR;
+using Microsoft.EntityFrameworkCore;
 using System.Text.RegularExpressions;
 
 namespace ChatRoom
@@ -14,7 +15,7 @@ namespace ChatRoom
         {
             _salaService = salaService;
             _ofertumService = ofertumService;
-        }
+        }     
 
         public async Task AddOferta(string salaId, string idComprador, string monto)
         {
@@ -36,9 +37,6 @@ namespace ChatRoom
             {
                 await Clients.Caller.SendAsync("ShowError", ex.Message);
             }
-
-
-
         }
         public async Task JoinSala(string salaId, string userName)
         {
@@ -52,6 +50,30 @@ namespace ChatRoom
             await Clients.Group(salaId).SendAsync("ShowWho", $"{userName} se unió a la sala");
 
         }
-    
+
+        public async Task SendNotification(string userId, string message)
+        {
+            await Clients.User(userId).SendAsync("ReceiveNotification", message);
+        }
+
+        public async Task CloseAuction(string groupName)
+        {
+            await Clients.Group(groupName).SendAsync("CloseAuction");
+        }
+        public async Task CreateSala(string nombre, string fotoProductoNombre, string idVendedor)
+        {
+            var sala = _salaService.CreateSala(nombre, fotoProductoNombre, idVendedor);
+            if (sala != null)
+            {
+                var salas = _salaService.GetSalas();
+                await Clients.All.SendAsync("ReceiveSalas", salas);
+            }
+        }
+        public async Task GetSalas()
+        {
+            var salas = _salaService.GetSalas();
+            await Clients.Caller.SendAsync("ReceiveSalas", salas);
+        }
+
     }
 }

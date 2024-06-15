@@ -5,26 +5,27 @@
     var authenticatedUser = ViewData["AuthenticatedUser"] as Usuario;
 }
 
-<div class="row">
-    <div class="col-md-6">
-        <h2>Subastas activas</h2>
-        <div>Estas Logueado, querés cerrar sesion?
+<section class="d-flex vh-100">
+    <article class="col-3 d-flex flex-column" style="background-color: #C5C3FC;">
+        <div class="mb-auto">
+            <h2>Subastas activas</h2>
+
+            <ul id="salasList" class="list-group">             
+            </ul>
+        </div>
+        
+        <div class="list-group list-group-flush border-top scrollarea mt-auto">
+            <small class="text-md-center">Estas Logueado, querés cerrar sesion?</small>
             <a href="javascript:void(0);" id="logoutLink" onclick="document.getElementById('logoutForm').submit();" class="btn btn-link">Logout</a>
         </div>
         <form id="logoutForm" action="~/Account/Logout" method="post" style="display:none;"></form>
-        <ul class="list-group">
-            @foreach (var sala in Model)
-            {
-                <li class="list-group-item">
-                    <a href="~/Chat/Room?id=@sala.Id">@sala.Nombre</a>
-                </li>
-            }
-        </ul>
-    </div>
+    </article>
 
-    <div class="col-md-6">
+    <article class="col-6"></article>
+
+    <article class="col-3" style="background-color: #C5C3FC;">
         <h2>Nueva sala</h2>
-        <form method="post" asp-action="CreateRoom">
+        <form method="post" id="createSalaForm" action="/Chat/Room/CreateRoom" class="py-3 lh-sm mb-3 m-lg-2">
             <div class="form-group">
                 <label for="nombre">Nombre de la sala</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" required />
@@ -36,7 +37,36 @@
             {
                 <input type="hidden" id="idVendedor" name="idVendedor" value="@authenticatedUser.Id" />
             }
-            <button type="submit" class="btn btn-primary mt-2">Crear subasta</button>
+            <button type="submit" class="btn mt-2 align-items-center" style="background-color: #E8E2FF;">Crear subasta</button>
         </form>
-    </div>
-</div>
+    </article>
+</section>
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script>
+    var connection = new signalR.HubConnectionBuilder().withUrl("/chat").build();
+    document.getElementById("createSalaForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var nombre = document.getElementById("nombre").value;
+        var fotoProductoNombre = document.getElementById("fotoProductoNombre").value;
+        var idVendedor = document.getElementById("idVendedor").value;
+        connection.invoke("CreateSala", nombre, fotoProductoNombre, idVendedor).catch(function (err) {
+            return console.error(err.toString());
+        });
+    });
+    connection.start().then(function () {
+        connection.invoke("GetSalas");
+    }).catch(function (err) {
+        return console.error(err.toString());
+    });
+    connection.on("ReceiveSalas", function (salas) {
+        const salasList = document.getElementById("salasList");
+        salasList.innerHTML = "";
+        salas.forEach(function (sala) {
+            const salaItem = document.createElement("div");
+            salaItem.className = "list-group list-group-flush border-bottom scrollarea";
+            salaItem.innerHTML = `<a class="list-group-item list-group-item-action py-3 lh-sm mb-3 m-lg-2 rounded-2" aria-current="true" href="/Chat/Room?id=${sala.id}">${sala.nombre}</a>`;
+            salasList.appendChild(salaItem);
+        });
+    });
+ 
+</script>
