@@ -1,0 +1,42 @@
+﻿@using ChatRoom.Datos.Entidades
+@model List<ChatRoom.Datos.Entidades.Sala>
+
+
+<section class="d-flex vh-100">
+    <article class="col-3" style="background-color: #C5C3FC;">
+        <h2>Subastas activas</h2>
+        <ul class="list-group">
+            @foreach (var sala in Model)
+            {
+                <div class="list-group list-group-flush border-bottom scrollarea">
+                    <a class="list-group-item list-group-item-action py-3 lh-sm mb-3 m-lg-2 rounded-2" aria-current="true" href="~/Chat/Room?id=@sala.Id">@sala.Nombre</a>
+                </div>
+            }
+        </ul>
+        <div class="list-group list-group-flush border-bottom scrollarea">
+            <a href="#" class="list-group-item list-group-item-action py-3 lh-sm mb-3 m-lg-2 rounded-2" aria-current="true">
+                <div class="d-flex w-100 align-items-center justify-content-between">
+                    <strong class="mb-1">Nombre de la sala</strong>
+                </div>
+                <div class="col-10 mb-1 small">Producto a subastar.</div>
+            </a>
+        </div>
+    </article>
+
+    <article class="col-6"></article>
+
+    <article class="col-3" style="background-color: #C5C3FC;">
+        <h2>Nueva sala</h2>
+        <form method="post" action="~/Chat/CreateRoom" class="py-3 lh-sm mb-3 m-lg-2">
+            <div class="form-group">
+                <label for="nombre">Nombre de la sala</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required />
+
+                <label for="fotoProductoNombre">Nombre de la imagen del producto</label>
+                <input type="text" class="form-control" id="fotoProductoNombre" name="fotoProductoNombre" required />
+            </div>
+            <button type="submit" class="btn mt-2" style="background-color: #E8E2FF;">Crear subasta</button>
+        </form>
+    </article>
+</section>
+
