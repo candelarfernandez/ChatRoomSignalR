@@ -15,7 +15,7 @@ namespace ChatRoom.Dominio
         Venta FinalizarSubasta(int idSala);
         Usuario GetUserById(string userId);
         Producto GetProductoById(int productoId);
-
+        void CreateSala(Sala nuevaSala);
     }
     public class SalaService : ISalaService
     {
@@ -118,5 +118,10 @@ namespace ChatRoom.Dominio
             return _subastaContext.Productos.Find(productoId);
         }
 
+        public void CreateSala(Sala nuevaSala)
+        {
+            _subastaContext.Salas.Add(nuevaSala);
+            _subastaContext.SaveChanges();
+        }
     }
 }

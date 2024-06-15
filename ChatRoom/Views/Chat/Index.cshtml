@@ -31,14 +31,13 @@
 
     <article class="col-3" style="background-color: #C5C3FC;">
         <h2>Nueva sala</h2>
-
-        <form method="post" action="~/Chat/CreateRoom" class="py-3 lh-sm mb-3 m-lg-2">
+        <form method="post" action="~/Chat/CreateRoom" class="py-3 lh-sm mb-3 m-lg-2" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="nombre">Nombre de la sala</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" required />
 
-                <label for="fotoProductoNombre">Nombre de la imagen del producto</label>
-                <input type="text" class="form-control" id="fotoProductoNombre" name="fotoProductoNombre" required />
+                <label for="fotoProducto">Imagen del producto</label>
+                <input type="file" class="form-control" id="fotoProducto" name="fotoProducto" required />
                 @if (authenticatedUser != null)
                 {
                     <input type="hidden" id="idVendedor" name="idVendedor" value="@authenticatedUser.Id" />
@@ -46,5 +45,6 @@
             </div>
             <button type="submit" class="btn mt-2" style="background-color: #E8E2FF;">Crear subasta</button>
         </form>
+
     </article>
 </section>

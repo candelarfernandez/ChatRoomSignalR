@@ -65,13 +65,38 @@ public class ChatController : Controller
     //invocado x signalR en la vista "Logueado"
 
   [HttpPost]
-   public async Task<IActionResult> CreateRoom(string idVendedor)
+   public async Task<IActionResult> CreateRoom(string nombre, string idVendedor, IFormFile fotoProducto)
    {
-       if (string.IsNullOrEmpty(idVendedor))
-       {
-           return RedirectToAction("Login", "Account");
-       }return View();
-   }
+        //if (string.IsNullOrEmpty(idVendedor))
+        //{
+        //    return RedirectToAction("Login", "Account");
+        //}return View();
+
+        if (string.IsNullOrEmpty(idVendedor))
+        {
+            return RedirectToAction("Login", "Account");
+        }
+        if (fotoProducto != null && fotoProducto.Length > 0)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                await fotoProducto.CopyToAsync(memoryStream);
+                var fotoProductoBase64 = Convert.ToBase64String(memoryStream.ToArray());
+
+                // Crear una nueva sala con los datos proporcionados
+                var nuevaSala = new Sala
+                {
+                    Nombre = nombre,
+                    FotoProductoNombre = fotoProductoBase64,
+                    IdVendedor = idVendedor,
+                };
+
+                _salaService.CreateSala(nuevaSala);
+            }
+        }
+
+        return RedirectToAction("Index");
+    }
 
     [HttpPost]
     public IActionResult FinalizarSubasta(int idSala)

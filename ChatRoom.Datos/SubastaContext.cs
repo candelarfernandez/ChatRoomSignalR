@@ -31,7 +31,7 @@ public partial class SubastaContext : IdentityDbContext<IdentityUser>
     public virtual DbSet<Venta> Venta { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=LAPTOP-RFDT8K10;Database=Subasta;Trusted_Connection=True;TrustServerCertificate=True;Encrypt=false");
+        => optionsBuilder.UseSqlServer("Server=ARGN0189\\SQLEXPRESS;Database=Subasta;Trusted_Connection=True;TrustServerCertificate=True;Encrypt=false");
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -107,7 +107,7 @@ public partial class SubastaContext : IdentityDbContext<IdentityUser>
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Activa).HasColumnName("activa");
             entity.Property(e => e.FotoProductoNombre)
-                .HasMaxLength(50)
+                .HasMaxLength(1000)
                 .IsUnicode(false)
                 .HasColumnName("fotoProductoNombre");
             entity.Property(e => e.HoraFinalizacion)
