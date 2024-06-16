@@ -50,6 +50,20 @@ namespace ChatRoom.Controllers
 
             return View(ventas);
         }
+        public IActionResult Depositar()
+        {
+          return View();
+
+        }
+        [HttpPost]
+        public IActionResult Depositar(Double monto)
+        {
+            var user = _userManager.GetUserAsync(User).Result;
+
+            _usuarioService.depositar(user.Id, monto);
+            return View();
+
+        }
 
 
 

@@ -31,6 +31,13 @@ namespace ChatRoom.Dominio
 
         public Ofertum CreateOfertum(decimal monto, string? idComprador, int? idSala)
         {
+            var usuarioComprador = _subastaContext.Usuarios.Find(idComprador);
+
+            if (usuarioComprador.DineroDisponible < monto)
+            {
+                throw new InvalidOperationException("El usuario comprador no tiene suficiente dinero disponible.");
+            }
+
             var ofertum = new Ofertum
             {
                 Monto = monto,

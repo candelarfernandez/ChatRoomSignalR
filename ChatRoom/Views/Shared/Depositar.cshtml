@@ -1,0 +1,35 @@
+﻿@using ChatRoom.Models
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_Layout";
+}
+
+<style>
+    body {
+        background-image: url('../images/login.png');
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+
+<div class="login-container">
+    <h1>DEPOSITO</h1>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-auto">
+                <div class="login-form">
+                    <form method="post" action="~/Usuario/Depositar" class="py-3 lh-sm mb-3 m-lg-2">
+                        <div class="form-group">
+                            <label for="Monto">Monto</label>
+                            <input type="number" class="form-control" id="Monto" name="Monto" required />
+
+                           
+                        </div>
+                        <button type="submit" class="btn mt-2" style="background-color: #E8E2FF;">Depositar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -30,6 +30,15 @@
                                     <button type="submit" class="btn btn-link nav-link text-dark" style="cursor:pointer;">Cerrar sesión</button>
                                 </form>
                             </li>
+                            <li class="nav-item">
+                                <form asp-area="" asp-controller="Usuario" asp-action="Depositar" method="get" class="form-inline">
+                                    <button type="submit" class="btn btn-link nav-link text-dark" style="cursor:pointer;">Depositar</button>
+                                </form>
+                            </li>
+                            @* <li class="nav-item">
+                                <span class="nav-link text-dark">Monto disponible: @ViewBag.DineroDisponible.ToString("C")</span>
+                            </li> *@
+
                         }
                         else
                         {
