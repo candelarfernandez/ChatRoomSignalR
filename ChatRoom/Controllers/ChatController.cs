@@ -81,13 +81,12 @@ public class ChatController : Controller
             using (var memoryStream = new MemoryStream())
             {
                 await fotoProducto.CopyToAsync(memoryStream);
-                var fotoProductoBase64 = Convert.ToBase64String(memoryStream.ToArray());
-
+                fotoProductoBytes = memoryStream.ToArray();
                 // Crear una nueva sala con los datos proporcionados
                 var nuevaSala = new Sala
                 {
                     Nombre = nombre,
-                    FotoProductoNombre = fotoProductoBase64,
+                    FotoProductoNombre = fotoProductoBytes,
                     IdVendedor = idVendedor,
                 };
 

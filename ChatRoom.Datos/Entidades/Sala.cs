@@ -9,8 +9,7 @@ public partial class Sala
     public int Id { get; set; }
 
     public string Nombre { get; set; } = null!;
-    [MaxLength(2048)]
-    public string? FotoProductoNombre { get; set; }
+    public byte[]? FotoProductoNombre { get; set; }
 
     public string? IdVendedor { get; set; }
 
