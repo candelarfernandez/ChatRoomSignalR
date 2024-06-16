@@ -8,7 +8,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSignalR();
+builder.Services.AddSignalR(options =>
+{
+    options.MaximumReceiveMessageSize = 1024 * 1024; 
+});
+
 builder.Services.AddScoped<SubastaContext>();
 builder.Services.AddScoped<ISalaService, SalaService>();
 builder.Services.AddScoped<IOfertumService, OfertumService>();
