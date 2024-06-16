@@ -54,7 +54,7 @@ namespace ChatRoom.Dominio
 
             var producto = new Producto
             {
-                Nombre = $"{nombre} - {fotoProductoNombre}",
+                Nombre = $"{nombre}",
 
             };
 

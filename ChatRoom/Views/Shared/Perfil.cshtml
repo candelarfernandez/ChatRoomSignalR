@@ -1,0 +1,38 @@
+﻿@using ChatRoom.Datos.Entidades
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ChatRoom</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ChatRoom.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/perfil.css" asp-append-version="true" />
+
+</head>
+@{
+    var authenticatedUser = ViewData["AuthenticatedUser"] as Usuario;
+}
+<body>
+    <div class="perfil-container">
+        <div class="perfil-box">
+            <div class="icono-persona">
+                <img id="icono" src="\img\compras.png" alt="Icono de persona">
+            </div>
+
+            <div class="datos-usuario">
+                <p>Usuario: <span>@authenticatedUser.UserName<span></p>
+                <p>Mail: <span>@authenticatedUser.Email</span></p>
+                <p>Contraseña: <span>******</span></p>
+
+            </div>
+        <a asp-controller="Usuario" asp-action="MisCompras" class="btn mt-2" style="background-color: #C5C3FC;">Mis compras</a>
+        <a asp-controller="Usuario" asp-action="MisVentas" class="btn mt-2" style="background-color: #C5C3FC;">Mis ventas</a>
+
+        </div>
+    </div>
+</body>
+</html>

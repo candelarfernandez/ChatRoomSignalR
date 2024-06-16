@@ -60,14 +60,36 @@ namespace ChatRoom
         {
             await Clients.Group(groupName).SendAsync("CloseAuction");
         }
-        public async Task CreateSala(string nombre, string fotoProductoNombre, string idVendedor)
+        public async Task CreateSala(string nombre, string base64Image, string idVendedor)
         {
-            var sala = _salaService.CreateSala(nombre, fotoProductoNombre, idVendedor);
-            if (sala != null)
-            {
-                var salas = _salaService.GetSalas();
-                await Clients.All.SendAsync("ReceiveSalas", salas);
-            }
+                var fileName = $"{nombre}.jpg"; // Genera un nombre único para la imagen
+                var filePath = Path.Combine("wwwroot/images", fileName);
+
+                try
+                {
+                    byte[] imageBytes = Convert.FromBase64String(base64Image);
+                    await System.IO.File.WriteAllBytesAsync(filePath, imageBytes);
+
+                    // Guarda solo la ruta relativa en la base de datos
+                    var relativeFilePath = "/images/" + fileName;
+                    var sala = _salaService.CreateSala(nombre, relativeFilePath, idVendedor);
+
+                    if (sala != null)
+                    {
+                        var salas = _salaService.GetSalas();
+                        await Clients.All.SendAsync("ReceiveSalas", salas);
+                    }
+                    else
+                    {
+                        throw new Exception("Error al crear la sala.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    
+                    throw new Exception($"Error interno del servidor: {ex.Message}");
+                }
+            
         }
         public async Task GetSalas()
         {

@@ -10,13 +10,7 @@
         <div class="mb-auto">
             <h2>Subastas activas</h2>
 
-            <ul id="salasList" class="list-group">
-                @foreach (var sala in Model)
-                {
-                    <div class="list-group list-group-flush border-bottom scrollarea">
-                        <a class="list-group-item list-group-item-action py-3 lh-sm mb-3 m-lg-2 rounded-2" aria-current="true" href="/Chat/Room?id=@sala.Id">@sala.Nombre</a>
-                    </div>
-                }
+            <ul id="salasList" class="list-group">             
             </ul>
         </div>
         
@@ -31,13 +25,13 @@
 
     <article class="col-3" style="background-color: #C5C3FC;">
         <h2>Nueva sala</h2>
-        <form method="post" id="createSalaForm" action="/Chat/Room/CreateRoom" class="py-3 lh-sm mb-3 m-lg-2">
+        <form method="post" id="createSalaForm" action="/Chat/Room/CreateRoom" class="py-3 lh-sm mb-3 m-lg-2" enctype="multipart/form-data>
             <div class="form-group">
                 <label for="nombre">Nombre de la sala</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" required />
 
                 <label for="fotoProductoNombre">Nombre de la imagen del producto</label>
-                <input type="text" class="form-control" id="fotoProductoNombre" name="fotoProductoNombre" required />
+                <input type="file" class="form-control" id="fotoProductoNombre" name="fotoProductoNombre" required />
             </div>
             @if (authenticatedUser != null)
             {
@@ -53,11 +47,31 @@
     document.getElementById("createSalaForm").addEventListener("submit", function (event) {
         event.preventDefault();
         var nombre = document.getElementById("nombre").value;
-        var fotoProductoNombre = document.getElementById("fotoProductoNombre").value;
+        var fotoProductoNombre = document.getElementById("fotoProductoNombre").files[0];
         var idVendedor = document.getElementById("idVendedor").value;
-        connection.invoke("CreateSala", nombre, fotoProductoNombre, idVendedor).catch(function (err) {
-            return console.error(err.toString());
-        });
+        if (fotoProductoNombre) {
+            if (fotoProductoNombre.size > 2 * 1024 * 1024) { 
+                alert("La imagen es demasiado grande. Por favor, selecciona una imagen de menos de 2MB.");
+                return;
+            }
+            const reader = new FileReader();
+            reader.readAsDataURL(fotoProductoNombre);
+            reader.onload = async function () {
+                const base64Image = reader.result.split(',')[1];
+
+                try {
+                    await connection.invoke("CreateSala", nombre, base64Image, idVendedor);
+                } catch (err) {
+                    console.error('Error:', err);
+                    alert('Ocurrió un error al crear la sala: ' + err.message);
+                }
+            };
+            reader.onerror = function (error) {
+                console.log('Error:', error);
+            };
+        } else {
+            alert("Debe subir una imagen del producto.");
+        }
     });
     connection.start().then(function () {
         connection.invoke("GetSalas");
