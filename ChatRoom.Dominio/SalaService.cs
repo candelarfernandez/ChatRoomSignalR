@@ -44,6 +44,7 @@ namespace ChatRoom.Dominio
             {
                 throw new Exception("El ID del vendedor no puede ser nulo.");
             }
+
             var sala = new Sala
             {
                 Nombre = nombre,

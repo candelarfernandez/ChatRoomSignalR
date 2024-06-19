@@ -67,6 +67,7 @@ namespace ChatRoom
 
                 try
                 {
+
                     byte[] imageBytes = Convert.FromBase64String(base64Image);
                     await System.IO.File.WriteAllBytesAsync(filePath, imageBytes);
 
