@@ -22,7 +22,7 @@
                 </div>
                 <h5 class="card-title">@authenticatedUser.UserName</h5>
                 <p class="card-text text-muted">@authenticatedUser.Email</p>
-                <p class="card-text text-muted">Contraseña: ******</p>
+                <p class="card-text text-muted">Dinero disponible: @authenticatedUser.DineroDisponible</p>
                 <a asp-controller="Usuario" asp-action="MisCompras" class="btn btn-primary w-100 mb-2" style="background-color: #cc99ff; border-color: #cc99ff;">Mis compras</a> 
                 <a asp-controller="Usuario" asp-action="MisVentas" class="btn btn-secondary w-100" style="background-color: #ff99cc; border-color: #ff99cc;">Mis ventas</a> 
             </div>
