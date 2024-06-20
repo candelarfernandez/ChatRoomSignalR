@@ -8,10 +8,10 @@
         <ul class="list-group">
             @foreach (var sala in Model)
             {
-                <div class="list-group list-group-flush border-bottom scrollarea">
-                    <a class="list-group-item list-group-item-action py-3 lh-sm mb-3 m-lg-2 rounded-2" aria-current="true" href="~/Chat/Room?id=@sala.Id">@sala.Nombre</a>
-                </div>
-            }
+                <li class="list-group-item list-group-item-action py-3 lh-sm mb-3 m-lg-2 rounded-2">
+                    <a href="~/Chat/Room?id=@sala.Id">@sala.Nombre</a>
+                </li>
+            }               
         </ul>
         <div class="list-group list-group-flush border-bottom scrollarea">
             <a href="#" class="list-group-item list-group-item-action py-3 lh-sm mb-3 m-lg-2 rounded-2" aria-current="true">
