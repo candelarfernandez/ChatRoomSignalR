@@ -39,8 +39,6 @@ namespace ChatRoom.Dominio
             }
         }
 
-        
-
         public List<Venta> GetCompras(string id)
         {
             var compras = _subastaContext.Venta
