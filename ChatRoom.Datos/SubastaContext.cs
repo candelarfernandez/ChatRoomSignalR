@@ -31,11 +31,7 @@ public partial class SubastaContext : IdentityDbContext<IdentityUser>
     public virtual DbSet<Venta> Venta { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-<<<<<<< HEAD
         => optionsBuilder.UseSqlServer("Server=DESKTOP-1S9GKAA;Database=Subasta;Trusted_Connection=True;TrustServerCertificate=True;Encrypt=false");
-=======
-        => optionsBuilder.UseSqlServer("Server=LAPTOP-RFDT8K10;Database=Subasta;Trusted_Connection=True;TrustServerCertificate=True;Encrypt=false");
->>>>>>> 4fc3bcda43741bb5cd55874f7897fe4baf1d32b0
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
