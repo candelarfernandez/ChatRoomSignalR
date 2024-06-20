@@ -71,6 +71,10 @@ namespace ChatRoom.Dominio
 
             var sala =  _subastaContext.Salas.Include(s => s.Oferta).FirstOrDefault(s => s.Id == idSala);
             var ultimaOferta = sala.Oferta.OrderByDescending(o => o.Monto).FirstOrDefault();
+           /* quisimos hacer condicion que cuando no deposito, el dinero disponible es 0, que no te deje ofertar, 
+           actualmente te deja si vos no depositaste. si vos no ofertaste, y depositas, ahi te funciona la logica, 
+           sino ya se rompe todo y te deja ofertar.
+           var comprador = _subastaContext.Usuarios.FirstOrDefault(c => c.Id == oferta.IdComprador);*/
             if (ultimaOferta == null || oferta.Monto > ultimaOferta.Monto)
             {
                 sala.Oferta.Add(oferta);
@@ -95,9 +99,8 @@ namespace ChatRoom.Dominio
                 throw new Exception("No hay ofertas en la sala");
             }
             decimal dineroDisponibleActual = usuario.DineroDisponible ?? 0;
-
-            usuario.DineroDisponible = dineroDisponibleActual - (decimal)ultimaOferta.Monto;
-            _subastaContext.SaveChanges();
+                usuario.DineroDisponible = dineroDisponibleActual - (decimal)ultimaOferta.Monto;
+                _subastaContext.SaveChanges();
 
             var venta = new Venta
             {

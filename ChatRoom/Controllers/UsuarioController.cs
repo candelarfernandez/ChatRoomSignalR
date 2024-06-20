@@ -58,9 +58,14 @@ namespace ChatRoom.Controllers
         [HttpPost]
         public IActionResult Depositar(Double monto)
         {
-            var user = _userManager.GetUserAsync(User).Result;
+            if(monto != null)
+            {
+                var user = _userManager.GetUserAsync(User).Result;
 
-            _usuarioService.depositar(user.Id, monto);
+                _usuarioService.depositar(user.Id, monto);
+                return RedirectToAction("Index", "Chat");
+            }
+
             return View();
 
         }
