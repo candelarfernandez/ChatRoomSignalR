@@ -1,5 +1,5 @@
-﻿ @using ChatRoom.Datos.Entidades
- @model List<ChatRoom.Datos.Entidades.Sala>
+﻿@using ChatRoom.Datos.Entidades
+@model List<Sala>
 
 @{
     var authenticatedUser = ViewData["AuthenticatedUser"] as Usuario;
@@ -7,25 +7,35 @@
 
 <section class="d-flex vh-100">
     <article class="col-3 d-flex flex-column" style="background-color: #C5C3FC;">
-        <div class="mb-auto">
-            <h2>Subastas activas</h2>
-
-            <ul id="salasList" class="list-group">             
+        <div class="mb-auto text-center">
+            <h2 class="mt-3 d-flex align-items-center justify-content-center">
+                <span>Subastas Activas</span>
+                <button id="nuevaSubastaBtn" type="button" class="btn ms-2" style="background-color: #E8E2FF;" data-is-authenticated="@User.Identity.IsAuthenticated.ToString().ToLower()">+</button>
+            </h2>
+            @if (Model.Count == 0)
+            {
+                <div id="mensajeSubastasNull">
+                    <p>En este momento no hay subastas activas</p>
+                </div>
+            }
+            <ul id="salasList" class="list-group">
+                <!-- Aquí se agregan dinámicamente los elementos de la lista -->
             </ul>
         </div>
-        
-        <div class="list-group list-group-flush border-top scrollarea mt-auto">
-            <small class="text-md-center">Estas Logueado, querés cerrar sesion?</small>
-            <a href="javascript:void(0);" id="logoutLink" onclick="document.getElementById('logoutForm').submit();" class="btn btn-link">Logout</a>
-        </div>
-        <form id="logoutForm" action="~/Account/Logout" method="post" style="display:none;"></form>
+
+        @*<div class="list-group list-group-flush border-top scrollarea mt-auto">
+        <small class="text-md-center">Estas Logueado, querés cerrar sesion?</small>
+        <a href="javascript:void(0);" id="logoutLink" onclick="document.getElementById('logoutForm').submit();" class="btn btn-link">Logout</a>
+        </div>*@
+        @*        <form id="logoutForm" action="~/Account/Logout" method="post" style="display:none;"></form>
+        *@
     </article>
 
     <article class="col-6"></article>
 
-    <article class="col-3" style="background-color: #C5C3FC;">
-        <h2>Nueva sala</h2>
-        <form method="post" id="createSalaForm" action="/Chat/Room/CreateRoom" class="py-3 lh-sm mb-3 m-lg-2" enctype="multipart/form-data>
+    <div id="nuevaSubastaFormContainer" class="d-none col-3" style="background-color: #C5C3FC;">
+        <h2 class="mt-3">Nueva Subasta</h2>
+        <form id="createSalaForm" action="/Chat/Room/CreateRoom" method="post" class="py-3 lh-sm mb-3 m-lg-2" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="nombre">Nombre de la sala</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" required />
@@ -37,56 +47,11 @@
             {
                 <input type="hidden" id="idVendedor" name="idVendedor" value="@authenticatedUser.Id" />
             }
+            <button id="cancelarSubastaBtn" type="button" class="btn btn-secondary mt-2 ml-2 align-items-center">Cancelar</button>
             <button type="submit" class="btn mt-2 align-items-center" style="background-color: #E8E2FF;">Crear subasta</button>
         </form>
-    </article>
+    </div>
+   
 </section>
 <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
-<script>
-    var connection = new signalR.HubConnectionBuilder().withUrl("/chat").build();
-    document.getElementById("createSalaForm").addEventListener("submit", function (event) {
-        event.preventDefault();
-        var nombre = document.getElementById("nombre").value;
-        var fotoProductoNombre = document.getElementById("fotoProductoNombre").files[0];
-        var idVendedor = document.getElementById("idVendedor").value;
-        if (fotoProductoNombre) {
-            if (fotoProductoNombre.size > 2 * 1024 * 1024) { 
-                alert("La imagen es demasiado grande. Por favor, selecciona una imagen de menos de 2MB.");
-                return;
-            }
-            const reader = new FileReader();
-            reader.readAsDataURL(fotoProductoNombre);
-            reader.onload = async function () {
-                const base64Image = reader.result.split(',')[1];
-
-                try {
-                    await connection.invoke("CreateSala", nombre, base64Image, idVendedor);
-                } catch (err) {
-                    console.error('Error:', err);
-                    alert('Ocurrió un error al crear la sala: ' + err.message);
-                }
-            };
-            reader.onerror = function (error) {
-                console.log('Error:', error);
-            };
-        } else {
-            alert("Debe subir una imagen del producto.");
-        }
-    });
-    connection.start().then(function () {
-        connection.invoke("GetSalas");
-    }).catch(function (err) {
-        return console.error(err.toString());
-    });
-    connection.on("ReceiveSalas", function (salas) {
-        const salasList = document.getElementById("salasList");
-        salasList.innerHTML = "";
-        salas.forEach(function (sala) {
-            const salaItem = document.createElement("div");
-            salaItem.className = "list-group list-group-flush border-bottom scrollarea";
-            salaItem.innerHTML = `<a class="list-group-item list-group-item-action py-3 lh-sm mb-3 m-lg-2 rounded-2" aria-current="true" href="/Chat/Room?id=${sala.id}">${sala.nombre}</a>`;
-            salasList.appendChild(salaItem);
-        });
-    });
- 
-</script>
+<script src="~/js/Subasta.js"></script>

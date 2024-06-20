@@ -45,7 +45,7 @@ public class ChatController : Controller
 
         var sala = _salaService.GetSalaById(id);
 
-        if(sala.Activa == false)
+        if (sala.Activa == false)
         {
             return RedirectToAction("Index");
         }
@@ -64,14 +64,15 @@ public class ChatController : Controller
     //asi que si el usuario NO esta logueado, y quiere crear una sala, entra en este metodo (vista index) sino entra en el metodo
     //invocado x signalR en la vista "Logueado"
 
-  [HttpPost]
-   public async Task<IActionResult> CreateRoom(string idVendedor)
-   {
-       if (string.IsNullOrEmpty(idVendedor))
-       {
-           return RedirectToAction("Login", "Account");
-       }return View();
-   }
+    [HttpPost]
+    public async Task<IActionResult> CreateRoom(string idVendedor)
+    {
+        if (string.IsNullOrEmpty(idVendedor))
+        {
+            return RedirectToAction("Login", "Account");
+        }
+        return View();
+    }
 
     [HttpPost]
     public IActionResult FinalizarSubasta(int idSala)
