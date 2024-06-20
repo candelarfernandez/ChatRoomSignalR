@@ -21,11 +21,11 @@ namespace ChatRoom
         {
                 int salaIdInt = int.Parse(salaId);
                 decimal montoDecimal = decimal.Parse(monto);
-                var oferta = _ofertumService.CreateOfertum(montoDecimal, idComprador, salaIdInt);
             try
             {
+                var oferta = _ofertumService.CreateOfertum(montoDecimal, idComprador, salaIdInt);
                 if (oferta != null)
-                {
+                {                  
                     _salaService.agregarOfertaALaSala(oferta, salaIdInt);
                     var sala = _salaService.GetSalaById(salaIdInt);
                     if (sala != null)
@@ -33,7 +33,9 @@ namespace ChatRoom
                         await Clients.Group(salaId).SendAsync("ReceiveOferta", sala.Oferta);
                     }
                 }
-            }catch (Exception ex)
+                
+            }
+            catch (Exception ex)
             {
                 await Clients.Caller.SendAsync("ShowError", ex.Message);
             }

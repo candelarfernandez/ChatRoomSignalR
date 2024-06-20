@@ -35,7 +35,11 @@ namespace ChatRoom.Dominio
 
             if (usuarioComprador.DineroDisponible < monto)
             {
-                throw new InvalidOperationException("El usuario comprador no tiene suficiente dinero disponible.");
+                throw new Exception("El usuario comprador no tiene suficiente dinero disponible.");
+            }
+            if (usuarioComprador.DineroDisponible == null)
+            {
+                throw new Exception("El usuario comprador no tiene dinero depositado.");
             }
 
             var ofertum = new Ofertum
