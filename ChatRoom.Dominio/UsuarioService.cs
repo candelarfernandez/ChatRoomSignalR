@@ -1,5 +1,6 @@
 ﻿using ChatRoom.Datos;
 using ChatRoom.Datos.Entidades;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace ChatRoom.Dominio
 {
     public interface IUsuarioService
     {
+        void depositar(string id, double monto);
         List<Venta> GetCompras(string id);
         List<Venta> GetVentas(string id);
     }
@@ -21,6 +23,23 @@ namespace ChatRoom.Dominio
         {
             _subastaContext = subastaContext;
         }
+        public void depositar(string id, double monto)
+        {
+            {
+                var usuario = _subastaContext.Usuarios.Find(id);
+
+                if (usuario != null)
+                {
+                    decimal dineroDisponibleActual = usuario.DineroDisponible ?? 0;
+
+                    usuario.DineroDisponible = dineroDisponibleActual + (decimal)monto; 
+                    _subastaContext.SaveChanges();
+                }
+                
+            }
+        }
+
+        
 
         public List<Venta> GetCompras(string id)
         {

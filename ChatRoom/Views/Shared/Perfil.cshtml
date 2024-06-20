@@ -8,31 +8,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ChatRoom</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/ChatRoom.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/perfil.css" asp-append-version="true" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" />
 </head>
 @{
     var authenticatedUser = ViewData["AuthenticatedUser"] as Usuario;
 }
 <body>
-    <div class="perfil-container">
-        <div class="perfil-box">
-            <div class="icono-persona">
-                <img id="icono" src="\img\compras.png" alt="Icono de persona">
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="card shadow-lg" style="width: 22rem;">
+            <div class="card-body text-center">
+                <div class="mb-4">
+                    <i class="bi bi-person" style="font-size: 100px;"></i>
+                </div>
+                <h5 class="card-title">@authenticatedUser.UserName</h5>
+                <p class="card-text text-muted">@authenticatedUser.Email</p>
+                <p class="card-text text-muted">Dinero disponible: @authenticatedUser.DineroDisponible</p>
+                <a asp-controller="Usuario" asp-action="MisCompras" class="btn btn-primary w-100 mb-2" style="background-color: #cc99ff; border-color: #cc99ff;">Mis compras</a> 
+                <a asp-controller="Usuario" asp-action="MisVentas" class="btn btn-secondary w-100" style="background-color: #ff99cc; border-color: #ff99cc;">Mis ventas</a> 
             </div>
-
-            <div class="datos-usuario">
-                <p>Usuario: <span>@authenticatedUser.UserName<span></p>
-                <p>Mail: <span>@authenticatedUser.Email</span></p>
-                <p>Contraseña: <span>******</span></p>
-
-            </div>
-        <a asp-controller="Usuario" asp-action="MisCompras" class="btn mt-2" style="background-color: #C5C3FC;">Mis compras</a>
-        <a asp-controller="Usuario" asp-action="MisVentas" class="btn mt-2" style="background-color: #C5C3FC;">Mis ventas</a>
-
         </div>
     </div>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -44,6 +44,7 @@ namespace ChatRoom.Dominio
             {
                 throw new Exception("El ID del vendedor no puede ser nulo.");
             }
+
             var sala = new Sala
             {
                 Nombre = nombre,
@@ -54,7 +55,7 @@ namespace ChatRoom.Dominio
 
             var producto = new Producto
             {
-                Nombre = $"{nombre} - {fotoProductoNombre}",
+                Nombre = $"{nombre}",
 
             };
 
@@ -87,11 +88,16 @@ namespace ChatRoom.Dominio
             sala.Activa = false;
 
             var ultimaOferta = sala.Oferta.OrderByDescending(o => o.Monto).FirstOrDefault();
+            var usuario = _subastaContext.Usuarios.Find(ultimaOferta.IdComprador);
 
             if (ultimaOferta == null)
             {
                 throw new Exception("No hay ofertas en la sala");
             }
+            decimal dineroDisponibleActual = usuario.DineroDisponible ?? 0;
+
+            usuario.DineroDisponible = dineroDisponibleActual - (decimal)ultimaOferta.Monto;
+            _subastaContext.SaveChanges();
 
             var venta = new Venta
             {
