@@ -1,5 +1,5 @@
-﻿ @using ChatRoom.Datos.Entidades
- @model List<ChatRoom.Datos.Entidades.Venta>
+﻿@using ChatRoom.Datos.Entidades
+@model List<ChatRoom.Datos.Entidades.Venta>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,16 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mis Compras - ChatRoom</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        /* Estilo personalizado para cambiar el color de fondo de la cabecera de la tabla */
+        .custom-bg-purple {
+            background-color: #C5C3FC;
+            color: #ffffff;
+        }
+
+        /* Estilo para el cuerpo de la tabla */
+        .custom-table-body {
+            background-color: #ffffff; /* Fondo blanco */
+            border-radius: 10px; /* Bordes redondeados */
+        }
+    </style>
 </head>
-<body>
+<body style="background-color: #E8E2FF;">
     <div class="container">
-        <h2>Mis Compras</h2>
+        <h2 style="margin-top: 20px;">Mis Compras</h2>
         <div class="row">
             <div class="col-md-12">
                 @if (Model != null && Model.Count > 0)
                 {
-                    <table class="table">
-                        <thead>
+                    <table class="table table-bordered custom-table-body">
+                        <thead class="custom-bg-purple">
                             <tr>
                                 <th>ID Producto</th>
                                 <th>ID Vendedor</th>
