@@ -13,6 +13,18 @@
     }
 </style>
 
+@{
+    bool errorCreateRoom = TempData["ErrorCreateRoom"] != null && (bool)TempData["ErrorCreateRoom"];
+}
+
+@if (errorCreateRoom)
+{
+    <div class="alert alert-danger">
+        <p>@TempData["ErrorMessage"]</p>
+    </div>
+}
+
+
 <div class="login-container">
     <h1>Login</h1>
 

@@ -1,8 +1,7 @@
 ﻿using ChatRoom.Datos;
 using ChatRoom.Datos.Entidades;
-using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
-using System.Threading;
+using System.Linq;
 
 namespace ChatRoom.Dominio
 {
@@ -21,7 +20,8 @@ namespace ChatRoom.Dominio
     {
         private SubastaContext _subastaContext;
 
-        public SalaService(SubastaContext subastaContext, IOfertumService ofertumService) {
+        public SalaService(SubastaContext subastaContext, IOfertumService ofertumService)
+        {
             _subastaContext = subastaContext;
         }
 
@@ -40,41 +40,58 @@ namespace ChatRoom.Dominio
 
         public Sala CreateSala(string nombre, string? fotoProductoNombre, string? idVendedor)
         {
-            if (idVendedor == null)
+            try
             {
-                throw new Exception("El ID del vendedor no puede ser nulo.");
+                if (idVendedor == null)
+                {
+                    throw new ArgumentException("El ID del vendedor no puede ser nulo.");
+                }
+                if (GetSalaActivaByNombre(nombre) != null)
+                {
+                    throw new InvalidOperationException("Ya existe una sala con ese nombre.");
+                }
+
+                var producto = new Producto
+                {
+                    Nombre = $"{nombre}",
+
+                };
+
+                _subastaContext.Productos.Add(producto);
+                _subastaContext.SaveChanges();
+
+                var sala = new Sala
+                {
+                    Nombre = nombre,
+                    FotoProductoNombre = fotoProductoNombre,
+                    IdVendedor = idVendedor,
+                    Activa = true,
+                    IdProducto = producto.Id
+                };
+
+                _subastaContext.Salas.Add(sala);
+                _subastaContext.SaveChanges();
+                return sala;
+            } catch (Exception ex)
+            {
+                throw new Exception($"No se pudo crear la sala: {ex.Message}");
             }
-
-            var sala = new Sala
-            {
-                Nombre = nombre,
-                FotoProductoNombre = fotoProductoNombre,
-                IdVendedor = idVendedor,
-                Activa = true
-            };
-
-            var producto = new Producto
-            {
-                Nombre = $"{nombre}",
-
-            };
-
-            _subastaContext.Productos.Add(producto);
-            _subastaContext.SaveChanges();
-            sala.IdProducto = producto.Id;
-
-            _subastaContext.Salas.Add(sala);
-            _subastaContext.SaveChanges();
-            return sala;
         }
-        public void agregarOfertaALaSala(Ofertum oferta, int idSala) {
 
-            var sala =  _subastaContext.Salas.Include(s => s.Oferta).FirstOrDefault(s => s.Id == idSala);
+        private Sala GetSalaActivaByNombre(string nombre)
+        {
+            return _subastaContext.Salas.FirstOrDefault(s => s.Nombre == nombre && s.Activa==true);
+        }
+
+        public void agregarOfertaALaSala(Ofertum oferta, int idSala)
+        {
+
+            var sala = _subastaContext.Salas.Include(s => s.Oferta).FirstOrDefault(s => s.Id == idSala);
             var ultimaOferta = sala.Oferta.OrderByDescending(o => o.Monto).FirstOrDefault();
             if (ultimaOferta == null || oferta.Monto > ultimaOferta.Monto)
             {
-                    sala.Oferta.Add(oferta);
-                    _subastaContext.SaveChanges();
+                sala.Oferta.Add(oferta);
+                _subastaContext.SaveChanges();
             }
             else
             {
@@ -95,8 +112,8 @@ namespace ChatRoom.Dominio
                 throw new Exception("No hay ofertas en la sala");
             }
             decimal dineroDisponibleActual = usuario.DineroDisponible ?? 0;
-                usuario.DineroDisponible = dineroDisponibleActual - (decimal)ultimaOferta.Monto;
-                _subastaContext.SaveChanges();
+            usuario.DineroDisponible = dineroDisponibleActual - (decimal)ultimaOferta.Monto;
+            _subastaContext.SaveChanges();
 
             var venta = new Venta
             {
@@ -114,7 +131,7 @@ namespace ChatRoom.Dominio
 
         public Usuario GetUserById(string userId)
         {
-           return _subastaContext.Usuarios.Find(userId);
+            return _subastaContext.Usuarios.Find(userId);
 
         }
 
