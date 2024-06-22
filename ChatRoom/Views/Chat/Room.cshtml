@@ -5,98 +5,152 @@
     var authenticatedUser = ViewData["AuthenticatedUser"] as Usuario;
     var isCreator = (bool)ViewData["IsCreator"];
 }
-<body  style="
+<body style="
      margin: 0;
      padding: 0;
      background-color: #E8E2FF;
-   "
->
-<h1>@Model.Nombre</h1>
+   ">
+    <h1>@Model.Nombre</h1>
 
-<div class="row">
-    <div class="col-12">
-        <img src="@Model.FotoProductoNombre" alt="Imagen del producto subastado" class="img-fluid" />
-    </div>
-</div>
-<style>
-    .img-fluid {
-        max-width: 20%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-    }
-</style>
-
-<div class="row">
-    @if (!isCreator)
-    {
-        <form method="post" action="~/Chat/CreateOferta" id="ofertaForm">
-            <div class="col-12">
-                <label for="idSala">ID Sala</label>
-                <input type="number" class="form-control" id="sala" name="idSala" value="@Model.Id" readonly />
-                @if (authenticatedUser != null)
-                {
-                    <input type="hidden" id="user" name="idUsuario" value="@authenticatedUser.Id" />
-                    <input type="hidden" id="userName" value="@authenticatedUser.UserName" />
-                }
-                <label for="monto">Monto</label>
-                <input type="number" class="form-control" id="monto" name="monto" required />
-                    <button id="btnSend" class="btn mt - 2" style="background-color: #C5C3FC;">Enviar Puja</button>
-            </div>
-        </form>
-    }
-    else
-    {
-        <form method="post" action="~/Chat/CreateOferta" id="ofertaForm" type="hidden">
-            <div class="col-12">
-                <input type="hidden" class="form-control" id="sala" name="idSala" value="@Model.Id" readonly  />
-                @if (authenticatedUser != null)
-                {
-                    <input type="hidden" id="user" name="idUsuario" value="@authenticatedUser.Id" />
-                    <input type="hidden" id="userName" value="@authenticatedUser.UserName" />
-                }
-                <input type="hidden" class="form-control" id="monto" name="monto"  required />
-                <button style="display:none" id="btnSend">Enviar puja</button>
-            </div>
-        </form>
-    }
-
-@if (authenticatedUser != null && authenticatedUser.Id == Model.IdVendedor)
-{
-    <form method="post" action="~/Chat/FinalizarSubasta" id="finalizarSubastaForm">
-        <input type="hidden" id="idSala" name="idSala" value="@Model.Id" />
-                <button id="btnFinalizarSubasta" class="btn mt - 2" style="background-color: #C5C3FC;">Finalizar subasta</button>
-    </form>
-}
-</div>
-
-<div class="row">
-    <div class="col-6">
-        <div id="montos">
+    <div class="row">
+        <div class="col-12">
+            <img src="@Model.FotoProductoNombre" alt="Imagen del producto subastado" class="img-fluid" />
         </div>
     </div>
-    <div class="col-6">
-        <div id="errors"></div>
+    <style>
+        .img-fluid {
+            max-width: 20%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-6">
+
+                                @if (!isCreator)
+                                {
+                                    <form method="post" action="~/Chat/CreateOferta" id="ofertaForm" type="hidden">
+                                        <div class="col-12">
+                                            <input type="hidden" class="form-control" id="sala" name="idSala" value="@Model.Id" readonly />
+                                        </div>
+                                    </form>
+                                }
+                                else
+                                {
+                                    <form method="post" action="~/Chat/CreateOferta" id="ofertaForm" type="hidden">
+                                        <div class="col-12">
+                                            <input type="hidden" class="form-control" id="sala" name="idSala" value="@Model.Id" readonly />
+                                        </div>
+                                    </form>
+                                }
+
+                            </div>
+                            <div class="col-6 text-end">
+                                @if (!isCreator)
+                                {
+                                    <form method="post" action="~/Chat/CreateOferta" id="ofertaForm" type="hidden">
+                                        <div class="col-12">
+                                            <input type="hidden" class="form-control" id="sala" name="idSala" value="@Model.Id" readonly />
+                                        </div>
+                                    </form>
+                                }
+                                else
+                                {
+                                    <form method="post" action="~/Chat/CreateOferta" id="ofertaForm" type="hidden">
+                                        <div class="col-12">
+                                            <input type="hidden" class="form-control" id="sala" name="idSala" value="@Model.Id" readonly />
+                                        </div>
+                                    </form>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body" style="height: 250px; overflow-y: auto;">
+                        <div class="chat-messages">
+                            <div class="message">
+                                <div id="notifications"></div>
+                            </div>
+                            <div class="message">
+                                <div id="montos"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+
+                            @if (authenticatedUser != null && authenticatedUser.Id == Model.IdVendedor)
+                            {
+                                <form method="post" action="~/Chat/FinalizarSubasta" id="finalizarSubastaForm">
+                                    <input type="hidden" id="idSala" name="idSala" value="@Model.Id" />
+                                    <button id="btnFinalizarSubasta" class="btn mt - 2" style="background-color: #C5C3FC;">Finalizar subasta</button>
+                                </form>
+                            }
+                        </div>
+                        <div class="monto-enviar">
+                            @if (!isCreator)
+                            {
+                                <form method="post" action="~/Chat/CreateOferta" id="ofertaForm">
+                                    <div class="col-12">
+                                        @if (authenticatedUser != null)
+                                        {
+                                            <input type="hidden" id="user" name="idUsuario" value="@authenticatedUser.Id" />
+                                            <input type="hidden" id="userName" value="@authenticatedUser.UserName" />
+                                        }
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" id="monto" name="monto" placeholder="Monto" required />
+                                            <button type="button" id="btnSend" class="btn" style="background-color: #C5C3FC;">Enviar Puja</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            }
+                            else
+                            {
+                                <form method="post" action="~/Chat/CreateOferta" id="ofertaForm" type="hidden">
+                                    <div class="col-12">
+                                        @if (authenticatedUser != null)
+                                        {
+                                            <input type="hidden" id="user" name="idUsuario" value="@authenticatedUser.Id" />
+                                            <input type="hidden" id="userName" value="@authenticatedUser.UserName" />
+                                        }
+                                        <input type="hidden" class="form-control" id="monto" name="monto" required />
+                                        <button type="button" style="display:none" id="btnSend">Enviar puja</button>
+                                    </div>
+                                </form>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-6">
-        <div id="notifications"></div>
+
+    <div class="row">
+        <div class="col-6 mx-auto">
+            <div id="errors" class="text-center"></div>
+        </div>
     </div>
-</div>
 </body>
-    <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
-    <script>
-        var connection = new signalR.HubConnectionBuilder().withUrl("/chat").build();
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script>
+    var connection = new signalR.HubConnectionBuilder().withUrl("/chat").build();
 
     connection.start().then(() => {
         let userName = document.getElementById("userName").value;
         connection.invoke("JoinSala", "@Model.Id", userName)
     }).catch((e) => console.error(e));
 
-        document.getElementById("btnSend").addEventListener("click", (event) => {
-     
-            let salaId = "@Model.Id";
-            let userId = document.getElementById("user").value;
-            let monto = document.getElementById("monto").value;   
+    document.getElementById("btnSend").addEventListener("click", (event) => {
+
+        let salaId = "@Model.Id";
+        let userId = document.getElementById("user").value;
+        let monto = document.getElementById("monto").value;
 
         connection.invoke("AddOferta", salaId, userId, monto).catch((err) =>
             console.error(err.toString()));
@@ -104,19 +158,32 @@
         document.getElementById("monto").value = "";
         document.getElementById("monto").focus();
         event.preventDefault();
-        });
+    });
 
     connection.on("ReceiveOferta", (ofertas) => {
         var ofertasHtml = "";
         ofertas.forEach(oferta => {
-            ofertasHtml += `<div><b>Monto:</b> ${oferta.monto}, <b>Comprador:</b> ${oferta.idComprador}</div>`;
+            ofertasHtml += `<div><b>Monto:</b> ${oferta.monto}, <b>Usuario:</b> ${oferta.idComprador}</div>`;
         });
         document.getElementById("montos").innerHTML = ofertasHtml;
     });
+
     connection.on("ShowError", (message) => {
         var errorsHtml = `<div class="alert alert-danger"><b>${message}</b></div>`;
-        document.getElementById("errors").innerHTML = errorsHtml + document.getElementById("errors").innerHTML;
+
+        const errorElement = document.createElement('div');
+        errorElement.classList.add('alert', 'alert-danger');
+        errorElement.innerHTML = message;
+
+        const errorsContainer = document.getElementById("errors");
+        errorsContainer.appendChild(errorElement);
+
+        function hideError() {
+            errorElement.style.display = 'none';
+        }
+        setTimeout(hideError, 3000);
     });
+
 
     connection.on("ShowWho", (message) => {
         var notificationHtml = `<div><b>${message}</b></div>`;
@@ -128,10 +195,10 @@
             text: "La subasta ha finalizado. Serás redirigido.",
             duration: 3000,
             close: true,
-            gravity: "bottom", 
+            gravity: "bottom",
             position: "center",
             backgroundColor: "#ff6f69",
-            stopOnFocus: true, 
+            stopOnFocus: true,
         }).showToast();
 
         setTimeout(() => {
@@ -147,7 +214,7 @@
             gravity: "bottom",
             position: "center",
             backgroundColor: "#88d8b0",
-            stopOnFocus: true, 
+            stopOnFocus: true,
         }).showToast();
     });
 
@@ -160,8 +227,13 @@
             var errorMessage = "No se puede finalizar la subasta porque no hay ofertas en la sala.";
             var errorsHtml = `<div class="alert alert-danger"><b>${errorMessage}</b></div>`;
             document.getElementById("errors").innerHTML = errorsHtml;
-            event.preventDefault(); 
+            event.preventDefault();
+
+            // Hide the error message after 3 seconds using setTimeout
+            setTimeout(function () {
+                document.getElementById("errors").style.display = "none";
+            }, 3000); // 3000 milliseconds = 3 seconds
         }
     });
 
-    </script>
+</script>
