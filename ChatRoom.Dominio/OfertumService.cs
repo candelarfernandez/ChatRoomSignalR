@@ -33,13 +33,9 @@ namespace ChatRoom.Dominio
         {
             var usuarioComprador = _subastaContext.Usuarios.Find(idComprador);
 
-            if (usuarioComprador.DineroDisponible < monto)
+            if (usuarioComprador.DineroDisponible < monto || usuarioComprador.DineroDisponible == null)
             {
-                throw new Exception("El usuario comprador no tiene suficiente dinero disponible.");
-            }
-            if (usuarioComprador.DineroDisponible == null)
-            {
-                throw new Exception("El usuario comprador no tiene dinero depositado.");
+                throw new Exception("No tenés suficiente dinero disponible, deberás realizar un depósito para continuar.");
             }
 
             var ofertum = new Ofertum

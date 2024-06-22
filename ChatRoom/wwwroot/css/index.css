@@ -1,11 +1,56 @@
-﻿@media (max-width: 1200px) {
-    .carousel-item img {
-        object-fit: cover; 
-    }
+﻿body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.contenedor {
-    bottom:0;
-    display: block;
-    position:absolute;
+header {
+    z-index: 1;
+}
+
+main {
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+.carousel-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-inner {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+    .carousel-item img {
+        object-fit: cover;
+    }
 }

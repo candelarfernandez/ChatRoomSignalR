@@ -1,77 +1,46 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrusel con Botón de Registro</title>
-    <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-       body {
-            margin: 0;
-            padding: 0;
-            background-color: #E8E2FF; /* Añadido para permitir posicionamiento absoluto */
-        }
-        .carousel-container {
-            width: 95%;
-            height: 100%; 
-            margin: auto;
-            position: relative;
-        }
+﻿<link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-        .carousel-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; 
-        }
-
-        
-    </style>
-</head>
-<body >
-
-    <div id="contenedor" class="container" >
+<div id="contenedor" class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10 col-sm-12"> 
+        <div class="col-md-10 col-sm-12">
             <div id="carouselExample" class="carousel slide carousel-container" data-ride="carousel">
-               
 
-    <div id="carouselExample" class="carousel slide carousel-container" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="/images/SIGNAL R..png" class="d-block w-100" alt="Imagen 1">
+
+                <div id="carouselExample" class="carousel slide carousel-container" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/images/SIGNAL R..png" class="d-block w-100" alt="Imagen 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/images/SIGNAL R. (1).png" class="d-block w-100" alt="Imagen 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/images/SIGNAL R. (2).png" class="d-block w-100" alt="Imagen 3">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Siguiente</span>
+                    </a>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="/images/SIGNAL R. (1).png" class="d-block w-100" alt="Imagen 2">
-            </div>
-            <div class="carousel-item">
-                <img src="/images/SIGNAL R. (2).png" class="d-block w-100" alt="Imagen 3">
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Anterior</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Siguiente</span>
-        </a>
-    </div>
-     </div>
         </div>
     </div>
 </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.carousel').carousel({
-                interval: 5000 
-            });
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.carousel').carousel({
+            interval: 5000
         });
-    </script>
-</body>
-</html>
+    });
+</script>
 
 
 
