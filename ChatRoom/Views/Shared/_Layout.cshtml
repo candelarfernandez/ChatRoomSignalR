@@ -8,6 +8,17 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ChatRoom.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/lib/toastify-js/src/toastify.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgba(255, 255, 255, 0.7); 
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -39,12 +50,12 @@
                         }                    
                         else
                         {
-                                <li class="nav-item ms-auto">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Registrarse</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Iniciar sesión</a>
-                                </li>
+                            <li class="nav-item ms-auto">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Registrarse</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Iniciar sesión</a>
+                            </li>
                         }
                     </ul>
                     @if (User.Identity.IsAuthenticated && !Context.Request.Path.StartsWithSegments("/Usuario/Perfil"))

@@ -1,49 +1,81 @@
-﻿@using ChatRoom.Datos.Entidades
-@model List<Sala>
-
-
-<section class="d-flex vh-100">
-    <article class="col-3" style="background-color: #C5C3FC;">
-        <h2>Subastas activas</h2>
-        @if (Model.Count == 0)
-        {
-            <p>Aún no hay subastas activas</p>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel con Botón de Registro</title>
+    <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+       body {
+            margin: 0;
+            padding: 0;
+            background-image: url('/images/fondo.png'); 
+            background-size: cover; 
+            background-position: center; 
+            height: 100%; 
+            overflow-x: hidden; 
+            position: relative; /* Añadido para permitir posicionamiento absoluto */
         }
-        else
-        {
-            <ul class="list-group">
-                @foreach (var sala in Model)
-                {
-                    <li class="list-group-item list-group-item-action py-3 lh-sm mb-3 m-lg-2 rounded-2">
-                        <a href="~/Chat/Room?id=@sala.Id">@sala.Nombre</a>
-                    </li>
-                }
-            </ul>
+        .carousel-container {
+            width: 95%;
+            height: 100%; 
+            margin: auto;
+            position: relative; /* Añadido para permitir posicionamiento absoluto */
         }
-   @*     
-        <div class="list-group list-group-flush border-bottom scrollarea">
-            <a href="#" class="list-group-item list-group-item-action py-3 lh-sm mb-3 m-lg-2 rounded-2" aria-current="true">
-                <div class="d-flex w-100 align-items-center justify-content-between">
-                    <strong class="mb-1">Nombre de la sala</strong>
-                </div>
-                <div class="col-10 mb-1 small">Producto a subastar.</div>
-            </a>
-        </div>*@
-    </article>
 
-    <article class="col-6"></article>
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
 
-    <article class="col-3" style="background-color: #C5C3FC;">
-        <h2>Nueva sala</h2>
-        <form method="post" action="~/Chat/CreateRoom" class="py-3 lh-sm mb-3 m-lg-2">
-            <div class="form-group">
-                <label for="nombre">Nombre de la sala</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" required />
+        
+    </style>
+</head>
+<body>
+  
+    <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-sm-12">  <div id="carouselExample" class="carousel slide carousel-container" data-ride="carousel">
+               
 
-                <label for="fotoProductoNombre">Nombre de la imagen del producto</label>
-                <input type="file" class="form-control" id="fotoProductoNombre" name="fotoProductoNombre" required />
+    <div id="carouselExample" class="carousel slide carousel-container" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/images/SIGNAL R..png" class="d-block w-100" alt="Imagen 1">
             </div>
-            <button type="submit" class="btn mt-2" style="background-color: #E8E2FF;">Crear subasta</button>
-        </form>
-    </article>
-</section>
+            <div class="carousel-item">
+                <img src="/images/SIGNAL R. (1).png" class="d-block w-100" alt="Imagen 2">
+            </div>
+            <div class="carousel-item">
+                <img src="/images/SIGNAL R. (2).png" class="d-block w-100" alt="Imagen 3">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+     </div>
+        </div>
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.carousel').carousel({
+                interval: 5000 
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+

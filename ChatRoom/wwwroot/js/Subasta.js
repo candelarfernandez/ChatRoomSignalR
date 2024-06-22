@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Mostrar un mensaje de éxito
         alert("Nueva subasta creada con éxito")
         cancelarSubasta();
+
     }
 
     document.getElementById("createSalaForm").addEventListener("submit", function (event) {
@@ -41,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 try {
                     await connection.invoke("CreateSala", nombre, base64Image, idVendedor);
                     mensajeExito();
+                    
 
                 } catch (err) {
                     console.error('Error:', err);

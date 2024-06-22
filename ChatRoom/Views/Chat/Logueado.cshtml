@@ -5,6 +5,126 @@
     var authenticatedUser = ViewData["AuthenticatedUser"] as Usuario;
 }
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Subastas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Color de fondo */
+            min-height: 100vh;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        .card img {
+            height: 200px; /* Altura de la imagen */
+            object-fit: cover; /* Ajuste de la imagen */
+        }
+
+        .btn-add {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        #nuevaSubastaFormContainer {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #C5C3FC;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+        }
+    </style>
+</head>
+<body>
+    <section class="container py-5">
+        <h2 class="text-center mb-4">Subastas Activas</h2>
+
+        <div class="row">
+            @foreach (var sala in Model)
+            {
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="/images/default-product-image.jpg" class="card-img-top" alt="Imagen de Producto">
+                            <div class="card-body">
+                                <h5 class="card-title">@sala.Nombre</h5>
+                                <p class="card-text">Descripción de la subasta, detalles, etc.</p>
+                                <a href="/Chat/Room?id=@sala.Id" class="btn btn-primary">Ver Sala</a>
+                            </div>
+                        </div>
+                    </div>
+            }
+        </div>
+
+        @if (Model.Count == 0)
+        {
+                <div id="mensajeSubastasNull">
+                    <p class="text-center">En este momento no hay subastas activas</p>
+                </div>
+        }
+    </section>
+
+    <button id="nuevaSubastaBtn" type="button" class="btn btn-primary btn-add" style="background-color: #E8E2FF;" data-is-authenticated="@User.Identity.IsAuthenticated.ToString().ToLower()">+</button>
+
+    <div id="nuevaSubastaFormContainer">
+        <h2 class="mb-3">Nueva Subasta</h2>
+        <form id="createSalaForm" action="/Chat/Room/CreateRoom" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="nombre">Nombre de la sala</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="fotoProductoNombre">Imagen del Producto</label>
+                <input type="file" class="form-control" id="fotoProductoNombre" name="fotoProductoNombre" required>
+            </div>
+            @if (authenticatedUser != null)
+            {
+                    <input type="hidden" id="idVendedor" name="idVendedor" value="@authenticatedUser.Id">
+            }
+            <button id="cancelarSubastaBtn" type="button" class="btn btn-secondary mt-2 mr-2" onclick="closeForm()">Cancelar</button>
+            <button type="submit" class="btn btn-primary mt-2" style="background-color: #E8E2FF;">Crear Subasta</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+    <script src="~/js/Subasta.js"></script>
+    <script>
+        $('#nuevaSubastaBtn').on('click', function() {
+            $('#nuevaSubastaFormContainer').toggle();
+        });
+
+        function closeForm() {
+            $('#nuevaSubastaFormContainer').hide();
+        }
+    </script>
+</body>
+</html>
+
+    
+
+@* @using ChatRoom.Datos.Entidades
+@model List<Sala>
+
+@{
+    var authenticatedUser = ViewData["AuthenticatedUser"] as Usuario;
+}
+
 <section class="d-flex vh-100">
     <article class="col-3 d-flex flex-column" style="background-color: #C5C3FC;">
         <div class="mb-auto text-center">
@@ -19,7 +139,6 @@
                 </div>
             }
             <ul id="salasList" class="list-group">
-                <!-- Aquí se agregan dinámicamente los elementos de la lista -->
             </ul>
         </div>
 
@@ -27,8 +146,9 @@
         <small class="text-md-center">Estas Logueado, querés cerrar sesion?</small>
         <a href="javascript:void(0);" id="logoutLink" onclick="document.getElementById('logoutForm').submit();" class="btn btn-link">Logout</a>
         </div>*@
-        @*        <form id="logoutForm" action="~/Account/Logout" method="post" style="display:none;"></form>
-        *@
+        @*
+              <form id="logoutForm" action="~/Account/Logout" method="post" style="display:none;"></form>
+        
     </article>
 
     <article class="col-6"></article>
@@ -55,3 +175,5 @@
 </section>
 <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
 <script src="~/js/Subasta.js"></script>
+ *@
+
