@@ -69,11 +69,13 @@ public class ChatController : Controller
     {
         if (string.IsNullOrEmpty(idVendedor))
         {
+            TempData["ErrorCreateRoom"] = true;
+            TempData["ErrorMessage"] = "Debes iniciar sesión para crear una sala.";
             return RedirectToAction("Login", "Account");
         }
         return View();
     }
-
+ 
     [HttpPost]
     public IActionResult FinalizarSubasta(int idSala)
     {
