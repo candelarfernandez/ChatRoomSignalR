@@ -89,19 +89,7 @@
     <section class="container py-5">
         <h2 class="text-center mb-4">Subastas Activas</h2>
 
-        <div class="row">
-            @foreach (var sala in Model)
-            {
-                    <div class="col-md-4" >
-                        <div class="card" >
-                            <img src="@sala.FotoProductoNombre" class="card-img" alt="Imagen de Producto">
-                            <div class="card-body">
-                                <h5 class="card-title">@sala.Nombre</h5>
-                                <a href="/Chat/Room?id=@sala.Id" class="botonversala">Ver Sala</a>
-                            </div>
-                        </div>
-                    </div>
-            }
+        <div class="row" id="salasList">
         </div>
 
         @if (Model.Count == 0)

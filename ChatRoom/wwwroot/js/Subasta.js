@@ -63,7 +63,8 @@ document.addEventListener('DOMContentLoaded', function () {
         return console.error(err.toString());
     });
     connection.on("ReceiveSalas", function (salas) {
-        const salasContainer = document.querySelector('.row');
+        //const salasContainer = document.querySelector('.row');
+        salasContainer = document.getElementById("salasList");
         const mensajeSubastasNull = document.getElementById("mensajeSubastasNull");
 
         // Limpiar la lista de subastas existentes
@@ -82,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const cardImg = document.createElement("img");
                 cardImg.className = "card-img-top";
-                cardImg.src = "/images/default-product-image.jpg";
+                cardImg.src = `/images/${sala.nombre}.jpg`;
                 cardImg.alt = "Imagen de Producto";
 
                 const cardBody = document.createElement("div");

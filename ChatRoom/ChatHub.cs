@@ -65,7 +65,7 @@ namespace ChatRoom
 
         public async Task CreateSala(string nombre, string base64Image, string idVendedor)
         {
-            var fileName = $"{nombre}.jpg"; // Genera un nombre único para la imagen
+            var fileName = $"{nombre}.jpg"; 
             var filePath = Path.Combine("wwwroot/images", fileName);
 
             try
