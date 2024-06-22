@@ -5,6 +5,9 @@
     var authenticatedUser = ViewData["AuthenticatedUser"] as Usuario;
 }
 
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,13 +22,13 @@
             background-color: #E8E2FF;
     }
 
-    .card {
+    .card  {
       margin-bottom: 20px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
       background-color: #F0F8FF; /* Lilac background color */
-       /* Existing styles for .botonversala */
   display: flex; /* Make .botonversala a flex container */
   justify-content: center; 
+    flex-grow: grow; /* Permite que las tarjetas se ajusten dinámicamente */
     }
 
     .card img {
@@ -78,11 +81,26 @@
     #botonversala {
       width: 90%;
       background-color: #C5C3FC;
+
     }
+    #salasList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Opcional: ajusta según tu preferencia de distribución */
+}
+
+
+
   </style>
 </head>
 <body>
     <section class="container py-5">
+        <div class="row mb-3">
+    <div class="col-md-6 offset-md-3">
+        <input type="text" class="form-control" id="filtroNombre" placeholder="Buscar por nombre...">
+    </div>
+</div>
+
         <h2 class="text-center mb-4">Subastas Activas</h2>
 
         <div class="row" id="salasList">
@@ -131,6 +149,22 @@
             $('#nuevaSubastaFormContainer').hide();
         }
     </script>
+   <script>
+    $(document).ready(function() {
+        $('#filtroNombre').on('input', function() {
+            var valor = $(this).val().toLowerCase().trim();
+            $('#salasList .card').each(function() {
+                var nombreSala = $(this).find('.card-body h5').text().toLowerCase();
+                if (nombreSala.includes(valor)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
 

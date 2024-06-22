@@ -1,6 +1,7 @@
 ﻿
 using ChatRoom.Datos.Entidades;
 using ChatRoom.Dominio;
+using ChatRoom.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
@@ -10,13 +11,15 @@ namespace ChatRoom.Controllers;
 public class ChatController : Controller
 {
     private readonly ISalaService _salaService;
+    private readonly IOfertumService _ofertumService;
     private IHubContext<ChatHub> _hubContext;
     private readonly UserManager<Usuario> _userManager;
 
 
-    public ChatController(ISalaService salaService,  IHubContext<ChatHub> hubContext, UserManager<Usuario> userManager)
+    public ChatController(ISalaService salaService, IOfertumService ofertumService, IHubContext<ChatHub> hubContext, UserManager<Usuario> userManager)
     {
         _salaService = salaService;
+        _ofertumService = ofertumService;
         _hubContext = hubContext;
         _userManager = userManager;
     }
