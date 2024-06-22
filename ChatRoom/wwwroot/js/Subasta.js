@@ -63,8 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return console.error(err.toString());
     });
     connection.on("ReceiveSalas", function (salas) {
-        //const salasContainer = document.querySelector('.row');
-        salasContainer = document.getElementById("salasList");
+        const salasContainer = document.getElementById("salasList");
         const mensajeSubastasNull = document.getElementById("mensajeSubastasNull");
 
         // Limpiar la lista de subastas existentes
