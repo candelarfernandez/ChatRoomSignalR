@@ -8,12 +8,7 @@
 <body  style="
      margin: 0;
      padding: 0;
-     background-image: url('/images/fondo.png');
-     background-size: cover;
-     background-position: center;
-     height: 100%;
-     overflow-x: hidden;
-     position: relative;
+     background-color: #E8E2FF;
    "
 >
 <h1>@Model.Nombre</h1>
@@ -46,7 +41,7 @@
                 }
                 <label for="monto">Monto</label>
                 <input type="number" class="form-control" id="monto" name="monto" required />
-                <button id="btnSend">Enviar Puja</button>
+                    <button id="btnSend" class="btn mt - 2" style="background-color: #C5C3FC;">Enviar Puja</button>
             </div>
         </form>
     }
@@ -70,7 +65,7 @@
 {
     <form method="post" action="~/Chat/FinalizarSubasta" id="finalizarSubastaForm">
         <input type="hidden" id="idSala" name="idSala" value="@Model.Id" />
-        <button id="btnFinalizarSubasta">Finalizar subasta</button>
+                <button id="btnFinalizarSubasta" class="btn mt - 2" style="background-color: #C5C3FC;">Finalizar subasta</button>
     </form>
 }
 </div>

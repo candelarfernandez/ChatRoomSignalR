@@ -98,7 +98,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const cardLink = document.createElement("a");
                 cardLink.href = `/Chat/Room?id=${sala.id}`;
-                cardLink.className = "btn btn-primary";
+                cardLink.className = "btn mt - 2";
+                cardLink.style = "background-color: #C5C3FC";
                 cardLink.textContent = "Ver Sala";
 
                 cardBody.appendChild(cardTitle);

@@ -16,12 +16,7 @@
     body {
       margin: 0;
       padding: 0;
-      background-image: url('/images/fondo.png');
-      background-size: cover;
-      background-position: center;
-      height: 100%;
-      overflow-x: hidden;
-      position: relative;
+            background-color: #E8E2FF;
     }
 
     .card {
@@ -77,6 +72,7 @@
       padding: 20px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       z-index: 1001;
+      border-radius: 10px;
     }
 
     #botonversala {
@@ -100,7 +96,7 @@
         }
     </section>
 
-    <button id="nuevaSubastaBtn" type="button" class="btn btn-primary btn-add" style="background-color: #E8E2FF; color:#4c2882; font-weight: bold;font-size: 1.2em;" data-is-authenticated="@User.Identity.IsAuthenticated.ToString().ToLower()">+</button>
+    <button id="nuevaSubastaBtn" type="button" class="btn btn-primary btn-add" style="background-color: #C5C3FC; color:#4c2882; font-weight: bold;font-size: 1.2em; border-color: #fff;" data-is-authenticated="@User.Identity.IsAuthenticated.ToString().ToLower()">+</button>
 
     <div id="nuevaSubastaFormContainer">
         <h2 class="mb-3">Nueva Subasta</h2>
