@@ -1,5 +1,11 @@
-﻿@media (max-width: 576px) {
+﻿@media (max-width: 1200px) {
     .carousel-item img {
         object-fit: cover; 
     }
+}
+
+.contenedor {
+    bottom:0;
+    display: block;
+    position:absolute;
 }

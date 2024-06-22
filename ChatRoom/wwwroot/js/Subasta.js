@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return console.error(err.toString());
     });
     connection.on("ReceiveSalas", function (salas) {
-        const salasList = document.getElementById("salasList");
+        const salasContainer = document.querySelector('.row');
         const mensajeSubastasNull = document.getElementById("mensajeSubastasNull");
 
         // Limpiar la lista de subastas existentes
@@ -74,13 +74,45 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
 
             salas.forEach(function (sala) {
-                const salaItem = document.createElement("li");
-                salaItem.className = "list-group-item list-group-item-action py-3 lh-sm mb-3 m-lg-2 rounded-2";
-                salaItem.innerHTML = `<a href="/Chat/Room?id=${sala.id}">${sala.nombre}</a>`;
-                salasList.appendChild(salaItem);
+                const cardColumn = document.createElement("div");
+                cardColumn.className = "col-md-4";
+
+                const card = document.createElement("div");
+                card.className = "card";
+
+                const cardImg = document.createElement("img");
+                cardImg.className = "card-img-top";
+                cardImg.src = "/images/default-product-image.jpg";
+                cardImg.alt = "Imagen de Producto";
+
+                const cardBody = document.createElement("div");
+                cardBody.className = "card-body";
+
+                const cardTitle = document.createElement("h5");
+                cardTitle.className = "card-title";
+                cardTitle.textContent = sala.nombre;
+
+                const cardText = document.createElement("p");
+                cardText.className = "card-text";
+                cardText.textContent = "Descripción de la subasta, detalles, etc.";
+
+                const cardLink = document.createElement("a");
+                cardLink.href = `/Chat/Room?id=${sala.id}`;
+                cardLink.className = "btn btn-primary";
+                cardLink.textContent = "Ver Sala";
+
+                cardBody.appendChild(cardTitle);
+                cardBody.appendChild(cardText);
+                cardBody.appendChild(cardLink);
+
+                card.appendChild(cardImg);
+                card.appendChild(cardBody);
+
+                cardColumn.appendChild(card);
+                salasContainer.appendChild(cardColumn);
             });
             mensajeSubastasNull.style.display = "none"; // Ocultar el mensaje de "No hay subastas activas"
         }
     });
-
+    
 });

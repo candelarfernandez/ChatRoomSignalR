@@ -8,47 +8,82 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Subastas</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa; /* Color de fondo */
-            min-height: 100vh;
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Subastas</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('/images/fondo.png');
+      background-size: cover;
+      background-position: center;
+      height: 100%;
+      overflow-x: hidden;
+      position: relative;
+    }
 
-        .card {
-            margin-bottom: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-        }
+    .card {
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+      background-color: #F0F8FF; /* Lilac background color */
+       /* Existing styles for .botonversala */
+  display: flex; /* Make .botonversala a flex container */
+  justify-content: center; 
+    }
 
-        .card img {
-            height: 200px; /* Altura de la imagen */
-            object-fit: cover; /* Ajuste de la imagen */
-        }
+    .card img {
+      width: 90%; /* Set image width to 90% */
+      height: 200px; /* Adjust image height as needed */
+      object-fit: cover; /* Ajuste de la imagen */
+      text-align: center;
+      margin:auto;
+      margin-top: 4px;
 
-        .btn-add {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
+    }
 
-        #nuevaSubastaFormContainer {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #C5C3FC;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 1001;
-        }
-    </style>
+    .card-body {
+      text-align: center; /* Center the content within the card body */
+
+    }
+
+    .botonversala {
+      display: block; /* Make the button a block-level element */
+      margin: 0 auto; /* Center the button horizontally */
+      width: 70%; /* Set button width to 70% of the card body */
+      padding: 10px 20px; /* Add some padding to the button */
+      background-color: #B28BD9; /* Lilac dark color */
+      color: white; /* White text color */
+      border: none; /* Remove default border */
+      border-radius: 5px; /* Add rounded corners */
+      cursor: pointer; /* Indicate clickable behavior */
+    }
+
+    .btn-add {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    #nuevaSubastaFormContainer {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #C5C3FC;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 1001;
+    }
+
+    #botonversala {
+      width: 90%;
+      background-color: #C5C3FC;
+    }
+  </style>
 </head>
 <body>
     <section class="container py-5">
@@ -57,13 +92,12 @@
         <div class="row">
             @foreach (var sala in Model)
             {
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="/images/default-product-image.jpg" class="card-img-top" alt="Imagen de Producto">
+                    <div class="col-md-4" >
+                        <div class="card" >
+                            <img src="@sala.FotoProductoNombre" class="card-img" alt="Imagen de Producto">
                             <div class="card-body">
                                 <h5 class="card-title">@sala.Nombre</h5>
-                                <p class="card-text">Descripción de la subasta, detalles, etc.</p>
-                                <a href="/Chat/Room?id=@sala.Id" class="btn btn-primary">Ver Sala</a>
+                                <a href="/Chat/Room?id=@sala.Id" class="botonversala">Ver Sala</a>
                             </div>
                         </div>
                     </div>
@@ -78,7 +112,7 @@
         }
     </section>
 
-    <button id="nuevaSubastaBtn" type="button" class="btn btn-primary btn-add" style="background-color: #E8E2FF;" data-is-authenticated="@User.Identity.IsAuthenticated.ToString().ToLower()">+</button>
+    <button id="nuevaSubastaBtn" type="button" class="btn btn-primary btn-add" style="background-color: #E8E2FF; color:#4c2882; font-weight: bold;font-size: 1.2em;" data-is-authenticated="@User.Identity.IsAuthenticated.ToString().ToLower()">+</button>
 
     <div id="nuevaSubastaFormContainer">
         <h2 class="mb-3">Nueva Subasta</h2>
