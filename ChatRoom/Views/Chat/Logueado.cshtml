@@ -122,7 +122,7 @@
                 <input type="hidden" id="idVendedor" name="idVendedor" value="@authenticatedUser.Id">
             }
             <button id="cancelarSubastaBtn" type="button" class="btn btn-secondary mt-2 mr-2" onclick="closeForm()">Cancelar</button>
-            <button type="submit" class="btn btn-primary mt-2" style="background-color: #E8E2FF;">Crear Subasta</button>
+            <button type="submit" class="btn btn-primary mt-2" style="background-color: #E8E2FF;" onclick="crearSubasta()">Crear Subasta</button>
         </form>
     </div>
 
@@ -139,6 +139,9 @@
         function closeForm() {
             $('#overlay').hide();
             $('#nuevaSubastaFormContainer').hide();
+        }
+        function crearSubasta() {
+            $('#overlay').hide();
         }
     </script>
 </body>

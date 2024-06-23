@@ -41,8 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 try {
                     await connection.invoke("CreateSala", nombre, base64Image, idVendedor);
-                    mensajeExito();
-                    
+                    mensajeExito();                
 
                 } catch (err) {
                     console.error('Error:', err);
@@ -113,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 salasContainer.appendChild(cardColumn);
             });
             mensajeSubastasNull.style.display = "none"; // Ocultar el mensaje de "No hay subastas activas"
+           
         }
     });
     
