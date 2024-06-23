@@ -74,7 +74,6 @@ namespace ChatRoom
                 byte[] imageBytes = Convert.FromBase64String(base64Image);
                 await System.IO.File.WriteAllBytesAsync(filePath, imageBytes);
 
-                // Guarda solo la ruta relativa en la base de datos
                 var relativeFilePath = "/images/" + fileName;
                 var sala = _salaService.CreateSala(nombre, relativeFilePath, idVendedor);
 

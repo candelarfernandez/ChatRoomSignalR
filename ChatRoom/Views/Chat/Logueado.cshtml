@@ -8,78 +8,86 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Subastas</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Subastas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
             background-color: #E8E2FF;
-    }
+        }
 
-    .card {
-      margin-bottom: 20px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-      background-color: #F0F8FF; /* Lilac background color */
-       /* Existing styles for .botonversala */
-  display: flex; /* Make .botonversala a flex container */
-  justify-content: center; 
-    }
+        .card {
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #F0F8FF;
+            display: flex;
+            justify-content: center;
+        }
 
-    .card img {
-      width: 90%; /* Set image width to 90% */
-      height: 200px; /* Adjust image height as needed */
-      object-fit: cover; /* Ajuste de la imagen */
-      text-align: center;
-      margin:auto;
-      margin-top: 4px;
+            .card img {
+                width: 90%;
+                height: 200px;
+                object-fit: cover;
+                text-align: center;
+                margin: auto;
+                margin-top: 4px;
+            }
 
-    }
+        .card-body {
+            text-align: center;
+        }
 
-    .card-body {
-      text-align: center; /* Center the content within the card body */
+        .botonversala {
+            display: block;
+            margin: 0 auto;
+            width: 70%;
+            padding: 10px 20px;
+            background-color: #B28BD9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-    }
+        .btn-add {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
 
-    .botonversala {
-      display: block; /* Make the button a block-level element */
-      margin: 0 auto; /* Center the button horizontally */
-      width: 70%; /* Set button width to 70% of the card body */
-      padding: 10px 20px; /* Add some padding to the button */
-      background-color: #B28BD9; /* Lilac dark color */
-      color: white; /* White text color */
-      border: none; /* Remove default border */
-      border-radius: 5px; /* Add rounded corners */
-      cursor: pointer; /* Indicate clickable behavior */
-    }
+        #nuevaSubastaFormContainer {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #C5C3FC;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+            border-radius: 10px;
+        }
 
-    .btn-add {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-    }
+        #botonversala {
+            width: 90%;
+            background-color: #C5C3FC;
+        }
 
-    #nuevaSubastaFormContainer {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #C5C3FC;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      z-index: 1001;
-      border-radius: 10px;
-    }
-
-    #botonversala {
-      width: 90%;
-      background-color: #C5C3FC;
-    }
-  </style>
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+    </style>
 </head>
 <body>
     <section class="container py-5">
@@ -90,14 +98,14 @@
 
         @if (Model.Count == 0)
         {
-                <div id="mensajeSubastasNull">
-                    <p class="text-center">En este momento no hay subastas activas</p>
-                </div>
+            <div id="mensajeSubastasNull">
+                <p class="text-center">En este momento no hay subastas activas</p>
+            </div>
         }
     </section>
 
     <button id="nuevaSubastaBtn" type="button" class="btn btn-primary btn-add" style="background-color: #C5C3FC; color:#4c2882; font-weight: bold;font-size: 1.2em; border-color: #fff;" data-is-authenticated="@User.Identity.IsAuthenticated.ToString().ToLower()">+</button>
-
+    <div id="overlay"></div>
     <div id="nuevaSubastaFormContainer">
         <h2 class="mb-3">Nueva Subasta</h2>
         <form id="createSalaForm" action="/Chat/Room/CreateRoom" method="post" enctype="multipart/form-data">
@@ -111,7 +119,7 @@
             </div>
             @if (authenticatedUser != null)
             {
-                    <input type="hidden" id="idVendedor" name="idVendedor" value="@authenticatedUser.Id">
+                <input type="hidden" id="idVendedor" name="idVendedor" value="@authenticatedUser.Id">
             }
             <button id="cancelarSubastaBtn" type="button" class="btn btn-secondary mt-2 mr-2" onclick="closeForm()">Cancelar</button>
             <button type="submit" class="btn btn-primary mt-2" style="background-color: #E8E2FF;">Crear Subasta</button>
@@ -123,18 +131,20 @@
     <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
     <script src="~/js/Subasta.js"></script>
     <script>
-        $('#nuevaSubastaBtn').on('click', function() {
+        $('#nuevaSubastaBtn').on('click', function () {
+            $('#overlay').show();
             $('#nuevaSubastaFormContainer').toggle();
         });
 
         function closeForm() {
+            $('#overlay').hide();
             $('#nuevaSubastaFormContainer').hide();
         }
     </script>
 </body>
 </html>
 
-    
+
 
 
 
