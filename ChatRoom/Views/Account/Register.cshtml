@@ -13,40 +13,37 @@
     }
 </style>
 
-<div class="register-container">
-<h1>Register</h1>
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-auto">
-                <div class="register-form">
+<div class="row justify-content-end mt-5">
+    <div class="col-md-6">
+        <h1 class="mt-5">Registrarse</h1>
+        <div class="login-form">
 
                     <form asp-action="Register" method="post">
                         <div asp-validation-summary="All"></div>
 
                         <div class="form-group">
-                            <label asp-for="UserName"></label>
-                            <input asp-for="UserName" class="form-control" />
+                    <label asp-for="UserName">Nombre de usuario</label>
+                    <input asp-for="UserName" class="form-control" required />
                             <span asp-validation-for="UserName" class="text-danger"></span>
                         </div >
 
                         <div class="form-group">
-                            <label asp-for="Email"></label>
-                            <input asp-for="Email" class="form-control" />
+                            <label asp-for="Email">Email</label>
+                    <input asp-for="Email" class="form-control" required />
                             <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
 
                         <div class="form-group">
-                            <label asp-for="Password"></label>
-                            <input asp-for="Password" type="password" class="form-control" />
+                            <label asp-for="Password">Contraseña</label>
+                    <input asp-for="Password" type="password" class="form-control" required />
                             <span asp-validation-for="Password" class="text-danger"></span>
                         </div>
 
-                        <button type="submit" class="btn btn-primary mt-2">Register</button>
+                        <button type="submit" class="btn btn-primary mt-2">Registrarse</button>
                     </form>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+
 
