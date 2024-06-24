@@ -98,6 +98,8 @@
         <div class="row mb-3">
     <div class="col-md-6 offset-md-3">
         <input type="text" class="form-control" id="filtroNombre" placeholder="Buscar por nombre...">
+                <button id="resetFiltro" class="btn btn-secondary ml-2">Reset</button>
+
     </div>
 </div>
 
@@ -141,6 +143,47 @@
     <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
     <script src="~/js/Subasta.js"></script>
     <script>
+        $(document).ready(function () {
+            // Store the original cards before filtering
+            let originalCards = $('#salasList .card');
+
+            $('#filtroNombre').on('input', function () {
+                var valor = $(this).val().toLowerCase().trim();
+                let filteredCards = []; // Temporary variable to store matching cards
+
+                $('#salasList .card').each(function () {
+                    var nombreSala = $(this).find('.card-body h5').text().toLowerCase();
+                    if (nombreSala.includes(valor)) {
+                        filteredCards.push($(this)); // Add matching card to temporary array
+                    } else {
+                        $(this).detach(); // Remove non-matching card from DOM
+                    }
+                });
+
+                // Clear the existing content of #salasList
+                $('#salasList').empty();
+
+                // Append all matching cards back to #salasList
+                filteredCards.forEach(function (card) {
+                    card.appendTo('#salasList');
+                });
+            });
+
+            // Restore original cards when search input is cleared
+            $('#filtroNombre').on('clear', function () {
+                originalCards.appendTo('#salasList');
+            });
+            $('#resetFiltro').on('click', function () {
+                $('#salasList').empty();
+                originalCards.appendTo('#salasList');
+            });
+        });
+
+
+    </script>
+
+
+   @*  <script>
         $('#nuevaSubastaBtn').on('click', function() {
             $('#nuevaSubastaFormContainer').toggle();
         });
@@ -163,7 +206,7 @@
             });
         });
     });
-</script>
+</script> *@
 
 </body>
 </html>
