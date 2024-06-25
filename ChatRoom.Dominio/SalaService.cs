@@ -11,7 +11,7 @@ namespace ChatRoom.Dominio
         Sala? GetSalaById(int id);
         Sala CreateSala(string nombre, string? fotoProductoNombre, string? idVendedor);
         void agregarOfertaALaSala(Ofertum oferta, int idSala);
-        Venta FinalizarSubasta(int idSala);
+        Venta FinalizarSubasta(int idSala, bool forceClose);
         Usuario GetUserById(string userId);
         Producto GetProductoById(int productoId);
 
@@ -99,34 +99,39 @@ namespace ChatRoom.Dominio
             }
         }
 
-        public Venta FinalizarSubasta(int idSala)
+        public Venta FinalizarSubasta(int idSala, bool forceClose)
         {
             var sala = _subastaContext.Salas.Include(s => s.Oferta).FirstOrDefault(s => s.Id == idSala);
-            sala.Activa = false;
-
             var ultimaOferta = sala.Oferta.OrderByDescending(o => o.Monto).FirstOrDefault();
-            var usuario = _subastaContext.Usuarios.Find(ultimaOferta.IdComprador);
 
-            if (ultimaOferta == null)
+            if (ultimaOferta == null&& !forceClose)
             {
-                throw new Exception("No hay ofertas en la sala");
+                throw new Exception("No es posible cerrar la sala");
             }
-            decimal dineroDisponibleActual = usuario.DineroDisponible ?? 0;
-            usuario.DineroDisponible = dineroDisponibleActual - (decimal)ultimaOferta.Monto;
-            _subastaContext.SaveChanges();
 
-            var venta = new Venta
+            sala.Activa = false;
+            if (ultimaOferta != null)
             {
-                IdComprador = ultimaOferta.IdComprador,
-                IdVendedor = sala.IdVendedor,
-                IdProducto = sala.IdProducto,
-                Monto = ultimaOferta.Monto
-            };
+                var usuario = _subastaContext.Usuarios.Find(ultimaOferta.IdComprador);
+                decimal dineroDisponibleActual = usuario.DineroDisponible ?? 0;
+                usuario.DineroDisponible = dineroDisponibleActual - (decimal)ultimaOferta.Monto;
+                _subastaContext.SaveChanges();
 
-            _subastaContext.Venta.Add(venta);
+                var venta = new Venta
+                {
+                    IdComprador = ultimaOferta.IdComprador,
+                    IdVendedor = sala.IdVendedor,
+                    IdProducto = sala.IdProducto,
+                    Monto = ultimaOferta.Monto
+                };
+
+                _subastaContext.Venta.Add(venta);
+                _subastaContext.SaveChanges();
+                return venta;
+            }
+            // Si no hay ofertas y se fuerza el cierre, simplemente cerrar la sala
             _subastaContext.SaveChanges();
-
-            return venta;
+            return null; // Retornar null si no hubo ventas
         }
 
         public Usuario GetUserById(string userId)
@@ -139,6 +144,5 @@ namespace ChatRoom.Dominio
         {
             return _subastaContext.Productos.Find(productoId);
         }
-
     }
 }

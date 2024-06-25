@@ -14,7 +14,7 @@ public class ChatController : Controller
     private readonly UserManager<Usuario> _userManager;
 
 
-    public ChatController(ISalaService salaService,  IHubContext<ChatHub> hubContext, UserManager<Usuario> userManager)
+    public ChatController(ISalaService salaService, IHubContext<ChatHub> hubContext, UserManager<Usuario> userManager)
     {
         _salaService = salaService;
         _hubContext = hubContext;
@@ -72,30 +72,40 @@ public class ChatController : Controller
         }
         return View();
     }
- 
+
     [HttpPost]
-    public IActionResult FinalizarSubasta(int idSala)
+    public IActionResult FinalizarSubasta([FromBody] FinalizarSubastaRequest request)
     {
-        var venta = _salaService.FinalizarSubasta(idSala);
-
-        if (venta != null)
+        try
         {
-            var comprador = _salaService.GetUserById(venta.IdComprador);
-            var vendedor = _salaService.GetUserById(venta.IdVendedor);
-            var producto = _salaService.GetProductoById(venta.IdProducto);
+            var venta = _salaService.FinalizarSubasta(request.IdSala, request.ForceClose);
+            if (venta != null)
+            {
+                var comprador = _salaService.GetUserById(venta.IdComprador);
+                var vendedor = _salaService.GetUserById(venta.IdVendedor);
+                var producto = _salaService.GetProductoById(venta.IdProducto);
 
-            var mensajeComprador = $"Felicidades! El producto: {producto.Nombre} es tuyo! Contactate con {vendedor.UserName} para reclamar tu compra.";
-            //este no se muestra
-            var mensajeVendedor = $"Felicidades! {comprador.UserName} ha comprado tu producto!";
+                var mensajeComprador = $"Felicidades! El producto: {producto.Nombre} es tuyo! Contactate con {vendedor.UserName} para reclamar tu compra.";
+                var mensajeVendedor = $"Felicidades! {comprador.UserName} ha comprado tu producto!";
 
-            _hubContext.Clients.User(venta.IdComprador.ToString()).SendAsync("ReceiveNotification", mensajeComprador);
-            _hubContext.Clients.User(venta.IdVendedor.ToString()).SendAsync("ReceiveNotification", mensajeVendedor);
-
-            var groupName = idSala.ToString();
+                _hubContext.Clients.User(venta.IdComprador.ToString()).SendAsync("ReceiveNotification", mensajeComprador);
+                _hubContext.Clients.User(venta.IdVendedor.ToString()).SendAsync("ReceiveNotification", mensajeVendedor);
+            }
+            var groupName = request.IdSala.ToString();
             _hubContext.Clients.Group(groupName).SendAsync("CloseAuction");
-
+            return RedirectToAction("Index");
         }
-        return RedirectToAction("Index");
+        catch (Exception ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
     }
+
+    public class FinalizarSubastaRequest
+    {
+        public int IdSala { get; set; }
+        public bool ForceClose { get; set; }
+    }
+
 
 }

@@ -38,7 +38,7 @@
                                 {
                                     <form method="post" action="~/Chat/CreateOferta" id="ofertaForm" type="hidden">
                                         <div class="col-12">
-                                            <input type="hidden" class="form-control" id="sala" name="idSala" value="@Model.Id" readonly />
+                                            <input type="hidden" class="form-control" id="salaId" name="idSala" value="@Model.Id" readonly />
                                         </div>
                                     </form>
                                 }
@@ -46,7 +46,7 @@
                                 {
                                     <form method="post" action="~/Chat/CreateOferta" id="ofertaForm" type="hidden">
                                         <div class="col-12">
-                                            <input type="hidden" class="form-control" id="sala" name="idSala" value="@Model.Id" readonly />
+                                            <input type="hidden" class="form-control" id="salaId" name="idSala" value="@Model.Id" readonly />
                                         </div>
                                     </form>
                                 }
@@ -57,7 +57,7 @@
                                 {
                                     <form method="post" action="~/Chat/CreateOferta" id="ofertaForm" type="hidden">
                                         <div class="col-12">
-                                            <input type="hidden" class="form-control" id="sala" name="idSala" value="@Model.Id" readonly />
+                                            <input type="hidden" class="form-control" id="salaId" name="idSala" value="@Model.Id" readonly />
                                         </div>
                                     </form>
                                 }
@@ -65,7 +65,7 @@
                                 {
                                     <form method="post" action="~/Chat/CreateOferta" id="ofertaForm" type="hidden">
                                         <div class="col-12">
-                                            <input type="hidden" class="form-control" id="sala" name="idSala" value="@Model.Id" readonly />
+                                            <input type="hidden" class="form-control" id="salaId" name="idSala" value="@Model.Id" readonly />
                                         </div>
                                     </form>
                                 }
@@ -138,7 +138,10 @@
     </div>
 </body>
 <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
-<script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="~/js/Room.js" asp-append-version="true"></script>
+
+@*<script>
     var connection = new signalR.HubConnectionBuilder().withUrl("/chat").build();
 
     connection.start().then(() => {
@@ -236,4 +239,4 @@
         }
     });
 
-</script>
+</script>*@
