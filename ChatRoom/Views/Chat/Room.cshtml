@@ -38,7 +38,7 @@
                                 {
                                     <form method="post" action="~/Chat/CreateOferta" id="ofertaForm" type="hidden">
                                         <div class="col-12">
-                                            <input type="hidden" class="form-control" id="salaId" name="idSala" value="@Model.Id" readonly />
+                                            <input type="hidden" class="form-control" id="sala" name="idSala" value="@Model.Id" readonly />
                                         </div>
                                     </form>
                                 }
@@ -46,7 +46,7 @@
                                 {
                                     <form method="post" action="~/Chat/CreateOferta" id="ofertaForm" type="hidden">
                                         <div class="col-12">
-                                            <input type="hidden" class="form-control" id="salaId" name="idSala" value="@Model.Id" readonly />
+                                            <input type="hidden" class="form-control" id="sala" name="idSala" value="@Model.Id" readonly />
                                         </div>
                                     </form>
                                 }
@@ -57,7 +57,7 @@
                                 {
                                     <form method="post" action="~/Chat/CreateOferta" id="ofertaForm" type="hidden">
                                         <div class="col-12">
-                                            <input type="hidden" class="form-control" id="salaId" name="idSala" value="@Model.Id" readonly />
+                                            <input type="hidden" class="form-control" id="sala" name="idSala" value="@Model.Id" readonly />
                                         </div>
                                     </form>
                                 }
@@ -65,7 +65,7 @@
                                 {
                                     <form method="post" action="~/Chat/CreateOferta" id="ofertaForm" type="hidden">
                                         <div class="col-12">
-                                            <input type="hidden" class="form-control" id="salaId" name="idSala" value="@Model.Id" readonly />
+                                            <input type="hidden" class="form-control" id="sala" name="idSala" value="@Model.Id" readonly />
                                         </div>
                                     </form>
                                 }
@@ -105,7 +105,7 @@
                                         }
                                         <div class="input-group">
                                             <input type="number" class="form-control" id="monto" name="monto" placeholder="Monto" required />
-                                            <button type="button" id="btnSend" class="btn" style="background-color: #C5C3FC;">Enviar Puja</button>
+                                            <button type="button" id="btnSend" class="btn" style="background-color: #C5C3FC;">Ofertar</button>
                                         </div>
                                     </div>
                                 </form>
@@ -141,102 +141,3 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="~/js/Room.js" asp-append-version="true"></script>
 
-@*<script>
-    var connection = new signalR.HubConnectionBuilder().withUrl("/chat").build();
-
-    connection.start().then(() => {
-        let userName = document.getElementById("userName").value;
-        connection.invoke("JoinSala", "@Model.Id", userName)
-    }).catch((e) => console.error(e));
-
-    document.getElementById("btnSend").addEventListener("click", (event) => {
-
-        let salaId = "@Model.Id";
-        let userId = document.getElementById("user").value;
-        let monto = document.getElementById("monto").value;
-
-        connection.invoke("AddOferta", salaId, userId, monto).catch((err) =>
-            console.error(err.toString()));
-
-        document.getElementById("monto").value = "";
-        document.getElementById("monto").focus();
-        event.preventDefault();
-    });
-
-    connection.on("ReceiveOferta", (ofertas) => {
-        var ofertasHtml = "";
-        ofertas.forEach(oferta => {
-            ofertasHtml += `<div><b>Monto:</b> ${oferta.monto}, <b>Usuario:</b> ${oferta.idComprador}</div>`;
-        });
-        document.getElementById("montos").innerHTML = ofertasHtml;
-    });
-
-    connection.on("ShowError", (message) => {
-        var errorsHtml = `<div class="alert alert-danger"><b>${message}</b></div>`;
-
-        const errorElement = document.createElement('div');
-        errorElement.classList.add('alert', 'alert-danger');
-        errorElement.innerHTML = message;
-
-        const errorsContainer = document.getElementById("errors");
-        errorsContainer.appendChild(errorElement);
-
-        function hideError() {
-            errorElement.style.display = 'none';
-        }
-        setTimeout(hideError, 3000);
-    });
-
-
-    connection.on("ShowWho", (message) => {
-        var notificationHtml = `<div><b>${message}</b></div>`;
-        document.getElementById("notifications").innerHTML = notificationHtml + document.getElementById("notifications").innerHTML;
-    });
-
-    connection.on("CloseAuction", () => {
-        Toastify({
-            text: "La subasta ha finalizado. Serás redirigido.",
-            duration: 3000,
-            close: true,
-            gravity: "bottom",
-            position: "center",
-            backgroundColor: "#ff6f69",
-            stopOnFocus: true,
-        }).showToast();
-
-        setTimeout(() => {
-            window.location.href = "/Chat/Index";
-        }, 3000);
-    });
-
-    connection.on("ReceiveNotification", (message) => {
-        Toastify({
-            text: message,
-            duration: 6000,
-            close: true,
-            gravity: "bottom",
-            position: "center",
-            backgroundColor: "#88d8b0",
-            stopOnFocus: true,
-        }).showToast();
-    });
-
-    document.getElementById("btnFinalizarSubasta").addEventListener("click", function (event) {
-        var numOfertas = document.getElementById("montos").children.length;
-
-        if (numOfertas > 0) {
-            return true;
-        } else {
-            var errorMessage = "No se puede finalizar la subasta porque no hay ofertas en la sala.";
-            var errorsHtml = `<div class="alert alert-danger"><b>${errorMessage}</b></div>`;
-            document.getElementById("errors").innerHTML = errorsHtml;
-            event.preventDefault();
-
-            // Hide the error message after 3 seconds using setTimeout
-            setTimeout(function () {
-                document.getElementById("errors").style.display = "none";
-            }, 3000); // 3000 milliseconds = 3 seconds
-        }
-    });
-
-</script>*@

@@ -5,8 +5,6 @@
     var authenticatedUser = ViewData["AuthenticatedUser"] as Usuario;
 }
 
-<!DOCTYPE html>
-<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -91,7 +89,8 @@
 </head>
 <body>
     <section class="container py-5">
-        <h2 class="text-center mb-4">Subastas Activas</h2>
+        <h2 class="text-center mb-0">Subastas Activas</h2>
+        <button id="nuevaSubastaBtn" type="button" class="btn btn-primary btn-add" style="background-color: #C5C3FC; color:#4c2882; font-weight: bold; font-size: 1.2em; border-color: #fff;" data-is-authenticated="@User.Identity.IsAuthenticated.ToString().ToLower()">Crear Subasta</button>
 
         <div class="row" id="salasList">
         </div>
@@ -104,7 +103,6 @@
         }
     </section>
 
-    <button id="nuevaSubastaBtn" type="button" class="btn btn-primary btn-add" style="background-color: #C5C3FC; color:#4c2882; font-weight: bold;font-size: 1.2em; border-color: #fff;" data-is-authenticated="@User.Identity.IsAuthenticated.ToString().ToLower()">+</button>
     <div id="overlay"></div>
     <div id="nuevaSubastaFormContainer">
         <h2 class="mb-3">Nueva Subasta</h2>
@@ -147,7 +145,6 @@
         }
     </script>
 </body>
-</html>
 
 
 
