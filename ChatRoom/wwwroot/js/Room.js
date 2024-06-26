@@ -2,11 +2,11 @@
 
 connection.start().then(() => {
     let userName = document.getElementById("userName").value;
-    connection.invoke("JoinSala", document.getElementById("salaId").value, userName) //de donde lo saco?
+    connection.invoke("JoinSala", document.getElementById("sala").value, userName) 
 }).catch((e) => console.error(e));
 
 document.getElementById("btnSend").addEventListener("click", (event) => {
-    let salaId = document.getElementById("salaId").value;
+    let salaId = document.getElementById("sala").value;
     let userId = document.getElementById("user").value;
     let monto = document.getElementById("monto").value;
 
